@@ -907,7 +907,7 @@ body {
 	padding-bottom: .87rem
 }
 .section-advanced-platform .step-list .label {
-	border-radius: .22rem;
+	border-radius: 2.22rem;
 	border: 2px solid #2b5ad6;
 	padding: .14rem 0
 }
@@ -4503,7 +4503,7 @@ body.desktop .q-stepper-tab.step-navigation:hover {
 	position: relative
 }
 #header, #header a {
-	color: #fff
+	color: #333
 }
 #header .container-t1 {
 	padding-left: 24px;
