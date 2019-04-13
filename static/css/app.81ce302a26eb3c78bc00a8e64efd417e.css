@@ -1175,7 +1175,8 @@ table td {
 }
 @media (min-width:840px) {
 	.tutorial .left-side {
-		display: block
+		display: block;
+		font-weight: 600;
 	}
 }
 @media (min-width:1300px) {
