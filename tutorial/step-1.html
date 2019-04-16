@@ -4,36 +4,35 @@
   <meta charset="utf-8">
   <meta content="user-scalable=no,width=device-width,initial-scale=1" name="viewport">
   <title></title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
   <link href="../static/css/app.81ce302a26eb3c78bc00a8e64efd417e.css" rel="stylesheet">
-  <script async charset="utf-8" src="../static/js/1.8d0381c49bfba337f95c.js" type="text/javascript">
-  </script>
 </head>
 <body>
   <div id="app">
     <div class="tutorial">
       <div id="header">
-        <div class="flex flex-middle header mobile-hidden">
+        <div class="flex flex-middle header mobile-hidden" id="p-header">
           <div class="full-width container-t1">
             <div class="flex flex-middle flex-between">
               <a class="flex flex-middle logo-wrapper router-link-active" href="../index.html"><img src="../img/mindmeld-logo.png"></a>
               <div class="flex flex-middle">
                 <div class="flex flex-middle navi-list">
                   <div class="navi-item">
-                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="/tutorial">Learn</a>
+                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="../learn/intro.html">Learn</a>
                   </div>
                   <div class="navi-item navi-active">
-                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="/tutorial">Tutorial</a>
+                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="overview.html">Tutorial</a>
                   </div>
                   <div class="navi-item">
-                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="/tutorial">User Guide</a>
+                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="../user_guide/about.html">User Guide</a>
                   </div>
                   <div class="navi-item">
-                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="/tutorial">Blueprints</a>
+                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="../blueprints/overview.html">Blueprints</a>
                   </div>
                   <div class="navi-item">
-                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="/tutorial">API</a>
+                    <a class="cursor-pointer bold fs-26 router-link-exact-active router-link-active" href="../api/api.html">API</a>
                   </div>
-                </div><button class="border-button bold fs-26">Get Started</button>
+                </div><button class="border-button bold fs-26" href="../get_started.html">Get Started</button>
               </div>
             </div>
           </div>
@@ -76,136 +75,98 @@
             <p class="navi-item fs-20"><a href="step-1.html">Step 9: Optimize Question Answering Performance</a></p>
             <p class="navi-item fs-20"><a href="step-1.html">Step 10: Deploy Trained Models</a></p>
         </div>
-        <div class="flex-auto content-container">
+        <div class="flex-auto content-container" id="content-container">
           <div class="content">
-            <h1 class="fs-50">Step 1: Select the Right Use Case</h1>
+            <h1 class="fs-50" id="content-title">Step 1: Select the Right Use Case</h1>
             <div class="content-anchor">
               <div class="anchor-list">
-                <p class="fs-22 anchor-item"><a href="#section-1">section 1</a></p>
-                <p class="fs-22 anchor-item"><a href="#section-1">section 2</a></p>
-                <p class="fs-22 anchor-item"><a href="#section-1">section 3</a></p>
-                <p class="fs-22 anchor-item"><a href="#section-1">section 4</a></p>
-                <p class="fs-22 anchor-item"><a href="#section-1">section 5</a></p>
+                <p class="fs-22 anchor-item">Title goes here</p>
+                <p class="fs-22 anchor-item">Title goes here</p>
+                <p class="fs-22 anchor-item">Title goes here</p>
+                <p class="fs-22 anchor-item">Title goes here</p>
+                <p class="fs-22 anchor-item">Title goes here</p>
               </div>
             </div>
             <div class="content-detail">
-              <div class="detail">
-                <p class="fs-18">Great conversational applications require both advanced technology and solid design judgement. The most widely used conversational applications today, such as Siri, Alexa, Google Assistant, and Cortana, are all built using a similar set of techniques and technologies to ensure both high accuracy and utility. This Step-by-Step Guide outlines the methodology used to build today’s most advanced and useful conversational applications.
-                <br>
-                <h2 id="section-1">Building a Conversational Interface in 10 Steps</h2>
-
-                <br>
-                Taking a conversational application from conception to production typically entails completing the ten implementation steps summarized below.
-                </p>
-              </div>
-              <div class="detail">
-                  <table width="100%" border="0" class="fs-18" text-align="center">
-                    <tbody valign="top">
-                      <tr class="row-odd">
-                        <td>1</td>
-                        <td>Select the right use case</td>
-                      </tr>
-                      <tr class="row-even">
-                        <td>2</td>
-                        <td>Script your ideal dialogue interactions</td>
-                      </tr>
-                      <tr class="row-odd">
-                        <td>3</td>
-                        <td>Define the domain, intent, entity, and role hierarchy</td>
-                      </tr>
-                      <tr class="row-even">
-                        <td>4</td>
-                        <td>Define the dialogue state handlers</td>
-                      </tr>
-                      <tr class="row-odd">
-                        <td>5</td>
-                        <td>Create the question answerer knowledge base</td>
-                      </tr>
-                      <tr class="row-even">
-                        <td>6</td>
-                        <td>Generate representative training data</td>
-                      </tr>
-                      <tr class="row-odd">
-                        <td>7</td>
-                        <td>Train the natural language processing classifiers</td>
-                      </tr>
-                      <tr class="row-even">
-                        <td>8</td>
-                        <td>Implement the language parser</td>
-                      </tr>
-                      <tr class="row-odd">
-                        <td>9</td>
-                        <td>Optimize question answering performance</td>
-                      </tr>
-                      <tr class="row-even">
-                        <td>10</td>
-                        <td>Deploy trained models to production</td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>             
-              <div class="detail">
-                <p class="fs-18">Taking a simple use case as an example, this Guide walks through the methodology, highlighting the key design decisions and technology components which underpin any great conversational experience. Along the way, the Guide explains how MindMeld Workbench can streamline the task of building and deploying conversational interfaces.</p>
-                <br>
-              </div>
-              <div class="detail">
-                <img src="../img/rise-map.png" style="width: 100%; text-align: center;">
-              </div>
-              <div class="detail">
-                <p class="fs-18">
-                  The question answerer supports whatever data model the application uses. Developers must decide what data model suits their apps best. For example, a food ordering app could model <code>cuisine</code> types either as information-rich objects with a list of attributes, or simply as a string (the cuisine type name) which is an attribute of dish objects.
-                </p>
-                <br>
-              </div>
-              <div class="detail">
-                <img src="../img/rise-map.png" style="width: 100%; text-align: center;">
-              </div>
-              <div class="detail">
-                  <pre>
-                    <button class="btn copybtn" data-clipboard-target="#codeblock1"><img alt="Copy to clipboard" src="https://clipboardjs.com/assets/images/clippy.svg" width="13"></button>
-                      <span>
-{
-"category": "Makimono-Sushi Rolls (6 Pcs)",
-"description": "Makimono-Sushi Rolls (6 Pcs)\nDeep-fried shrimp, avocado, cucumber",
-"price": 6.5,
-"restaurant_id": "B01N97KQNJ",
-"img_url": null,
-"id": "B01N0KXELH",
-"name": "Shrimp Tempura Roll"
-},
-{
-"category": "Special Rolls",
-"description": "California roll topped w/ cooked salmon, mayo and masago",
-"price": 9.95,
-"restaurant_id": "B01N97KQNJ",
-"img_url": null,
-"id": "B01MYTS7W4",
-"name": "Pink Salmon Roll"
-}
-                      </span>
-                      
-                  </pre>
+              <div id="first" class="section navi-href">
+                <p>Selecting the right use case is perhaps the most important step in building a conversational application that users will love. For many use cases, a voice or chat conversation can make it simpler to find information or accomplish a task. For many others, a conversational interface can be inconvenient or frustrating. Selecting an unrealistic or incorrect use case will render even the smartest voice or chat assistant dead on arrival.</p>
+                <p>While there is no magic formula to determine which use case is ideal for a conversational interface, some best practices have begun to emerge for distinguishing the good candidates from the bad. To ensure that your conversational application is practical to build and provides real value to users, it is important to ask the following questions <em>before</em> selecting a use case.</p>
+                <table class="docutils">
+                <colgroup>
+                <col width="10%" />
+                <col width="90%" />
+                </colgroup>
+                <tbody valign="top">
+                <tr class="row-odd"><td><strong>Does it resemble a real-world human interaction?</strong></td>
+                <td>Conversational interfaces do not come with instruction manuals, and there is little opportunity to teach users about the supported functionality before they take it for a spin. The best use cases mimic an existing, familiar real-world human interaction so that users intuitively know what they can ask and how the service can help. For example, a conversational interface could mimic an interaction with a bank teller, a barista or a customer support rep.</td>
+                </tr>
+                <tr class="row-even"><td><strong>Does it save users time?</strong></td>
+                <td>Conversational interfaces shine when they save users time. A conversational interface is viewed as an unwelcome impediment when a well-designed GUI would be faster. The most useful conversational experiences often center around a use case where users are looking to accomplish a specific task and know how to articulate it. For example, simply saying ‘play my smooth jazz playlist in the kitchen’ can be much faster than launching an app and navigating to the equivalent option by touch.</td>
+                </tr>
+                <tr class="row-odd"><td><strong>Is it more convenient for the user?</strong></td>
+                <td>Voice interfaces can be particularly useful when users’ hands and attention are occupied or no mobile device is within reach. If it makes sense to use your application while driving, biking, walking, exercising, cooking, or sitting on the couch, that application is likely to be an excellent candidate for a conversational interface.</td>
+                </tr>
+                <tr class="row-even"><td><strong>Does it hit the Goldilocks zone?</strong></td>
+                <td>The best conversational applications fall squarely into the ‘Goldilocks zone.’ The range of functionality that they offer is both narrow enough to ensure that the machine learning models achieve high accuracy, and broad enough that users find the experience useful for a wide variety of tasks. Apps that are too narrow can be trivial and useless. Apps that are too broad can frustrate users by managing only hit-or-miss accuracy.</td>
+                </tr>
+                <tr class="row-odd"><td><strong>Is it possible to get enough training data?</strong></td>
+                <td>Even the best use cases fail when it is not possible or practical to collect enough training data to reflect the full range of envisioned functionality. For ideal use cases, training data can be easily generated from production traffic or crowdsourcing techniques. If training data for your use case can only be sourced from a small number of hard-to-find human experts, it is not likely to be a good candidate for a conversational interface.</td>
+                </tr>
+                </tbody>
+                </table>
+                <p>In this Guide we consider a simple conversational use case about a neighborhood retail store called Kwik-E-Mart. For instance, you could ask this service about store hours: ‘What time does the Kwik-E-Mart on Elm street close today?’ This rudimentary use case will serve as a reference example to highlight the key steps in building a useful conversational interface.</p>
               </div>
             </div>
           </div>
         </div>
         <div class="anchor-side">
           <div class="anchor-list">
-              <p class="fs-22 anchor-item"><a href="#section-1">section 1</a></p>
-              <p class="fs-22 anchor-item"><a href="#section-1">section 2</a></p>
-              <p class="fs-22 anchor-item"><a href="#section-1">section 3</a></p>
-              <p class="fs-22 anchor-item"><a href="#section-1">section 4</a></p>
-              <p class="fs-22 anchor-item"><a href="#section-1">section 5</a></p>
+            <nav id="nav-menu">
+              <ul>
+                <li><a class="nav-menu-item active">Home</a></li>
+                <li><a class="nav-menu-item">Portfolio</a></li>
+                <li><a class="nav-menu-item">About</a></li>
+                <li><a class="nav-menu-item">Contact</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <script src="/static/js/manifest.997bb5fb9f262c83b39d.js" type="text/javascript">
+
+  <script type="text/javascript">
+    var naviHrefs = document.getElementsByClassName('navi-href');
+    var navMenuItems = document.getElementsByClassName('nav-menu-item');
+    var contentContainer = document.getElementById('content-container');
+    var title = document.getElementById('content-title');
+    var headerBar = document.getElementById('p-header');
+
+    for(var i=0;i<navMenuItems.length;i++){
+        (function (index) {
+            navMenuItems[index].onclick=function () {
+              for(let j=0;j<navMenuItems.length;j++){
+                navMenuItems[j].classList.remove('active');
+              }
+              navMenuItems[index].classList.add("active");
+              contentContainer.scrollTop=naviHrefs[index].offsetTop-headerBar.offsetHeight;
+            }
+        })(i)
+    }
+
+    contentContainer.onscroll = function(e){
+      var st = contentContainer.scrollTop;
+      for(let i=naviHrefs.length-1;i>=0;i--){
+        if(st>=naviHrefs[i].offsetTop-headerBar.offsetHeight){
+          for(let j=0;j<navMenuItems.length;j++){
+            navMenuItems[j].classList.remove('active');
+          }
+          navMenuItems[i].classList.add("active");
+          break;
+        }
+      }
+    }
   </script>
-  <script src="/static/js/vendor.66ecd5ce93c3077fa98e.js" type="text/javascript">
-  </script>
-  <script src="/static/js/app.9f1dbd376e13c4ea9259.js" type="text/javascript">
-  </script>
+
 </body>
 </html>

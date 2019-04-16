@@ -5963,7 +5963,7 @@ body.desktop .q-stepper-tab.step-navigation:hover {
 }
 body {
 	min-width: 100px;
-	font-family: Roboto, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-family: CiscoSansTT, Roboto, -apple-system, Helvetica Neue, Helvetica, Arial, sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
