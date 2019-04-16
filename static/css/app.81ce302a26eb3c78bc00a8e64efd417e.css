@@ -9,8 +9,9 @@ html {
 	box-sizing: border-box;
 	outline: none
 }
-body, button, code, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
-	margin: 0;
+button, code, dd, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+	margin-top: 10px;
+	margin-bottom: 10px;
 	padding: 0
 }
 body, button, code, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
@@ -39,7 +40,12 @@ a {
 a:hover {
 	color: #0074e4
 }
-
+.content a {
+	color: #0074e4
+}
+.content a:hover {
+	color: #005fbb
+}
 li .active {
 	color: #0074e4
 }
@@ -1137,7 +1143,7 @@ table td {
 }
 .tutorial .content-container .content {
 	background-color: #fff;
-	border-radius: .22rem .22rem 0 0;
+	border-radius: .22rem .22rem .22rem .22rem;
 }
 .tutorial .content-container .content h1 {
 	padding: 16px;
@@ -1171,11 +1177,11 @@ table td {
 		padding-top: 1rem
 	}
 	.tutorial .content-container {
-    	margin: .0rem .68rem;
-    	padding: .28rem .18rem;
+	    margin: .0rem 5%;
+	    padding: .28rem 0.2rem;
 	}
 	.tutorial .content-container .content-anchor, .tutorial .content-container .content .content-detail, .tutorial .content-container .content h1 {
-		padding: .32rem .42rem
+		padding: .32rem .62rem;
 	}
 }
 @media (min-width:840px) {
@@ -1250,6 +1256,9 @@ dfn {
 }
 img {
 	border-style: none;
+}
+.content img {
+	width: -webkit-fill-available;
 }
 svg:not(:root) {
 	overflow: hidden
@@ -5961,18 +5970,18 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-smoothing: antialiased;
 	background: #fff;
-	color: #0c0c0c;
+	color: #202124;
 	min-height: 100vh
 }
 h1 {
-	font-size: 112px;
-	font-weight: 300;
-	line-height: 1.12;
-	letter-spacing: -.04em
+	font-size: 26px;
+	font-weight: 600;
+	line-height: 1.35;
+	letter-spacing: -.02em
 }
 @media screen and (max-width:767px) {
 	h1 {
-		font-size: 67.2px
+		font-size: 37px
 	}
 }
 h2 {
