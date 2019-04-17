@@ -76,6 +76,16 @@ table td {
 	height: .15rem;
 	padding: 8px 16px;
 }
+.rst-footer-buttons {
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    display: flow-root;
+}
+.rst-footer-buttons a {
+	color: white;
+}
 .flex {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -970,7 +980,7 @@ table td {
 	border-radius: .08rem;
 	-webkit-box-shadow: 0 .05rem .2rem 0 rgba(7, 42, 68, .1);
 	box-shadow: 0 .05rem .2rem 0 rgba(7, 42, 68, .1);
-	padding: .12rem .14rem;
+	padding: 0.18rem .34rem;
 	margin-left: .38rem;
 	background-image: linear-gradient(76deg, #114ae5, #2676e4);
 	color: white;
