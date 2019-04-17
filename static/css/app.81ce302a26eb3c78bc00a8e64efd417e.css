@@ -259,20 +259,34 @@ table td {
 		font-size: 372.917%
 	}
 }
-@media (min-width:1200px) {
-	html {
-		font-size: 390.625%
+@media (max-width:1600px) {
+	.tutorial .anchor-list {
+	margin-left: 0px!important
+	}
+	.tutorial .left-side {
+	width: 4rem!important;
+    }
+    .tutorial .content-container {
+    margin: .0rem 5%!important;
+    padding: .28rem 0.2rem;
 	}
 }
-@media (min-width:1300px) {
+@media (max-width:1299px) {
 	html {
 		font-size: 423.177%
 	}
-}
-@media (min-width:1440px) {
-	html {
-		font-size: 468.75%
+	.tutorial .anchor-list {
+	margin-left: 0px!important
 	}
+	.tutorial .left-side {
+	width: 4rem!important;
+    }
+    .tutorial .content-container {
+    margin: .0rem 5%!important;
+    padding: .28rem 0.2rem;
+	}
+}
+
 }
 .fs-12, .fs-14, .fs-16, .fs-18, .fs-20, .fs-22, .fs-24 {
 	font-size: 12px
@@ -1117,7 +1131,8 @@ table td {
 	font-size: 14px
 }
 .tutorial .left-side {
-	width: 4.25rem;
+	width: 20%;
+	max-width: 5rem;
 	padding: .5rem .44rem;
 	background-color: #fff;
 	overflow-y: auto;
@@ -1166,7 +1181,8 @@ table td {
 }
 .tutorial .anchor-list {
 	padding-left: .18rem;
-	border-left: 3px solid #114ae5
+	border-left: 3px solid #114ae5;
+	margin-left: -70%;
 }
 .tutorial .anchor-list .anchor-item {
 	color: #333;
@@ -1177,7 +1193,7 @@ table td {
 		padding-top: 1rem
 	}
 	.tutorial .content-container {
-	    margin: .0rem 5%;
+	    margin: .0rem 10%;
 	    padding: .28rem 0.2rem;
 	}
 	.tutorial .content-container .content-anchor, .tutorial .content-container .content .content-detail, .tutorial .content-container .content h1 {
