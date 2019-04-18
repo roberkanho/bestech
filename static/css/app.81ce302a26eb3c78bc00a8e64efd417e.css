@@ -40,14 +40,18 @@ a {
 a:hover {
 	color: #0074e4
 }
+.toctree-l1 a {
+	color: #027be3;
+}
 .content a {
 	color: #0074e4
 }
 .content a:hover {
-	color: #005fbb
+	color: white
 }
 li .active {
-	color: #0074e4
+	color: #0074e4;
+	font-weight: 600;
 }
 
 hr {
@@ -6165,11 +6169,11 @@ h6 {
 	font-weight: 400
 }
 .caption {
-	color: #424242;
-	letter-spacing: 0;
-	line-height: 24px;
-	padding: 0;
-	font-weight: 300
+    color: #aaaaaa;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding: 0;
+    font-weight: 600;
 }
 .uppercase {
 	text-transform: uppercase
