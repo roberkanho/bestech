@@ -5538,6 +5538,22 @@ body.desktop .q-stepper-tab.step-navigation:hover {
 		opacity: 1
 	}
 }
+
+.post__header:before {
+    content: "";
+}
+
+.post__header:before {
+    background: url(/wp-content/themes/github-blog/dist/css/../../assets/images/dot-left-corner.png) no-repeat;
+    content: none;
+    height: 300px;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    transform: translate(-125px,-152px);
+    width: 318px;
+}
 .non-selectable {
 	-webkit-user-select: none!important;
 	-moz-user-select: none!important;
@@ -6433,3 +6449,85 @@ body.ios .q-hoverable:active .q-focus-helper {
 	font-weight: 400;
 	src: url(https://fonts.gstatic.com/s/materialicons/v46/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format("woff2")
 }
+
+/* ...*/
+.transition, p, ul li i:before, ul li i:after {
+  transition: all 0.25s ease-in-out;
+}
+
+.flipIn, h1, ul li {
+  animation: flipdown 0.5s ease both;
+}
+
+.no-select, h2 {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* list animation */
+
+.navigation ul li:nth-of-type(1) {
+  animation-delay: 0.2s;
+}
+.navigation ul li:nth-of-type(2) {
+  animation-delay: 0.3s;
+}
+.navigation ul li:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+.navigation ul li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+.navigation ul li:nth-of-type(5) {
+  animation-delay: 0.6s;
+}
+.navigation ul li:nth-of-type(6) {
+  animation-delay: 0.7s;
+}
+.navigation ul li:last-of-type {
+  padding-bottom: 0;
+}
+.navigation ul li i {
+  position: absolute;
+  transform: translate(-6px, 0);
+  margin-top: 16px;
+  right: 0;
+}
+.navigation ul li i:before, .navigation ul li i:after {
+  content: "";
+  position: absolute;
+  background-color: #ff6873;
+  width: 3px;
+  height: 9px;
+}
+
+
+@keyframes flipdown {
+  0% {
+    opacity: 0;
+    transform-origin: top center;
+    transform: rotateX(-90deg);
+  }
+  5% {
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(8deg);
+  }
+  83% {
+    transform: rotateX(6deg);
+  }
+  92% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform-origin: top center;
+    transform: rotateX(0deg);
+  }
+}
+
