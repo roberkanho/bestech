@@ -349,7 +349,7 @@
                 </ul>
                 </div>
                 <div class="section" id="system-entities-and-custom-entities">
-                <h2>System entities and custom entities<a class="headerlink" href="#system-entities-and-custom-entities" title="Permalink to this headline">¶</a></h2>
+                <h2>System entities and custom entities<a class="headerlink" href="#system-entities-and-custom-entities" title="Permalink to this headline"></a></h2>
                 <p>Entities in Workbench are categorized into two types:</p>
                 <dl class="docutils">
                 <dt><strong>System Entities</strong></dt>
@@ -360,7 +360,7 @@
                 <p>This chapter focuses on training entity recognition models for detecting all the custom entities used by your app.</p>
                 </div>
                 <div class="section" id="access-the-entity-recognizer">
-                <h2>Access the entity recognizer<a class="headerlink" href="#access-the-entity-recognizer" title="Permalink to this headline">¶</a></h2>
+                <h2>Access the entity recognizer<a class="headerlink" href="#access-the-entity-recognizer" title="Permalink to this headline"></a></h2>
                 <p>Working with any natural language processor component falls into two broad phases:</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -430,7 +430,7 @@
                 </div>
                 </div>
                 <div class="section" id="train-an-entity-recognizer">
-                <span id="train-entity-model"></span><h2>Train an entity recognizer<a class="headerlink" href="#train-an-entity-recognizer" title="Permalink to this headline">¶</a></h2>
+                <span id="train-entity-model"></span><h2>Train an entity recognizer<a class="headerlink" href="#train-an-entity-recognizer" title="Permalink to this headline"></a></h2>
                 <p>Use the <code class="xref py py-meth docutils literal"><span class="pre">EntityRecognizer.fit()</span></code> method to train an entity recognition model. Depending on the size of the training data and the selected model, this can take anywhere from a few seconds to several minutes. With logging level set to <code class="docutils literal"><span class="pre">INFO</span></code> or below, you should see the build progress in the console along with cross-validation accuracy of the trained model.</p>
                 <div class="highlight-python" id="baseline-entity-fit"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">configure_logs</span><span class="p">;</span> <span class="n">configure_logs</span><span class="p">()</span>
                 <span class="n">er</span> <span class="o">=</span> <span class="n">nlp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="s1">&#39;weather&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">intents</span><span class="p">[</span><span class="s1">&#39;check_weather&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">entity_recognizer</span>
@@ -447,7 +447,7 @@
                 <p>The <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method loads all necessary training queries and trains an entity recognition model. When called with no arguments (as in the example above), the method uses the settings from <code class="docutils literal"><span class="pre">config.py</span></code>, the <a class="reference internal" href="nlp.html#build-nlp-with-config"><span class="std std-ref">app’s configuration file</span></a>. If <code class="docutils literal"><span class="pre">config.py</span></code> is not defined, the method uses the Workbench preset <a class="reference internal" href="nlp.html#config"><span class="std std-ref">classifier configuration</span></a>.</p>
                 <p>Using default settings is the recommended (and quickest) way to get started with any of the NLP classifiers. The resulting baseline classifier should provide a reasonable starting point from which to bootstrap your machine learning experimentation. You can then try alternate settings as you seek to identify the optimal classifier configuration for your app.</p>
                 <div class="section" id="classifier-configuration">
-                <h3>Classifier configuration<a class="headerlink" href="#classifier-configuration" title="Permalink to this headline">¶</a></h3>
+                <h3>Classifier configuration<a class="headerlink" href="#classifier-configuration" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Use the <code class="xref py py-attr docutils literal"><span class="pre">config</span></code> attribute of a trained classifier to view the <a class="reference internal" href="nlp.html#config"><span class="std std-ref">configuration</span></a> that the classifier is using. Here’s an example where we view the configuration of an entity recognizer trained using default settings:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">er</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
                 </pre></div>
@@ -845,10 +845,10 @@
                 </dl>
                 </div>
                 <div class="section" id="training-with-custom-configurations">
-                <span id="build-entity-with-config"></span><h3>Training with custom configurations<a class="headerlink" href="#training-with-custom-configurations" title="Permalink to this headline">¶</a></h3>
+                <span id="build-entity-with-config"></span><h3>Training with custom configurations<a class="headerlink" href="#training-with-custom-configurations" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>To override Workbench’s default entity recognizer configuration with custom settings, you can either edit the app configuration file, or, you can call the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method with appropriate arguments.</p>
                 <div class="section" id="application-configuration-file">
-                <h4>1. Application configuration file<a class="headerlink" href="#application-configuration-file" title="Permalink to this headline">¶</a></h4>
+                <h4>1. Application configuration file<a class="headerlink" href="#application-configuration-file" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>When you define custom classifier&nbsp;settings in <code class="docutils literal"><span class="pre">config.py</span></code>, the <code class="xref py py-meth docutils literal"><span class="pre">EntityRecognizer.fit()</span></code> and <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.build()</span></code> methods use those settings instead of Workbench’s defaults. To do this, define a dictionary of your custom settings, named <code class="xref py py-data docutils literal"><span class="pre">ENTITY_RECOGNIZER_CONFIG</span></code>.</p>
                 <p>Here’s an example of a <code class="docutils literal"><span class="pre">config.py</span></code> file where custom settings optimized for the app override the preset configuration for the entity recognizer.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ENTITY_RECOGNIZER_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
@@ -901,7 +901,7 @@
                 <p>Since this method requires updating a file each time you modify a setting, it’s less suitable for rapid prototyping than the method described next.</p>
                 </div>
                 <div class="section" id="arguments-to-the-fit-method">
-                <h4>2. Arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method<a class="headerlink" href="#arguments-to-the-fit-method" title="Permalink to this headline">¶</a></h4>
+                <h4>2. Arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method<a class="headerlink" href="#arguments-to-the-fit-method" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>For experimenting with an&nbsp;entity recognizer, the recommended method is to use arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method. The main areas for exploration are feature extraction, hyperparameter tuning, and model selection.</p>
                 <p><strong>Feature extraction</strong></p>
                 <p>Let’s start with the baseline classifier that was trained <a class="reference internal" href="#baseline-entity-fit"><span class="std std-ref">above</span></a>. Here’s how you get the default feature set used by the classifer.</p>
@@ -1061,7 +1061,7 @@
                 </div>
                 </div>
                 <div class="section" id="run-the-entity-recognizer">
-                <span id="predict-entities"></span><h2>Run the entity recognizer<a class="headerlink" href="#run-the-entity-recognizer" title="Permalink to this headline">¶</a></h2>
+                <span id="predict-entities"></span><h2>Run the entity recognizer<a class="headerlink" href="#run-the-entity-recognizer" title="Permalink to this headline"></a></h2>
                 <p>Entity recognition takes place in two steps:</p>
                 <blockquote>
                 <div><ol class="arabic simple">
@@ -1098,7 +1098,7 @@
                 <p>The <code class="xref py py-meth docutils literal"><span class="pre">predict()</span></code> and <code class="xref py py-meth docutils literal"><span class="pre">predict_proba()</span></code> methods take one query at a time. Next, we’ll see how to test a trained model on a batch of labeled test queries.</p>
                 </div>
                 <div class="section" id="evaluate-classifier-performance">
-                <span id="entity-evaluation"></span><h2>Evaluate classifier performance<a class="headerlink" href="#evaluate-classifier-performance" title="Permalink to this headline">¶</a></h2>
+                <span id="entity-evaluation"></span><h2>Evaluate classifier performance<a class="headerlink" href="#evaluate-classifier-performance" title="Permalink to this headline"></a></h2>
                 <p>Before you can evaluate the accuracy of your trained entity recognizer, you must first create labeled test data and place it in your Workbench project as described in the <a class="reference internal" href="nlp.html#evaluate-nlp"><span class="std std-ref">Natural Language Processor</span></a> chapter.</p>
                 <p>Then, when you are ready, use the <code class="xref py py-meth docutils literal"><span class="pre">EntityRecognizer.evaluate()</span></code> method, which</p>
                 <blockquote>
@@ -1409,7 +1409,7 @@
                 <p>Error analysis on the results of the <code class="xref py py-meth docutils literal"><span class="pre">evaluate()</span></code> method can inform your experimentation and help in building better models. Augmenting training data and adding gazetteer entries should be the first steps, as in the above example. Beyond that, you can experiment with different model types, features, and hyperparameters, as described <a class="reference internal" href="#build-entity-with-config"><span class="std std-ref">earlier</span></a> in this chapter.</p>
                 </div>
                 <div class="section" id="viewing-features-extracted-for-entity-recognition">
-                <h2>Viewing features extracted for entity recognition<a class="headerlink" href="#viewing-features-extracted-for-entity-recognition" title="Permalink to this headline">¶</a></h2>
+                <h2>Viewing features extracted for entity recognition<a class="headerlink" href="#viewing-features-extracted-for-entity-recognition" title="Permalink to this headline"></a></h2>
                 <p>While training a new model or investigating a misclassification by the classifier, it is sometimes useful to view the extracted features to make sure they are as expected. For example, there may be non-ASCII characters in the query that are treated differently by the feature extractors. Or the value assigned to a particular feature may be computed differently than you expected. Not extracting the right features could lead to misclassifications. In the example below, we view the features extracted for the query ‘set alarm for 7 am’ using <code class="xref py py-meth docutils literal"><span class="pre">EntityRecognizer.view_extracted_features()</span></code> method.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">er</span><span class="o">.</span><span class="n">view_extracted_features</span><span class="p">(</span><span class="s2">&quot;set alarm for 7 am&quot;</span><span class="p">)</span>
                 </pre></div>
@@ -1424,7 +1424,7 @@
                 <p>This is especially useful when you are writing <a class="reference internal" href="custom_features.html"><span class="doc">custom feature extractors</span></a> to inspect whether the right features are being extracted.</p>
                 </div>
                 <div class="section" id="save-model-for-future-use">
-                <h2>Save model for future use<a class="headerlink" href="#save-model-for-future-use" title="Permalink to this headline">¶</a></h2>
+                <h2>Save model for future use<a class="headerlink" href="#save-model-for-future-use" title="Permalink to this headline"></a></h2>
                 <p>Save the trained entity recognizer for later use by calling the <code class="xref py py-meth docutils literal"><span class="pre">EntityRecognizer.dump()</span></code> method. The <code class="xref py py-meth docutils literal"><span class="pre">dump()</span></code> method serializes the trained model as a <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle file</a> and saves it to the specified location on disk.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">er</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s1">&#39;experiments/entity_recognizer.pkl&#39;</span><span class="p">)</span>
                 </pre></div>
@@ -1441,7 +1441,7 @@
                 </div>
                 </div>
                 <div class="section" id="more-about-system-entities">
-                <span id="system-entities"></span><h2>More about system entities<a class="headerlink" href="#more-about-system-entities" title="Permalink to this headline">¶</a></h2>
+                <span id="system-entities"></span><h2>More about system entities<a class="headerlink" href="#more-about-system-entities" title="Permalink to this headline"></a></h2>
                 <p>System entities are generic application-agnostic entities that all Workbench applications detect automatically. There is no need to train models to learn system entities; they just work.</p>
                 <p>Supported system entities are enumerated in the table below.</p>
                 <table class="docutils">
@@ -1509,11 +1509,11 @@
                 </div>
                 </div>
                 <div class="section" id="custom-entities-system-entities-and-training-set-size">
-                <h3>Custom entities, system entities, and training set size<a class="headerlink" href="#custom-entities-system-entities-and-training-set-size" title="Permalink to this headline">¶</a></h3>
+                <h3>Custom entities, system entities, and training set size<a class="headerlink" href="#custom-entities-system-entities-and-training-set-size" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Any application’s training set must focus on capturing all the entity variations and language patterns for the <em>custom entities</em> that the app uses. By contrast, the part of the training set concerned with <em>system entities</em> can be relatively minimal, because Workbench does not need to train an entity recognition model to recognize system entities.</p>
                 </div>
                 <div class="section" id="annotating-system-entities">
-                <h3>Annotating system entities<a class="headerlink" href="#annotating-system-entities" title="Permalink to this headline">¶</a></h3>
+                <h3>Annotating system entities<a class="headerlink" href="#annotating-system-entities" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Assuming that you have defined the <a class="reference internal" href="../quickstart/03_define_the_hierarchy.html#model-hierarchy"><span class="std std-ref">domain-intent-entity-role hierarchy</span></a> for your app, you know</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -1533,7 +1533,7 @@
                 <p>For more examples, see the training data for any of the blueprint apps.</p>
                 </div>
                 <div class="section" id="inspecting-how-workbench-detects-system-entities">
-                <h3>Inspecting how Workbench detects system entities<a class="headerlink" href="#inspecting-how-workbench-detects-system-entities" title="Permalink to this headline">¶</a></h3>
+                <h3>Inspecting how Workbench detects system entities<a class="headerlink" href="#inspecting-how-workbench-detects-system-entities" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>To see which token spans in a query are detected as system entities, and what system entities Workbench thinks they are, use the <code class="xref py py-func docutils literal"><span class="pre">parse_numerics()</span></code> function:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.ser</span> <span class="kn">import</span> <span class="n">parse_numerics</span>
                 <span class="n">parse_numerics</span><span class="p">(</span><span class="s2">&quot;tomorrow morning at 9am&quot;</span><span class="p">)</span>
@@ -1619,7 +1619,7 @@
                 <p>This output is especially useful when debugging system entity behavior.</p>
                 </div>
                 <div class="section" id="when-workbench-is-unable-to-resolve-a-system-entity">
-                <h3>When Workbench is unable to resolve a system entity<a class="headerlink" href="#when-workbench-is-unable-to-resolve-a-system-entity" title="Permalink to this headline">¶</a></h3>
+                <h3>When Workbench is unable to resolve a system entity<a class="headerlink" href="#when-workbench-is-unable-to-resolve-a-system-entity" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Two common mistakes when working with system entities are: annotating an entity as the wrong type, and, labeling an unsupported token as an entity. In these cases, Workbench will be unable to resolve the system entity.</p>
                 <p><strong>Annotating a system entity as the wrong type</strong></p>
                 <p>Because <code class="docutils literal"><span class="pre">sys_interval</span></code> and <code class="docutils literal"><span class="pre">sys_time</span></code> are so close in meaning, developers or annotation scripts sometimes use one in place of the other.</p>

@@ -347,12 +347,12 @@
                 </div>
                 <p>Let’s explore the main concepts you’ll apply when you develop a dialogue manager in Workbench: <em>dialogue states</em>, <em>dialogue state rules</em>, <em>dialogue state handlers</em>, <em>targeted dialogue state handling</em>, <em>dialogue flows</em>, and <em>dialogue middleware</em>.</p>
                 <div class="section" id="dialogue-states">
-                <h2>Dialogue States<a class="headerlink" href="#dialogue-states" title="Permalink to this headline">¶</a></h2>
+                <h2>Dialogue States<a class="headerlink" href="#dialogue-states" title="Permalink to this headline"></a></h2>
                 <p>For every incoming request, the dialogue manager (DM) determines which dialogue state applies. When developing your application, you set up a system of rules to match requests to dialogue states, using a flexible syntax that Workbench provides. Each dialogue state represents a task that the conversational agent can complete. Usually, you name the dialogue state for the task it represents, for example <cite>welcome</cite> or <cite>send_store_hours</cite>. Name the dialogue states from the conversational agent’s perspective. (By contrast, you name intents from the user’s perspective).</p>
                 <p>Each dialogue state has a handler which contains logic to fulfill a user’s request or gather more information if necessary, and to generate a natural language response. Dialogue state rules and handlers are implemented in the <a class="reference internal" href="../quickstart/04_define_the_dialogue_handlers.html#app-container"><span class="std std-ref">application container</span></a>.</p>
                 </div>
                 <div class="section" id="dialogue-state-rules">
-                <h2>Dialogue State Rules<a class="headerlink" href="#dialogue-state-rules" title="Permalink to this headline">¶</a></h2>
+                <h2>Dialogue State Rules<a class="headerlink" href="#dialogue-state-rules" title="Permalink to this headline"></a></h2>
                 <p>Dialogue state rules match requests to dialogue states based on attributes of the request object, including the output from the natural language processor. Each rule specifies what to match, in the following form: exactly one domain, one intent, and a set of entity types. In single-domain apps the domain is omitted; in all apps, the entity types are optional. The exception to all this is the <cite>default</cite> state, which must match all requests, and therefore has neither domain, intent, nor entity types. The first state registered without a domain, intent, and entity types is the implicit default.</p>
                 <p>To better understand dialogue state rules, let’s jump into the skeleton of a dialogue manager for an app that provides store hours.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">Application</span>
@@ -402,7 +402,7 @@
                 </div></blockquote>
                 <p>When the same combination of domain, intent, and entity types appears in both (a) the NLP result of a request and (b) a dialogue state rule, then the request satisfies (matches) the rule. A dialogue state can have multiple rules, and if any of them match the request, the dialogue handler responds.</p>
                 <div class="section" id="tie-breaking">
-                <h3>Tie Breaking<a class="headerlink" href="#tie-breaking" title="Permalink to this headline">¶</a></h3>
+                <h3>Tie Breaking<a class="headerlink" href="#tie-breaking" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The DM always resolves to exactly one dialogue state.</p>
                 <p>Rules are considered more or less <em>specific</em> according to what parameters they have:</p>
                 <blockquote>
@@ -418,11 +418,11 @@
                 </div>
                 </div>
                 <div class="section" id="dialogue-state-handlers">
-                <span id="id1"></span><h2>Dialogue State Handlers<a class="headerlink" href="#dialogue-state-handlers" title="Permalink to this headline">¶</a></h2>
+                <span id="id1"></span><h2>Dialogue State Handlers<a class="headerlink" href="#dialogue-state-handlers" title="Permalink to this headline"></a></h2>
                 <p>Dialogue state handlers are the functions invoked when a request matches a rule for the handler’s corresponding dialogue state. Workbench places no restrictions on the code within a handler. This is important because requirements differ for different applications, and developers must have the flexibility to organize code as they wish.</p>
                 <p>Dialogue state handlers take two arguments: <code class="docutils literal"><span class="pre">request</span></code> and <code class="docutils literal"><span class="pre">responder</span></code>.</p>
                 <div class="section" id="request">
-                <h3><code class="docutils literal"><span class="pre">request</span></code><a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+                <h3><code class="docutils literal"><span class="pre">request</span></code><a class="headerlink" href="#request" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p><code class="docutils literal"><span class="pre">request</span></code> is an immutable <code class="xref py py-class docutils literal"><span class="pre">Request</span></code> object containing the contextual information needed to manage dialogues. You can use this information to fulfill user requests, determine additional information needed from the user, set the state for the next turn or to fill slots in your natural language templates.</p>
                 <table class="docutils">
                 <colgroup>
@@ -490,7 +490,7 @@
                 </table>
                 </div>
                 <div class="section" id="params">
-                <h3><code class="docutils literal"><span class="pre">params</span></code><a class="headerlink" href="#params" title="Permalink to this headline">¶</a></h3>
+                <h3><code class="docutils literal"><span class="pre">params</span></code><a class="headerlink" href="#params" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The <code class="docutils literal"><span class="pre">params</span></code> attribute of the <code class="docutils literal"><span class="pre">request</span></code> object is an immutable <code class="xref py py-class docutils literal"><span class="pre">FrozenParams</span></code> object that contains state information of how workbench processed the current turn.</p>
                 <table class="docutils">
                 <colgroup>
@@ -539,7 +539,7 @@
                 </div>
                 </div>
                 <div class="section" id="responder">
-                <span id="id2"></span><h3><code class="docutils literal"><span class="pre">responder</span></code><a class="headerlink" href="#responder" title="Permalink to this headline">¶</a></h3>
+                <span id="id2"></span><h3><code class="docutils literal"><span class="pre">responder</span></code><a class="headerlink" href="#responder" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The <code class="docutils literal"><span class="pre">responder</span></code> is a mutable object used to send actions, like templated natural language responses, to the client. The <code class="docutils literal"><span class="pre">responder</span></code> can also carry output state from the current handler’s processing to Workbench for next-turn’s handling. It has attributes and methods listed below:</p>
                 <table class="docutils">
                 <colgroup>
@@ -647,7 +647,7 @@
                 </div>
                 </div>
                 <div class="section" id="targeted-dialogue-state-handling">
-                <span id="targeted-dialogue"></span><h2>Targeted Dialogue State Handling<a class="headerlink" href="#targeted-dialogue-state-handling" title="Permalink to this headline">¶</a></h2>
+                <span id="targeted-dialogue"></span><h2>Targeted Dialogue State Handling<a class="headerlink" href="#targeted-dialogue-state-handling" title="Permalink to this headline"></a></h2>
                 <p>Any query that contains enough information to determine and fulfill an intent can also occur as a multi-query sequence.</p>
                 <p>For example, <cite>Close the door to the bedroom</cite> could occur as a sequence of two queries with a prompt from the Workbench app in between:</p>
                 <a class="reference internal image-reference" href="../_images/deterministic_dialog_1.png"><img alt="../_images/deterministic_dialog_1.png" class="align-center" src="../_images/deterministic_dialog_1.png" style="width: 400px;" /></a>
@@ -657,7 +657,7 @@
                 <p>To support this pattern, the app needs to “remember” the intent it detects in the first query, and then interpret entities detected in subsequent queries as belonging to that intent.</p>
                 <p>In Workbench, you do this by adding information to the params object of the responder to specify either (a) a target dialogue state, or (b) allowed domains and intents, for the next conversational turn. The first approach is simpler; the second is more flexible.</p>
                 <div class="section" id="specifying-a-target-dialogue-state">
-                <h3>Specifying a target dialogue state<a class="headerlink" href="#specifying-a-target-dialogue-state" title="Permalink to this headline">¶</a></h3>
+                <h3>Specifying a target dialogue state<a class="headerlink" href="#specifying-a-target-dialogue-state" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>In a dialogue state handler, we can set the <code class="docutils literal"><span class="pre">target_dialogue_state</span></code> attribute of the context object by invoking the <code class="docutils literal"><span class="pre">responder</span></code> object.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">responder</span><span class="o">.</span><span class="n">params</span><span class="o">.</span><span class="n">target_dialogue_state</span> <span class="o">=</span> <span class="s1">&#39;close_door&#39;</span>
                 </pre></div>
@@ -690,7 +690,7 @@
                 <p>In such scenarios, the conversation is locked in a certain state, which could be frustrating to the user. In the next section, we will explore a more graceful alternative that will guide the user along a certain path but also handles the unexpected divergences and interruptions.</p>
                 </div>
                 <div class="section" id="specifying-a-list-of-allowable-intents">
-                <h3>Specifying a list of allowable intents<a class="headerlink" href="#specifying-a-list-of-allowable-intents" title="Permalink to this headline">¶</a></h3>
+                <h3>Specifying a list of allowable intents<a class="headerlink" href="#specifying-a-list-of-allowable-intents" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Here is a variant of our multi-query-sequence case where the domain and intent do <em>not</em> remain the same:</p>
                 <a class="reference internal image-reference" href="../_images/deterministic_dialog_2.png"><img alt="../_images/deterministic_dialog_2.png" class="align-center" src="../_images/deterministic_dialog_2.png" style="width: 400px;" /></a>
                 <p>To support both the “happy path” scenario in the previous section and the unexpected scenario above, we can specify a list of domains and intents for the dialogue state handler to choose from.</p>
@@ -726,7 +726,7 @@
                 </div>
                 </div>
                 <div class="section" id="using-dynamic-gazetteers">
-                <span id="dynamic-gaz"></span><h2>Using Dynamic Gazetteers<a class="headerlink" href="#using-dynamic-gazetteers" title="Permalink to this headline">¶</a></h2>
+                <span id="dynamic-gaz"></span><h2>Using Dynamic Gazetteers<a class="headerlink" href="#using-dynamic-gazetteers" title="Permalink to this headline"></a></h2>
                 <p>In cases where the training data has a low coverage of variations in queries, or the query contains only an entity with no surrounding words, presence of words in gazetteers serve as an important signal to the NLP models. This is especially true for named entity recognition.</p>
                 <p>While it is difficult to enumerate every single possible entity in the gazetteer beforehand, the application may have contextual information about the entities that can be expected to occur in the next user query. Consider the following dialogue.</p>
                 <a class="reference internal image-reference" href="../_images/dynamic_gaz_1.png"><img alt="../_images/dynamic_gaz_1.png" class="align-center" src="../_images/dynamic_gaz_1.png" style="width: 400px;" /></a>
@@ -762,7 +762,7 @@
                 </div>
                 </div>
                 <div class="section" id="dialogue-flows">
-                <span id="dialogue-flow"></span><h2>Dialogue Flows<a class="headerlink" href="#dialogue-flows" title="Permalink to this headline">¶</a></h2>
+                <span id="dialogue-flow"></span><h2>Dialogue Flows<a class="headerlink" href="#dialogue-flows" title="Permalink to this headline"></a></h2>
                 <p>The Dialogue Flow functionality helps in structuring conversation flows where the user needs to be directed towards a specific end goal in a focused manner.</p>
                 <p>For example, let us take a look at a code snippet from the <code class="docutils literal"><span class="pre">kwik_e_mart</span></code> blueprint. Here we have implemented a flow where the user is prompted multiple times to get the store information.</p>
                 <p>In this particular example, we want to structure the user experience of getting store hours with these particular requirements:</p>
@@ -849,7 +849,7 @@
                 <p>As shown here, you can use the dialog flow functionality to effectively craft complex flows that gracefully direct the user to provide the desired information for your application.</p>
                 </div>
                 <div class="section" id="dialogue-middleware">
-                <span id="id3"></span><h2>Dialogue Middleware<a class="headerlink" href="#dialogue-middleware" title="Permalink to this headline">¶</a></h2>
+                <span id="id3"></span><h2>Dialogue Middleware<a class="headerlink" href="#dialogue-middleware" title="Permalink to this headline"></a></h2>
                 <p>Workbench provides a useful mechanism for changing the behavior of many or all dialogue states via middleware. Dialogue middleware are like dialogue state handlers that get called for every request before the matched dialogue state handler. In addition to the <code class="docutils literal"><span class="pre">request</span></code> and <code class="docutils literal"><span class="pre">responder</span></code> arguments dialogue state handlers receive, dialogue middleware functions take a third argument: <code class="docutils literal"><span class="pre">handler</span></code>. The <code class="docutils literal"><span class="pre">handler</span></code> argument is a function containing either the next middleware or the dialogue state handler for the current request.</p>
                 <div class="admonition note">
                 <p class="first admonition-title">Note</p>
@@ -902,7 +902,7 @@
                 </pre></div>
                 </div>
                 <div class="section" id="uses-for-dialogue-middleware">
-                <h3>Uses for Dialogue Middleware<a class="headerlink" href="#uses-for-dialogue-middleware" title="Permalink to this headline">¶</a></h3>
+                <h3>Uses for Dialogue Middleware<a class="headerlink" href="#uses-for-dialogue-middleware" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Some examples of useful middleware include the following:</p>
                 <ul class="simple">
                 <li>Custom handling for unexpected exceptions</li>
@@ -919,7 +919,7 @@
                 </div>
                 </div>
                 <div class="section" id="asynchronous-dialogue-state-handlers-and-middleware">
-                <span id="async-dialogue"></span><h2>Asynchronous Dialogue State Handlers and Middleware<a class="headerlink" href="#asynchronous-dialogue-state-handlers-and-middleware" title="Permalink to this headline">¶</a></h2>
+                <span id="async-dialogue"></span><h2>Asynchronous Dialogue State Handlers and Middleware<a class="headerlink" href="#asynchronous-dialogue-state-handlers-and-middleware" title="Permalink to this headline"></a></h2>
                 <p>Developers of more advanced applications may decide to leverage remote services from within their
                 dialogue state handlers. This can cause issues with scalability as the process serving an
                 application will wait idly until it receives a response from the third party. Newer versions of
@@ -927,7 +927,7 @@
                 <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">asyncio</a> module and the <code class="docutils literal"><span class="pre">async</span></code> and <code class="docutils literal"><span class="pre">await</span></code>
                 <a class="reference external" href="https://www.python.org/dev/peps/pep-0492/">keywords</a>.</p>
                 <div class="section" id="writing-an-asynchronous-dialogue-manager">
-                <h3>Writing an Asynchronous Dialogue Manager<a class="headerlink" href="#writing-an-asynchronous-dialogue-manager" title="Permalink to this headline">¶</a></h3>
+                <h3>Writing an Asynchronous Dialogue Manager<a class="headerlink" href="#writing-an-asynchronous-dialogue-manager" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Asynchronous dialogue state handlers can be enabled with the following steps:</p>
                 <ol class="arabic simple">
                 <li>Set the <code class="docutils literal"><span class="pre">async_mode</span></code> keyword argument to true when creating the application.</li>
@@ -1001,7 +1001,7 @@
                 </div>
                 </div>
                 <div class="section" id="next-steps">
-                <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline">¶</a></h2>
+                <h2>Next Steps<a class="headerlink" href="#next-steps" title="Permalink to this headline"></a></h2>
                 <p>The concepts and techniques described above are exactly what you will use in coding the dialogue handlers you defined in <a class="reference internal" href="../quickstart/04_define_the_dialogue_handlers.html#define-dialogue-state-handlers"><span class="std std-ref">Step 4</span></a> of the Step-By-Step Guide. Before you begin, study how Workbench blueprint apps implement the dialogue managers:</p>
                 <blockquote>
                 <div><ul class="simple">

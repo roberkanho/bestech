@@ -346,11 +346,11 @@
                 <p class="last">Please make sure to install and run all of the <a class="reference internal" href="../userguide/getting_started.html#getting-started-virtualenv-setup"><span class="std std-ref">pre-requisites</span></a> for Workbench before continuing on with this blueprint tutorial.</p>
                 </div>
                 <div class="section" id="the-use-case">
-                <h2>1. The Use Case<a class="headerlink" href="#the-use-case" title="Permalink to this headline">¶</a></h2>
+                <h2>1. The Use Case<a class="headerlink" href="#the-use-case" title="Permalink to this headline"></a></h2>
                 <p>Users should be able to interact with appliances and automated functions in their homes using natural language. They should be able to check the weather, set alarms, set timers, and control the lights, the doors, the thermostat, and various appliances in the house.</p>
                 </div>
                 <div class="section" id="example-dialogue-interactions">
-                <h2>2. Example Dialogue Interactions<a class="headerlink" href="#example-dialogue-interactions" title="Permalink to this headline">¶</a></h2>
+                <h2>2. Example Dialogue Interactions<a class="headerlink" href="#example-dialogue-interactions" title="Permalink to this headline"></a></h2>
                 <p>The conversational flows for home automation can&nbsp;be highly complex, depending on the desired app functionality and the amount of user guidance required at each step. Enumerating and finalizing all anticipated user interactions requires multiple iterations.</p>
                 <p>Here are some examples of scripted dialogue interactions for conversational flows.</p>
                 <a class="reference internal image-reference" href="../_images/home_assistant_interactions.png"><img alt="../_images/home_assistant_interactions.png" class="align-center" src="../_images/home_assistant_interactions.png" style="width: 700px;" /></a>
@@ -360,7 +360,7 @@
                 </div>
                 </div>
                 <div class="section" id="domain-intent-entity-hierarchy">
-                <span id="home-model-hierarchy"></span><h2>3. Domain-Intent-Entity Hierarchy<a class="headerlink" href="#domain-intent-entity-hierarchy" title="Permalink to this headline">¶</a></h2>
+                <span id="home-model-hierarchy"></span><h2>3. Domain-Intent-Entity Hierarchy<a class="headerlink" href="#domain-intent-entity-hierarchy" title="Permalink to this headline"></a></h2>
                 <p>The home assistant blueprint is organized into five domains: <code class="docutils literal"><span class="pre">Greeting</span></code>, <code class="docutils literal"><span class="pre">Smart</span> <span class="pre">Home</span></code>, <code class="docutils literal"><span class="pre">Time</span> <span class="pre">&amp;</span> <span class="pre">Dates</span></code>, <code class="docutils literal"><span class="pre">Weather</span></code>, and <code class="docutils literal"><span class="pre">Unknown</span></code>. Because the home assistant blueprint supports more activities, it requires more domains and intents than the Kwik-E-Mart blueprint does. For example, controlling the lights require two intents, one for turning on and one for turning off. Similar logic applies for turning on/off appliances, closing/opening doors, locking/unlocking doors, and so on.</p>
                 <p>The full list of intents for all domains is illustrated below.</p>
                 <img alt="../_images/hierarchy_home_assistant.png" src="../_images/hierarchy_home_assistant.png" />
@@ -413,7 +413,7 @@
                 <a class="reference internal image-reference" href="../_images/home_assistant_directory.png"><img alt="../_images/home_assistant_directory.png" class="align-center" src="../_images/home_assistant_directory.png" style="width: 250px;" /></a>
                 </div>
                 <div class="section" id="dialogue-states">
-                <h2>4. Dialogue States<a class="headerlink" href="#dialogue-states" title="Permalink to this headline">¶</a></h2>
+                <h2>4. Dialogue States<a class="headerlink" href="#dialogue-states" title="Permalink to this headline"></a></h2>
                 <p>Dialogue state logic can be arbitrarily complex. Simple dialogue state handlers just return a canned text response, while sophisticated ones can call third party APIs, calculate state transitions, and return complex responses.</p>
                 <p>Workbench supports two ways to organize dialogue states in the Dialogue Manager:</p>
                 <ol class="arabic simple">
@@ -637,11 +637,11 @@
                 </table>
                 </div>
                 <div class="section" id="knowledge-base">
-                <h2>5. Knowledge Base<a class="headerlink" href="#knowledge-base" title="Permalink to this headline">¶</a></h2>
+                <h2>5. Knowledge Base<a class="headerlink" href="#knowledge-base" title="Permalink to this headline"></a></h2>
                 <p>Since the home assistant is a straightforward command-and-control application, it has no product catalog, and therefore does not need a knowledge base.</p>
                 </div>
                 <div class="section" id="training-data">
-                <h2>6. Training Data<a class="headerlink" href="#training-data" title="Permalink to this headline">¶</a></h2>
+                <h2>6. Training Data<a class="headerlink" href="#training-data" title="Permalink to this headline"></a></h2>
                 <p>The labeled data for training our NLP pipeline was created using a combination of in-house data generation and crowdsourcing techniques. This is a highly important multi-step process that is described in more detail in <a class="reference internal" href="../quickstart/06_generate_representative_training_data.html"><span class="doc">Step 6</span></a> of the Step-By-Step Guide. Be aware that at minimum, the following data generation tasks are required:</p>
                 <table class="docutils">
                 <colgroup>
@@ -747,7 +747,7 @@
                 </div>
                 </div>
                 <div class="section" id="training-the-nlp-classifiers">
-                <h2>7. Training the NLP Classifiers<a class="headerlink" href="#training-the-nlp-classifiers" title="Permalink to this headline">¶</a></h2>
+                <h2>7. Training the NLP Classifiers<a class="headerlink" href="#training-the-nlp-classifiers" title="Permalink to this headline"></a></h2>
                 <p>Train a baseline NLP system for the blueprint app. The <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method of the <code class="xref py py-class docutils literal"><span class="pre">NaturalLanguageProcessor</span></code> class, used as shown below, applies Workbench’s default machine learning settings.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.components.nlp</span> <span class="kn">import</span> <span class="n">NaturalLanguageProcessor</span>
                 <span class="kn">import</span> <span class="nn">mmworkbench</span> <span class="kn">as</span> <span class="nn">wb</span>
@@ -799,7 +799,7 @@
                 </pre></div>
                 </div>
                 <div class="section" id="inspect-classifiers-in-baseline-configuration">
-                <h3>Inspect classifiers in baseline configuration<a class="headerlink" href="#inspect-classifiers-in-baseline-configuration" title="Permalink to this headline">¶</a></h3>
+                <h3>Inspect classifiers in baseline configuration<a class="headerlink" href="#inspect-classifiers-in-baseline-configuration" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>For the data distributed with this blueprint, the baseline performance is already high. However, when extending the blueprint with your own custom home assistant data, you may find that the default settings may not be optimal and you can get better accuracy by individually optimizing each of the NLP components.</p>
                 <p>Because the home assistant app has five domains and over twenty intents, the classifiers need a fair amount of fine-tuning.</p>
                 <p>Start by inspecting the baseline configurations that the different classifiers use. The User Guide lists and describes the available configuration options. As an example, the code below shows how to access the model and feature extraction settings for the Intent Classifier.</p>
@@ -825,7 +825,7 @@
                 <p>You can experiment with different learning algorithms (model types), features, hyperparameters, and cross-validation settings, by passing the appropriate parameters to the classifier’s <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method. Intent classifer and role classifier examples follow.</p>
                 </div>
                 <div class="section" id="experiment-with-the-intent-classifiers">
-                <h3>Experiment with the intent classifiers<a class="headerlink" href="#experiment-with-the-intent-classifiers" title="Permalink to this headline">¶</a></h3>
+                <h3>Experiment with the intent classifiers<a class="headerlink" href="#experiment-with-the-intent-classifiers" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>We can change the feature extraction settings to use bag of trigrams in addition to the default bag of words:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ic</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">features</span><span class="p">[</span><span class="s1">&#39;bag-of-words&#39;</span><span class="p">][</span><span class="s1">&#39;lengths&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
                 <span class="n">ic</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -877,7 +877,7 @@
                 <p>Similar options are available for inspecting and experimenting with the Entity Recognizer and other NLP classifiers as well. Finding the optimal machine learning settings is an iterative process involving several rounds of parameter tuning, testing, and error analysis. Refer to the <a class="reference internal" href="../userguide/nlp.html"><span class="doc">NaturalLanguageProcessor</span></a> in the user guide for more about training, tuning, and evaluating the various Workbench classifiers.</p>
                 </div>
                 <div class="section" id="inspect-the-role-classifiers">
-                <h3>Inspect the role classifiers<a class="headerlink" href="#inspect-the-role-classifiers" title="Permalink to this headline">¶</a></h3>
+                <h3>Inspect the role classifiers<a class="headerlink" href="#inspect-the-role-classifiers" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The home assistant application has role classifiers to distinguish between different role labels. For example, the annotated data in the <code class="docutils literal"><span class="pre">times_and_dates</span></code> domain and <code class="docutils literal"><span class="pre">check_alarm</span></code> intent has two types of roles: <code class="docutils literal"><span class="pre">old_time</span></code> and <code class="docutils literal"><span class="pre">new_time</span></code>. The role classifier detects these roles for the <code class="docutils literal"><span class="pre">sys_time</span></code> entity:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="s2">&quot;times_and_dates&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">intents</span><span class="p">[</span><span class="s2">&quot;change_alarm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
                 <span class="n">nlp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="s2">&quot;times_and_dates&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">intents</span><span class="p">[</span><span class="s2">&quot;change_alarm&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">entities</span><span class="p">[</span><span class="s2">&quot;sys_time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">role_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -890,7 +890,7 @@
                 <p>In the above case, the role classifier was able to correctly distinguish between <code class="docutils literal"><span class="pre">new_time</span></code> and <code class="docutils literal"><span class="pre">old_time</span></code> for all test cases.</p>
                 </div>
                 <div class="section" id="inspect-the-configuration">
-                <h3>Inspect the configuration<a class="headerlink" href="#inspect-the-configuration" title="Permalink to this headline">¶</a></h3>
+                <h3>Inspect the configuration<a class="headerlink" href="#inspect-the-configuration" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The application configuration file, <code class="docutils literal"><span class="pre">config.py</span></code>, at the top level of the home assistant folder, contains custom intent and domain classifier model configurations. These are defined as dictionaries named <code class="docutils literal"><span class="pre">DOMAIN_CLASSIFIER_CONFIG</span></code> and <code class="docutils literal"><span class="pre">INTENT_CLASSIFIER_CONFIG</span></code>, respectively; other dictionaries include <code class="docutils literal"><span class="pre">ENTITY_RECOGNIZER_CONFIG</span></code> and <code class="docutils literal"><span class="pre">ROLE_CLASSIFIER_CONFIG</span></code>. If no custom model configuration is added to <code class="docutils literal"><span class="pre">config.py</span></code> file, Workbench uses its default classifier configurations for training and evaluation. Here is an example of an intent configuration:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">INTENT_CLASSIFIER_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
                     <span class="s1">&#39;model_type&#39;</span><span class="p">:</span> <span class="s1">&#39;text&#39;</span><span class="p">,</span>
@@ -926,17 +926,17 @@
                 </div>
                 </div>
                 <div class="section" id="parser-configuration">
-                <h2>8. Parser Configuration<a class="headerlink" href="#parser-configuration" title="Permalink to this headline">¶</a></h2>
+                <h2>8. Parser Configuration<a class="headerlink" href="#parser-configuration" title="Permalink to this headline"></a></h2>
                 <p>The relationships between entities in the home assistant queries are simple ones. For example, in the annotated query <code class="docutils literal"><span class="pre">is</span> <span class="pre">the</span> <span class="pre">{back|location}</span> <span class="pre">door</span> <span class="pre">closed</span> <span class="pre">or</span> <span class="pre">open</span></code>, the <code class="docutils literal"><span class="pre">location</span></code> entity is self-sufficient, in that it is not described by any other entity.</p>
                 <p>If you extended the app to support queries with more complex entity relationships, it would be necessary to specify <em>entity groups</em> and configure the parser accordingly. For example, in the query <code class="docutils literal"><span class="pre">is</span> <span class="pre">the</span> <span class="pre">{green|color}</span> <span class="pre">{back|location}</span> <span class="pre">door</span> <span class="pre">closed</span> <span class="pre">or</span> <span class="pre">open</span></code>, we would need to relate the <code class="docutils literal"><span class="pre">color</span></code> entity to the <code class="docutils literal"><span class="pre">location</span></code> entity, because one entity describes the other. The related entities would form an entity group. For more about entity groups and parser configurations, see the <a class="reference internal" href="../userguide/parser.html"><span class="doc">Language Parser</span></a> chapter of the User Guide.</p>
                 <p>Since we do not have entity groups in the home assistant app, we do not need a parser configuration.</p>
                 </div>
                 <div class="section" id="using-the-question-answerer">
-                <h2>9. Using the Question Answerer<a class="headerlink" href="#using-the-question-answerer" title="Permalink to this headline">¶</a></h2>
+                <h2>9. Using the Question Answerer<a class="headerlink" href="#using-the-question-answerer" title="Permalink to this headline"></a></h2>
                 <p>The <a class="reference internal" href="../userguide/kb.html"><span class="doc">Question Answerer</span></a> component in Workbench is mainly used within dialogue state handlers for retrieving information from the knowledge base. Since the home assistant app has no knowledge base, no question answerer is not needed.</p>
                 </div>
                 <div class="section" id="testing-and-deployment">
-                <h2>10. Testing and Deployment<a class="headerlink" href="#testing-and-deployment" title="Permalink to this headline">¶</a></h2>
+                <h2>10. Testing and Deployment<a class="headerlink" href="#testing-and-deployment" title="Permalink to this headline"></a></h2>
                 <p>Once all the individual pieces (NLP, Dialogue State Handlers) have been trained, configured or implemented, perform an end-to-end test of the app using the <code class="xref py py-class docutils literal"><span class="pre">Conversation</span></code> class.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.components.dialogue</span> <span class="kn">import</span> <span class="n">Conversation</span>
                 <span class="n">conv</span> <span class="o">=</span> <span class="n">Conversation</span><span class="p">(</span><span class="n">nlp</span><span class="o">=</span><span class="n">nlp</span><span class="p">,</span> <span class="n">app_path</span><span class="o">=</span><span class="s1">&#39;home_assistant&#39;</span><span class="p">)</span>

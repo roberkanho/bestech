@@ -346,7 +346,7 @@
                 <p class="last">This is an in-depth tutorial to work through from start to finish. Before you begin, read the <a class="reference internal" href="../index.html#quickstart"><span class="std std-ref">Step-by-Step Guide</span></a>, paying special attention to the <a class="reference internal" href="../quickstart/07_train_the_natural_language_processing_classifiers.html#role-classification"><span class="std std-ref">Role Classification</span></a> section.</p>
                 </div>
                 <div class="section" id="access-a-role-classifier">
-                <h2>Access a role classifier<a class="headerlink" href="#access-a-role-classifier" title="Permalink to this headline">¶</a></h2>
+                <h2>Access a role classifier<a class="headerlink" href="#access-a-role-classifier" title="Permalink to this headline"></a></h2>
                 <p>Working with the natural language processor falls into two broad phases:</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -424,7 +424,7 @@
                 </div>
                 </div>
                 <div class="section" id="train-a-role-classifier">
-                <span id="train-role-model"></span><h2>Train a role classifier<a class="headerlink" href="#train-a-role-classifier" title="Permalink to this headline">¶</a></h2>
+                <span id="train-role-model"></span><h2>Train a role classifier<a class="headerlink" href="#train-a-role-classifier" title="Permalink to this headline"></a></h2>
                 <p>Use the <code class="xref py py-meth docutils literal"><span class="pre">RoleClassifier.fit()</span></code> method to train a role classification model. Depending on the size of the training data, this can take anywhere from a few seconds to several minutes. With logging level set to <code class="docutils literal"><span class="pre">INFO</span></code> or below, you should see the build progress in the console along with cross-validation accuracy for the classifier.</p>
                 <div class="highlight-python" id="baseline-role-fit"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">configure_logs</span><span class="p">;</span> <span class="n">configure_logs</span><span class="p">()</span>
                 <span class="kn">from</span> <span class="nn">mmworkbench.components.nlp</span> <span class="kn">import</span> <span class="n">NaturalLanguageProcessor</span>
@@ -442,7 +442,7 @@
                 <p>The <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method loads all necessary training queries and trains a role classification model. When called with no arguments (as in the example above), the method uses the settings from <code class="docutils literal"><span class="pre">config.py</span></code>, the <a class="reference internal" href="nlp.html#build-nlp-with-config"><span class="std std-ref">app’s configuration file</span></a>. If <code class="docutils literal"><span class="pre">config.py</span></code> is not defined, the method uses the Workbench preset <a class="reference internal" href="nlp.html#config"><span class="std std-ref">classifier configuration</span></a>.</p>
                 <p>Using default settings is the recommended (and quickest) way to get started with any of the NLP classifiers. The resulting baseline classifier should provide a reasonable starting point from which to bootstrap your machine learning experimentation. You can then try alternate settings as you seek to identify the optimal classifier configuration for your app.</p>
                 <div class="section" id="classifier-configuration">
-                <h3>Classifier configuration<a class="headerlink" href="#classifier-configuration" title="Permalink to this headline">¶</a></h3>
+                <h3>Classifier configuration<a class="headerlink" href="#classifier-configuration" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Use the <code class="xref py py-attr docutils literal"><span class="pre">config</span></code> attribute of a trained classifier to view the <a class="reference internal" href="nlp.html#config"><span class="std std-ref">configuration</span></a> that the classifier is using. Here’s an  example where we view the configuration of a role classifier trained using default settings:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">rc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
                 </pre></div>
@@ -692,10 +692,10 @@
                 </dl>
                 </div>
                 <div class="section" id="training-with-custom-configurations">
-                <span id="build-role-with-config"></span><h3>Training with custom configurations<a class="headerlink" href="#training-with-custom-configurations" title="Permalink to this headline">¶</a></h3>
+                <span id="build-role-with-config"></span><h3>Training with custom configurations<a class="headerlink" href="#training-with-custom-configurations" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>To override Workbench’s default role classifier configuration with custom settings, you can either edit the app configuration file, or, you can call the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method with appropriate arguments.</p>
                 <div class="section" id="application-configuration-file">
-                <h4>1. Application configuration file<a class="headerlink" href="#application-configuration-file" title="Permalink to this headline">¶</a></h4>
+                <h4>1. Application configuration file<a class="headerlink" href="#application-configuration-file" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>When you define custom classifier&nbsp;settings in <code class="docutils literal"><span class="pre">config.py</span></code>, the <code class="xref py py-meth docutils literal"><span class="pre">RoleClassifier.fit()</span></code> and <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.build()</span></code> methods use those settings instead of Workbench’s defaults. To do this, define a dictionary of your custom settings, named <code class="xref py py-data docutils literal"><span class="pre">ROLE_CLASSIFIER_CONFIG</span></code>.</p>
                 <p>Here’s an example of a <code class="docutils literal"><span class="pre">config.py</span></code> file where custom settings optimized for the app override the preset configuration for the role classifier.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ROLE_CLASSIFIER_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
@@ -737,7 +737,7 @@
                 <p>Since this method requires updating a file each time you modify a setting, it’s less suitable for rapid prototyping than the method described next.</p>
                 </div>
                 <div class="section" id="arguments-to-the-fit-method">
-                <h4>2. Arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method<a class="headerlink" href="#arguments-to-the-fit-method" title="Permalink to this headline">¶</a></h4>
+                <h4>2. Arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method<a class="headerlink" href="#arguments-to-the-fit-method" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>For experimenting with the role classifier, the recommended method is to use arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method. The main areas for exploration are feature extraction and hyperparameter tuning.</p>
                 <p><strong>Feature extraction</strong></p>
                 <p>View the default feature set, as seen in the baseline classifier that we trained <a class="reference internal" href="#baseline-role-fit"><span class="std std-ref">earlier</span></a>. Notice that the ‘ngram_lengths_to_start_positions’ settings tell the classifier to extract n-grams within a context window of two tokens or less around the token of interest — that is, to only look at words in the immediate vicinity.</p>
@@ -847,7 +847,7 @@
                 </div>
                 </div>
                 <div class="section" id="run-the-role-classifier">
-                <span id="predict-roles"></span><h2>Run the role classifier<a class="headerlink" href="#run-the-role-classifier" title="Permalink to this headline">¶</a></h2>
+                <span id="predict-roles"></span><h2>Run the role classifier<a class="headerlink" href="#run-the-role-classifier" title="Permalink to this headline"></a></h2>
                 <p>Before you run the trained role classifier on a test query, you must first detect all the entities in the query using a <a class="reference internal" href="entity_recognizer.html#train-entity-model"><span class="std std-ref">trained entity recognizer</span></a>:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s1">&#39;Change my 6 AM alarm to 7 AM&#39;</span>
                 <span class="n">er</span> <span class="o">=</span> <span class="n">nlp</span><span class="o">.</span><span class="n">domains</span><span class="p">[</span><span class="s1">&#39;times_and_dates&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">intents</span><span class="p">[</span><span class="s1">&#39;change_alarm&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">entity_recognizer</span>
@@ -895,7 +895,7 @@
                 <p>The <code class="xref py py-meth docutils literal"><span class="pre">predict()</span></code> and <code class="xref py py-meth docutils literal"><span class="pre">predict_proba()</span></code> methods operate on one entity at a time. Next, we’ll see how to test a trained model on a batch of labeled test queries.</p>
                 </div>
                 <div class="section" id="evaluate-classifier-performance">
-                <h2>Evaluate classifier performance<a class="headerlink" href="#evaluate-classifier-performance" title="Permalink to this headline">¶</a></h2>
+                <h2>Evaluate classifier performance<a class="headerlink" href="#evaluate-classifier-performance" title="Permalink to this headline"></a></h2>
                 <p>To evaluate the accuracy of your trained role classifier, you first need to create labeled test data, as described in the <a class="reference internal" href="nlp.html#evaluate-nlp"><span class="std std-ref">Natural Language Processor</span></a> chapter. Once you have the test data files in the right place in your Workbench project, you can measure your model’s performance using the <code class="xref py py-meth docutils literal"><span class="pre">RoleClassifier.evaluate()</span></code> method.</p>
                 <p>Before you can evaluate the accuracy of your trained role classifier, you must first create labeled test data and place it in your Workbench project as described in the <a class="reference internal" href="nlp.html#evaluate-nlp"><span class="std std-ref">Natural Language Processor</span></a> chapter.</p>
                 <p>Then, when you are ready, use the <code class="xref py py-meth docutils literal"><span class="pre">RoleClassifier.evaluate()</span></code> method, which</p>
@@ -1128,7 +1128,7 @@
                 <p>Error analysis on the results of the <code class="xref py py-meth docutils literal"><span class="pre">evaluate()</span></code> method can inform your experimentation and help in building better models. Augmenting training data should be the first step, as in the above example. Beyond that, you can experiment with different model types, features, and hyperparameters, as described <a class="reference internal" href="#build-role-with-config"><span class="std std-ref">earlier</span></a> in this chapter.</p>
                 </div>
                 <div class="section" id="view-features-extracted-for-classification">
-                <h2>View features extracted for classification<a class="headerlink" href="#view-features-extracted-for-classification" title="Permalink to this headline">¶</a></h2>
+                <h2>View features extracted for classification<a class="headerlink" href="#view-features-extracted-for-classification" title="Permalink to this headline"></a></h2>
                 <p>While training a new model or investigating a misclassification by the classifier, it is sometimes useful to view the extracted features to make sure they are as expected. For example, there may be non-ASCII characters in the query that are treated differently by the feature extractors. Or the value assigned to a particular feature may be computed differently than you expected. Not extracting the right features could lead to misclassifications. In the example below, we view the features extracted for the query ‘set alarm for 7 am’ using <code class="xref py py-meth docutils literal"><span class="pre">RoleClassifier.view_extracted_features()</span></code> method.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">rc</span><span class="o">.</span><span class="n">view_extracted_features</span><span class="p">(</span><span class="s2">&quot;set alarm for 7 am&quot;</span><span class="p">,</span> <span class="n">entities</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
                 </pre></div>
@@ -1146,7 +1146,7 @@
                 <p>This is especially useful when you are writing <a class="reference internal" href="custom_features.html"><span class="doc">custom feature extractors</span></a> to inspect whether the right features are being extracted.</p>
                 </div>
                 <div class="section" id="save-model-for-future-use">
-                <h2>Save model for future use<a class="headerlink" href="#save-model-for-future-use" title="Permalink to this headline">¶</a></h2>
+                <h2>Save model for future use<a class="headerlink" href="#save-model-for-future-use" title="Permalink to this headline"></a></h2>
                 <p>Save the trained role classifier for later use by calling the <code class="xref py py-meth docutils literal"><span class="pre">RoleClassifier.dump()</span></code> method. The <code class="xref py py-meth docutils literal"><span class="pre">dump()</span></code> method serializes the trained model as a <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle file</a> and saves it to the specified location on disk.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">rc</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s1">&#39;experiments/role_classifier.maxent.20170701.pkl&#39;</span><span class="p">)</span>
                 </pre></div>

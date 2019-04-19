@@ -338,7 +338,7 @@
                 <p>MindMeld Workbench provides advanced capabilities for dialogue state tracking, beginning with a flexible syntax for defining rules and patterns for mapping requests to dialogue states. And because Workbench is fully extensible, you can supplement MindMeld’s built-in pattern matching capabilities with whatever custom logic you need.</p>
               </div>
               <div id="second" class="section navi-href">
-                <h2>Specify the Superset of Dialogue States<a class="headerlink" href="#specify-the-superset-of-dialogue-states" title="Permalink to this headline">¶</a></h2>
+                <h2>Specify the Superset of Dialogue States<a class="headerlink" href="#specify-the-superset-of-dialogue-states" title="Permalink to this headline"></a></h2>
                 <p>Before you can begin to implement dialogue state handlers, you must first define the dialogue states your application requires. For simple conversational interactions, the set of dialogue states can be straightforward, as illustrated in the flow diagram below.</p><a class="reference internal image-reference" href="../_images/simple_dialogue_states.png"><img alt="../_images/simple_dialogue_states.png" class="align-center" src="../_images/simple_dialogue_states.png" style="width: 700px;"></a>
                 <p>The power of conversational applications lies in providing minimal constraints on what a user can say during an interaction. Users can shortcut directly to the functionality they want. They are also free to change topics or otherwise throw a curve ball at your application at any point in the interaction without warning. All of this means that in practice, dialogue flows can become quite convoluted, as suggested below.</p><a class="reference internal image-reference" href="../_images/complex_dialogue_states.png"><img alt="../_images/complex_dialogue_states.png" class="align-center" src="../_images/complex_dialogue_states.png" style="width: 700px;"></a>
                 <p>For our example, we need to define the dialogue states that the scripted conversational interaction in <a class="reference internal" href="02_script_interactions.html"><span class="doc">Step 2</span></a> requires. To capture the functionality we envision, we need four different dialogue states: <code class="docutils literal"><span class="pre">welcome</span></code>, <code class="docutils literal"><span class="pre">send_store_hours</span></code>, <code class="docutils literal"><span class="pre">send_nearest_store</span></code>, and <code class="docutils literal"><span class="pre">say_goodbye</span></code>, as shown in the diagram below.</p><a class="reference internal image-reference" href="../_images/quickstart_dialogue_states.png"><img alt="../_images/quickstart_dialogue_states.png" class="align-center" src="../_images/quickstart_dialogue_states.png" style="width: 700px;"></a>
@@ -350,11 +350,11 @@
               </div>
               <div id="third" class="section navi-href">
                 <span id="app-container"></span>
-                <h2>Create the Application Container<a class="headerlink" href="#create-the-application-container" title="Permalink to this headline">¶</a></h2>
+                <h2>Create the Application Container<a class="headerlink" href="#create-the-application-container" title="Permalink to this headline"></a></h2>
                 <p>In MindMeld Workbench, every project is also a Python package and therefore must have an <code class="docutils literal"><span class="pre">__init.py__</span></code> file at the root level. This package must contain an <em>application container</em> – a container for all of the logic and functionality for your application. This application container enumerates all of the dialogue states and their associated handlers, and should be defined as <code class="docutils literal"><span class="pre">app</span></code> in the application’s Python package. If you based your application structure on a blueprint, you will see two python files in the root directory: <code class="docutils literal"><span class="pre">__init__.py</span></code> and <code class="docutils literal"><span class="pre">__main__.py</span></code>. If not, you need to create these files with the following minimal implementation.</p>
                 <div class="literal-block-wrapper docutils container" id="id1">
                   <div class="code-block-caption">
-                    <span class="caption-text">__init__.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a>
+                    <span class="caption-text">__init__.py</span><a class="headerlink" href="#id1" title="Permalink to this code"><table class="docutils"></a>
                   </div>
                   <div class="highlight-python">
                     <div class="highlight">
@@ -371,7 +371,7 @@
                 </div>
                 <div class="literal-block-wrapper docutils container" id="id2">
                   <div class="code-block-caption">
-                    <span class="caption-text">__main__.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a>
+                    <span class="caption-text">__main__.py</span><a class="headerlink" href="#id2" title="Permalink to this code"><table class="docutils"></a>
                   </div>
                   <div class="highlight-python">
                     <div class="highlight">
@@ -394,7 +394,7 @@
                 <p>The patterns and associated handlers which you enumerate using this straighforward application structure constitute the core interaction logic for your application. The structure described above should suffice if you plan to contain all the functionality needed for your app’s interactions within a single file (<code class="docutils literal"><span class="pre">__init__.py</span></code>). It is often useful for large applications to break the application logic into multiple modules. Because the application is a Python package there is flexibility in how you accomplish this. Here is one approach which defines dialogue handlers in a <code class="docutils literal"><span class="pre">handlers</span></code> submodule.</p>
                 <div class="literal-block-wrapper docutils container" id="id3">
                   <div class="code-block-caption">
-                    <span class="caption-text">__init__.py</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a>
+                    <span class="caption-text">__init__.py</span><a class="headerlink" href="#id3" title="Permalink to this code"><table class="docutils"></a>
                   </div>
                   <div class="highlight-python">
                     <div class="highlight">
@@ -412,7 +412,7 @@
                 </div>
                 <div class="literal-block-wrapper docutils container" id="id4">
                   <div class="code-block-caption">
-                    <span class="caption-text">handlers.py</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a>
+                    <span class="caption-text">handlers.py</span><a class="headerlink" href="#id4" title="Permalink to this code"><table class="docutils"></a>
                   </div>
                   <div class="highlight-python">
                     <div class="highlight">
@@ -431,7 +431,7 @@
                   <p>While the simple example above will work, it is possible to introduce circular imports with this structure. To avoid circular imports, you can create the application container in a submodule instead of the <code class="docutils literal"><span class="pre">__init__.py</span></code> module, as in the following example.</p>
                   <div class="literal-block-wrapper docutils container" id="id5">
                     <div class="code-block-caption">
-                      <span class="caption-text">__init__.py</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a>
+                      <span class="caption-text">__init__.py</span><a class="headerlink" href="#id5" title="Permalink to this code"><table class="docutils"></a>
                     </div>
                     <div class="highlight-python">
                       <div class="highlight">
@@ -445,7 +445,7 @@
                   </div>
                   <div class="literal-block-wrapper docutils container" id="id6">
                     <div class="code-block-caption">
-                      <span class="caption-text">root.py</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a>
+                      <span class="caption-text">root.py</span><a class="headerlink" href="#id6" title="Permalink to this code"><table class="docutils"></a>
                     </div>
                     <div class="highlight-python">
                       <div class="highlight">
@@ -458,7 +458,7 @@
                   </div>
                   <div class="literal-block-wrapper last docutils container" id="id7">
                     <div class="code-block-caption">
-                      <span class="caption-text">handlers.py</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a>
+                      <span class="caption-text">handlers.py</span><a class="headerlink" href="#id7" title="Permalink to this code"><table class="docutils"></a>
                     </div>
                     <div class="highlight-python">
                       <div class="highlight">
@@ -474,7 +474,7 @@
                 </div>
               </div>
               <div id="fourth" class="section navi-href">
-                <h2>Implement the Dialogue State Handlers<a class="headerlink" href="#implement-the-dialogue-state-handlers" title="Permalink to this headline">¶</a></h2>
+                <h2>Implement the Dialogue State Handlers<a class="headerlink" href="#implement-the-dialogue-state-handlers" title="Permalink to this headline"></a></h2>
   <p>We have already defined the dialogue handlers that the interaction in <a class="reference internal" href="02_script_interactions.html"><span class="doc">Step 2</span></a> requires.</p>
   <p>Now, to finish implementing the dialogue handlers, we need to add the desired response for each dialogue state. As we do so, we will learn about capabilities of Workbench which are explained further in the <a class="reference internal" href="../userguide/dm.html"><span class="doc">User Guide</span></a>.</p>
   <p>First, consider the handler for the <code class="docutils literal"><span class="pre">welcome</span></code> dialogue state.</p>

@@ -350,7 +350,7 @@
                 </ul>
                 </div>
                 <div class="section" id="access-the-domain-classifier">
-                <h2>Access the domain classifier<a class="headerlink" href="#access-the-domain-classifier" title="Permalink to this headline">¶</a></h2>
+                <h2>Access the domain classifier<a class="headerlink" href="#access-the-domain-classifier" title="Permalink to this headline"></a></h2>
                 <p>Working with any natural language processor component falls into two broad phases:</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -377,7 +377,7 @@
                 </div>
                 </div>
                 <div class="section" id="train-the-domain-classifier">
-                <h2>Train the domain classifier<a class="headerlink" href="#train-the-domain-classifier" title="Permalink to this headline">¶</a></h2>
+                <h2>Train the domain classifier<a class="headerlink" href="#train-the-domain-classifier" title="Permalink to this headline"></a></h2>
                 <p>Use the <code class="xref py py-meth docutils literal"><span class="pre">DomainClassifier.fit()</span></code> method to train a domain classification model. Depending on the size of the training data, this can take anywhere from a few seconds to several minutes. With logging level set to <code class="docutils literal"><span class="pre">INFO</span></code> or below, you should see the build progress in the console along with cross-validation accuracy for the classifier.</p>
                 <div class="highlight-python" id="baseline-domain-fit"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">configure_logs</span><span class="p">;</span> <span class="n">configure_logs</span><span class="p">()</span>
                 <span class="n">dc</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
@@ -414,7 +414,7 @@
                 <p>The <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method loads all necessary training queries and trains a domain classification model. When called with no arguments (as in the example above), the method uses the settings from <code class="docutils literal"><span class="pre">config.py</span></code>, the <a class="reference internal" href="nlp.html#build-nlp-with-config"><span class="std std-ref">app’s configuration file</span></a>. If no custom settings for domain classification are defined in <code class="docutils literal"><span class="pre">config.py</span></code>, the method uses the Workbench preset <a class="reference internal" href="nlp.html#config"><span class="std std-ref">classifier configuration</span></a>.</p>
                 <p>Using default settings is the recommended (and quickest) way to get started with any of the NLP classifiers. The resulting baseline classifier should provide a reasonable starting point from which to bootstrap your machine learning experimentation. You can then try alternate settings as you seek to identify the optimal classifier configuration for your app.</p>
                 <div class="section" id="classifier-configuration">
-                <h3>Classifier configuration<a class="headerlink" href="#classifier-configuration" title="Permalink to this headline">¶</a></h3>
+                <h3>Classifier configuration<a class="headerlink" href="#classifier-configuration" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Use the <code class="xref py py-attr docutils literal"><span class="pre">config</span></code> attribute of a trained classifier to view the <a class="reference internal" href="nlp.html#config"><span class="std std-ref">configuration</span></a> that the classifier is using. Here’s an example where we view the configuration of a baseline domain classifier trained using default settings:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">dc</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
                 </pre></div>
@@ -838,10 +838,10 @@
                 </dl>
                 </div>
                 <div class="section" id="training-with-custom-configurations">
-                <span id="build-domain-with-config"></span><h3>Training with custom configurations<a class="headerlink" href="#training-with-custom-configurations" title="Permalink to this headline">¶</a></h3>
+                <span id="build-domain-with-config"></span><h3>Training with custom configurations<a class="headerlink" href="#training-with-custom-configurations" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>To override Workbench’s default domain classifier configuration with custom settings, you can either edit the app configuration file, or, you can call the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method with appropriate arguments.</p>
                 <div class="section" id="application-configuration-file">
-                <h4>1. Application configuration file<a class="headerlink" href="#application-configuration-file" title="Permalink to this headline">¶</a></h4>
+                <h4>1. Application configuration file<a class="headerlink" href="#application-configuration-file" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>When you define custom classifier&nbsp;settings in <code class="docutils literal"><span class="pre">config.py</span></code>, the <code class="xref py py-meth docutils literal"><span class="pre">DomainClassifier.fit()</span></code> and <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.build()</span></code> methods use those settings instead of Workbench’s defaults. To do this, define a dictionary of your custom settings, named <code class="xref py py-data docutils literal"><span class="pre">DOMAIN_CLASSIFIER_CONFIG</span></code>.</p>
                 <p>Here’s an example of a <code class="docutils literal"><span class="pre">config.py</span></code> file where custom settings optimized for the app override the preset configuration for the domain classifier.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DOMAIN_CLASSIFIER_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
@@ -874,7 +874,7 @@
                 <p>Since this method requires updating a file each time you modify a setting, it’s less suitable for rapid prototyping than the method described next.</p>
                 </div>
                 <div class="section" id="arguments-to-the-fit-method">
-                <h4>2. Arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method<a class="headerlink" href="#arguments-to-the-fit-method" title="Permalink to this headline">¶</a></h4>
+                <h4>2. Arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method<a class="headerlink" href="#arguments-to-the-fit-method" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>For experimenting with the domain classifier, the recommended method is to use arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method. The main areas for exploration are feature extraction, hyperparameter tuning, and model selection.</p>
                 <p><strong>Feature extraction</strong></p>
                 <p>Let’s start with the baseline classifier we trained <a class="reference internal" href="#baseline-domain-fit"><span class="std std-ref">earlier</span></a>. Viewing the feature set reveals that, by default, the classifier uses unigrams for its bag of words features.</p>
@@ -1036,7 +1036,7 @@
                 </div>
                 </div>
                 <div class="section" id="run-the-domain-classifier">
-                <h2>Run the domain classifier<a class="headerlink" href="#run-the-domain-classifier" title="Permalink to this headline">¶</a></h2>
+                <h2>Run the domain classifier<a class="headerlink" href="#run-the-domain-classifier" title="Permalink to this headline"></a></h2>
                 <p>Run the trained domain classifier on a test query using the <code class="xref py py-meth docutils literal"><span class="pre">DomainClassifier.predict()</span></code> method, which returns the label for the domain whose predicted probability is highest.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">dc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="s1">&#39;weather in san francisco?&#39;</span><span class="p">)</span>
                 </pre></div>
@@ -1066,7 +1066,7 @@
                 <p>The <code class="xref py py-meth docutils literal"><span class="pre">predict()</span></code> and <code class="xref py py-meth docutils literal"><span class="pre">predict_proba()</span></code> methods take one query at a time. Next, we’ll see how to test a trained model on a batch of labeled test queries.</p>
                 </div>
                 <div class="section" id="evaluate-classifier-performance">
-                <h2>Evaluate classifier performance<a class="headerlink" href="#evaluate-classifier-performance" title="Permalink to this headline">¶</a></h2>
+                <h2>Evaluate classifier performance<a class="headerlink" href="#evaluate-classifier-performance" title="Permalink to this headline"></a></h2>
                 <p>Before you can evaluate the accuracy of your trained domain classifier, you must first create labeled test data and place it in your Workbench project as described in the <a class="reference internal" href="nlp.html#evaluate-nlp"><span class="std std-ref">Natural Language Processor</span></a> chapter.</p>
                 <p>Then, when you are ready, use the <code class="xref py py-meth docutils literal"><span class="pre">DomainClassifier.evaluate()</span></code> method, which</p>
                 <blockquote>
@@ -1318,7 +1318,7 @@
                 <p>Error analysis on the results of the <code class="xref py py-meth docutils literal"><span class="pre">evaluate()</span></code> method can inform your experimentation and help in building better models. Augmenting training data based on what you find should be the first step, as in the above example. Beyond that, you can experiment with different model types, features, and hyperparameters, as described <a class="reference internal" href="#build-domain-with-config"><span class="std std-ref">earlier</span></a> in this chapter.</p>
                 </div>
                 <div class="section" id="viewing-features-extracted-for-classification">
-                <h2>Viewing features extracted for classification<a class="headerlink" href="#viewing-features-extracted-for-classification" title="Permalink to this headline">¶</a></h2>
+                <h2>Viewing features extracted for classification<a class="headerlink" href="#viewing-features-extracted-for-classification" title="Permalink to this headline"></a></h2>
                 <p>While training a new model or investigating a misclassification by the classifier, it is sometimes useful to view the extracted features to make sure they are as expected. For example, there may be non-ASCII characters in the query that are treated differently by the feature extractors, or the value assigned to a particular feature may be computed differently than you expected. Not extracting the right features could lead to misclassifications. In the example below, we view the features extracted for the query ‘set alarm for 7 am’ using <code class="xref py py-meth docutils literal"><span class="pre">DomainClassifier.view_extracted_features()</span></code> method.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">dc</span><span class="o">.</span><span class="n">view_extracted_features</span><span class="p">(</span><span class="s2">&quot;set alarm for 7 am&quot;</span><span class="p">)</span>
                 </pre></div>
@@ -1349,7 +1349,7 @@
                 <p>This is especially useful when you are writing <a class="reference internal" href="custom_features.html"><span class="doc">custom feature extractors</span></a> to inspect whether the right features are being extracted.</p>
                 </div>
                 <div class="section" id="inspect-features-and-their-importance">
-                <h2>Inspect features and their importance<a class="headerlink" href="#inspect-features-and-their-importance" title="Permalink to this headline">¶</a></h2>
+                <h2>Inspect features and their importance<a class="headerlink" href="#inspect-features-and-their-importance" title="Permalink to this headline"></a></h2>
                 <p>Examining the learned feature weights of a machine-learned model can offer insights into its behavior. To analyze the prediction of the domain classifier on any query, you can inspect its features and their weights using <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.inspect()</span></code> method. In particular, it is useful to compare the computed feature values for the query for the predicted class and the expected ground truth (also called <strong>gold</strong>) class. Looking at the feature values closely can help in identifying the features that are useful, those that aren’t, and even those that may be misleading or confusing for the model.</p>
                 <p>Let us examine the results of <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.inspect()</span></code> on the query “check temperature outside” with the gold domain <code class="docutils literal"><span class="pre">weather</span></code>. Focus on the ‘Feature’ and ‘Diff’ columns. A high negative value in the ‘Diff’ column for the features representing the presence of a <code class="docutils literal"><span class="pre">location</span></code> entity and the word ‘temperature’ imply that they are major indicators to the classifier that the query belongs to the <code class="docutils literal"><span class="pre">smart_home</span></code> domain over the <code class="docutils literal"><span class="pre">weather</span></code> domain. This reinforces our hypothesis from the previous section that we lack labeled training queries that fit the “check … temperature …” pattern in the <code class="docutils literal"><span class="pre">weather</span></code> domain.</p>
                 <div class="admonition note">
@@ -1414,7 +1414,7 @@
                 <p>Currently, feature inspection is only available for logistic regression models.</p>
                 </div>
                 <div class="section" id="save-model-for-future-use">
-                <h2>Save model for future use<a class="headerlink" href="#save-model-for-future-use" title="Permalink to this headline">¶</a></h2>
+                <h2>Save model for future use<a class="headerlink" href="#save-model-for-future-use" title="Permalink to this headline"></a></h2>
                 <p>Save the trained domain classifier for later use by calling the <code class="xref py py-meth docutils literal"><span class="pre">DomainClassifier.dump()</span></code> method. The <code class="xref py py-meth docutils literal"><span class="pre">dump()</span></code> method serializes the trained model as a <a class="reference external" href="https://docs.python.org/3/library/pickle.html">pickle file</a> and saves it to the specified location on disk.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">dc</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">model_path</span><span class="o">=</span><span class="s1">&#39;experiments/domain_classifier.pkl&#39;</span><span class="p">)</span>
                 </pre></div>

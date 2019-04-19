@@ -346,7 +346,7 @@
                 <p class="last">This is an in-depth tutorial to work through from start to finish. Before you begin, read the <a class="reference internal" href="../index.html#quickstart"><span class="std std-ref">Step-by-Step Guide</span></a>, paying special attention to the <a class="reference internal" href="../quickstart/07_train_the_natural_language_processing_classifiers.html#entity-resolution"><span class="std std-ref">Entity Resolution</span></a> section.</p>
                 </div>
                 <div class="section" id="understanding-the-entity-resolver">
-                <h2>Understanding the entity resolver<a class="headerlink" href="#understanding-the-entity-resolver" title="Permalink to this headline">¶</a></h2>
+                <h2>Understanding the entity resolver<a class="headerlink" href="#understanding-the-entity-resolver" title="Permalink to this headline"></a></h2>
                 <p>In NLP literature, entity resolution or <a class="reference external" href="https://en.wikipedia.org/wiki/Entity_linking">entity linking</a> is the problem of identifying all terms that refer to the same real-world entity.</p>
                 <p>In Workbench, two different kinds of entities require resolution:</p>
                 <blockquote>
@@ -385,12 +385,12 @@
                 <p>The entity resolver is trained using <em>entity mapping files</em>, described in the next section.</p>
                 </div>
                 <div class="section" id="prepare-data-for-the-entity-resolver">
-                <h2>Prepare data for the Entity Resolver<a class="headerlink" href="#prepare-data-for-the-entity-resolver" title="Permalink to this headline">¶</a></h2>
+                <h2>Prepare data for the Entity Resolver<a class="headerlink" href="#prepare-data-for-the-entity-resolver" title="Permalink to this headline"></a></h2>
                 <p>The most important task when you are developing a production-quality entity resolver is to collect a high-quality and comprehensive set of synonyms, and place those synonyms into entity mapping files, which is where Workbench can use them.</p>
                 <p>This section explains how entity mapping files and synonym files are structured, and how they work. Each sub-section concludes with instructions for generating the files.</p>
                 <p>Entity mapping files come first, since they provide the framework into which the synonyms fit.</p>
                 <div class="section" id="generate-entity-mapping-files">
-                <h3>Generate entity mapping files<a class="headerlink" href="#generate-entity-mapping-files" title="Permalink to this headline">¶</a></h3>
+                <h3>Generate entity mapping files<a class="headerlink" href="#generate-entity-mapping-files" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Every Workbench app has an entity mapping file for each entity type.</p>
                 <p>An entity mapping file is a JSON file containing a dictionary whose purpose is to provide information about entities of the given type, and, where applicable, about how the entity type corresponds to a knowledge base object type. Entity mapping files are used to train the entity resolver.</p>
                 <p>At the top level, the entity mapping file has the three key/value pairs described in the table below.</p>
@@ -483,7 +483,7 @@
                 <a class="reference internal image-reference" href="../_images/food_ordering_directory3.png"><img alt="../_images/food_ordering_directory3.png" class="align-center" src="../_images/food_ordering_directory3.png" style="width: 300px;" /></a>
                 </div>
                 <div class="section" id="generate-synonyms">
-                <h3>Generate synonyms<a class="headerlink" href="#generate-synonyms" title="Permalink to this headline">¶</a></h3>
+                <h3>Generate synonyms<a class="headerlink" href="#generate-synonyms" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Synonyms enable the resolver to consistently resolve to an entity that users refer to using varied language. You can generate synonyms in-house, or crowdsource them from a service like Mechanical Turk. For some use cases, existing synonym data sets may be available.</p>
                 <p>To ensure that you get high-quality synonyms, observe the following guidelines:</p>
                 <ol class="arabic simple">
@@ -514,7 +514,7 @@
                 </div>
                 </div>
                 <div class="section" id="train-the-entity-resolver">
-                <h2>Train the entity resolver<a class="headerlink" href="#train-the-entity-resolver" title="Permalink to this headline">¶</a></h2>
+                <h2>Train the entity resolver<a class="headerlink" href="#train-the-entity-resolver" title="Permalink to this headline"></a></h2>
                 <p>The Entity Resolver uses the <a class="reference external" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a> full-text search and analytics engine for information retrieval. This is required by the advanced text similarity model Workbench uses by default. Once Elasticsearch is up and running, no configuration needed is needed within Workbench. To learn how to set up Elasticsearch, see the <a class="reference internal" href="getting_started.html"><span class="doc">Getting Started guide</span></a>.</p>
                 <div class="admonition note">
                 <p class="first admonition-title">Note</p>
@@ -522,7 +522,7 @@
                 </div>
                 <p>Once all of the entity mapping files are generated, you can either (1) train the resolver as a standalone component, or (2) build the whole NLP pipeline, which trains the resolver along with the other components.</p>
                 <div class="section" id="train-the-resolver-alone">
-                <h3>Train the resolver alone<a class="headerlink" href="#train-the-resolver-alone" title="Permalink to this headline">¶</a></h3>
+                <h3>Train the resolver alone<a class="headerlink" href="#train-the-resolver-alone" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>To train the resolver as a standalone component, adapt the following snippet to the particulars of your app:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">configure_logs</span><span class="p">;</span> <span class="n">configure_logs</span><span class="p">()</span>
                 <span class="kn">from</span> <span class="nn">mmworkbench.components.nlp</span> <span class="kn">import</span> <span class="n">NaturalLanguageProcessor</span>
@@ -534,11 +534,11 @@
                 </div>
                 </div>
                 <div class="section" id="train-the-resolver-by-building-the-nlp-pipeline">
-                <h3>Train the resolver by building the NLP pipeline<a class="headerlink" href="#train-the-resolver-by-building-the-nlp-pipeline" title="Permalink to this headline">¶</a></h3>
+                <h3>Train the resolver by building the NLP pipeline<a class="headerlink" href="#train-the-resolver-by-building-the-nlp-pipeline" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Build the NLP pipeline using <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.build()</span></code>. Among its other tasks, this fits the resolver. When you run <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.process()</span></code>, the NLP pipeline includes the resolved entities in its results.</p>
                 </div>
                 <div class="section" id="about-the-entityresolver-fit-method">
-                <h3>About the <cite>EntityResolver.fit()</cite> method<a class="headerlink" href="#about-the-entityresolver-fit-method" title="Permalink to this headline">¶</a></h3>
+                <h3>About the <cite>EntityResolver.fit()</cite> method<a class="headerlink" href="#about-the-entityresolver-fit-method" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>When <code class="xref py py-meth docutils literal"><span class="pre">EntityResolver.fit()</span></code> method is run for the first time, Workbench creates the Elasticsearch index and uploads all the objects. How long this takes depends on the size of your data, your network speed, and whether your code and Elasticsearch server are running on the same machine.</p>
                 <p>For the sake of speed, subsequent calls to <code class="xref py py-meth docutils literal"><span class="pre">EntityResolver.fit()</span></code> update the existing index rather than creating a new one from scratch. This means that new objects are added, and objects with existing IDs are updated, but no objects are deleted. If you wish to delete objects, fully recreate the index from scratch by running a clean fit as follows.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">er</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">clean</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -548,7 +548,7 @@
                 </div>
                 </div>
                 <div class="section" id="run-the-entity-resolver">
-                <h2>Run the entity resolver<a class="headerlink" href="#run-the-entity-resolver" title="Permalink to this headline">¶</a></h2>
+                <h2>Run the entity resolver<a class="headerlink" href="#run-the-entity-resolver" title="Permalink to this headline"></a></h2>
                 <p>Once the resolver has been fit, test the entity resolver by passing <code class="docutils literal"><span class="pre">Entity</span></code> objects as follows.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.core</span> <span class="kn">import</span> <span class="n">Entity</span>
                 <span class="n">er</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Entity</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;gluten free pepperoni pizza&#39;</span><span class="p">,</span> <span class="n">entity_type</span><span class="o">=</span><span class="s1">&#39;dish&#39;</span><span class="p">))</span>
@@ -628,7 +628,7 @@
                 <p>The next section explains how to handles scenarios like this.</p>
                 </div>
                 <div class="section" id="consider-context-aware-entity-resolution">
-                <h2>Consider context-aware entity resolution<a class="headerlink" href="#consider-context-aware-entity-resolution" title="Permalink to this headline">¶</a></h2>
+                <h2>Consider context-aware entity resolution<a class="headerlink" href="#consider-context-aware-entity-resolution" title="Permalink to this headline"></a></h2>
                 <p>While the Entity Resolver finds the best-matching canonical values based on text relevance and numeric sort factors, you might sometimes want application-specific constraints to influence how the recognized entities are resolved. These constraints could come from proximity information, business logic, the data model hierarchy, or elsewhere. For instance:</p>
                 <ul class="simple">
                 <li>resolve to the dish whose name best matches <code class="docutils literal"><span class="pre">Pad</span> <span class="pre">Thai</span></code>, within a selected restaurant</li>
@@ -645,7 +645,7 @@
                 </div></blockquote>
                 </div>
                 <div class="section" id="about-the-exact-match-text-similarity-model">
-                <span id="exact-match"></span><h2>About the Exact Match text similarity model<a class="headerlink" href="#about-the-exact-match-text-similarity-model" title="Permalink to this headline">¶</a></h2>
+                <span id="exact-match"></span><h2>About the Exact Match text similarity model<a class="headerlink" href="#about-the-exact-match-text-similarity-model" title="Permalink to this headline"></a></h2>
                 <p>If you choose not to use Elasticsearch, Workbench provides a simple baseline version of entity resolution. This Exact Match Model only resolves to an object when the text exactly matches a canonical name or synonym. To use the Exact Match Model, add the following to your app config (<code class="docutils literal"><span class="pre">config.py</span></code>) located in the top level of your app folder:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ENTITY_RESOLVER_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
                     <span class="s1">&#39;model_type&#39;</span><span class="p">:</span> <span class="s1">&#39;exact_match&#39;</span>

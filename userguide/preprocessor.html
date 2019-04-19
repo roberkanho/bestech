@@ -341,7 +341,7 @@
                 </div></blockquote>
                 <p>Examples of some common preprocessing tasks include spelling correction, punctuation removal, handling special characters, sentence segmentation, and other kinds of application-specific text normalization.</p>
                 <div class="section" id="implement-the-preprocessor">
-                <h2>Implement the preprocessor<a class="headerlink" href="#implement-the-preprocessor" title="Permalink to this headline">¶</a></h2>
+                <h2>Implement the preprocessor<a class="headerlink" href="#implement-the-preprocessor" title="Permalink to this headline"></a></h2>
                 <p>You can use the <code class="xref py py-class docutils literal"><span class="pre">Preprocessor</span></code> abstract class provided by Workbench as a template for defining your own custom preprocessing logic.</p>
                 <p>The base class contains two methods:</p>
                 <blockquote>
@@ -352,11 +352,11 @@
                 </div></blockquote>
                 <p>While implementing the <code class="xref py py-meth docutils literal"><span class="pre">process()</span></code> method is mandatory and key to defining the functionality of your preprocessor, implementation of the <code class="xref py py-meth docutils literal"><span class="pre">get_char_index_map()</span></code> is optional. However, to ensure the proper functioning of downstream NLP components, it is essential that you implement this function whenever the length (character count) of the input query is changed by the <code class="xref py py-meth docutils literal"><span class="pre">process()</span></code> method.</p>
                 <div class="section" id="example-stemming-as-a-preprocessing-step">
-                <h3>Example: Stemming as a preprocessing step<a class="headerlink" href="#example-stemming-as-a-preprocessing-step" title="Permalink to this headline">¶</a></h3>
+                <h3>Example: Stemming as a preprocessing step<a class="headerlink" href="#example-stemming-as-a-preprocessing-step" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>In this example, we define a basic preprocessor that does <a class="reference external" href="https://en.wikipedia.org/wiki/Stemming">stemming</a> using the <a class="reference external" href="https://tartarus.org/martin/PorterStemmer/">Porter Stemmer</a> implementation from <a class="reference external" href="https://www.nltk.org/">NLTK</a>. Stemming reduces each word to a base or root form called the word stem. E.g., the words “fish”, “fishes” and “fishing” all have the same stem, “fish”. This kind of preprocessing is widely used in information retrieval systems as a <a class="reference external" href="https://en.wikipedia.org/wiki/Query_expansion">query expansion</a> technique to improve search engine recall.</p>
                 <p>You will need to install the NLTK package to try out the example below. Add the following code to a file named <code class="docutils literal"><span class="pre">stem_processor.py</span></code> and put it in your application folder.</p>
                 <div class="literal-block-wrapper docutils container" id="id1">
-                <div class="code-block-caption"><span class="caption-text">stem_processor.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+                <div class="code-block-caption"><span class="caption-text">stem_processor.py</span><a class="headerlink" href="#id1" title="Permalink to this code"><table class="docutils"></a></div>
                 <div class="highlight-python"><div class="highlight"><pre><span></span>  <span class="kn">from</span> <span class="nn">mmworkbench.components</span> <span class="kn">import</span> <span class="n">Preprocessor</span>
                   <span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span>
 
@@ -422,10 +422,10 @@
                 </div>
                 </div>
                 <div class="section" id="use-the-preprocessor">
-                <h2>Use the preprocessor<a class="headerlink" href="#use-the-preprocessor" title="Permalink to this headline">¶</a></h2>
+                <h2>Use the preprocessor<a class="headerlink" href="#use-the-preprocessor" title="Permalink to this headline"></a></h2>
                 <p>To use your custom preprocessing logic within your Workbench application, pass in an instance of your implemented preprocessor class when initializing the <code class="xref py py-class docutils literal"><span class="pre">Application</span></code> object in the application container file, <code class="docutils literal"><span class="pre">__init__.py</span></code>.</p>
                 <div class="literal-block-wrapper docutils container" id="id2">
-                <div class="code-block-caption"><span class="caption-text">__init__.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+                <div class="code-block-caption"><span class="caption-text">__init__.py</span><a class="headerlink" href="#id2" title="Permalink to this code"><table class="docutils"></a></div>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">Application</span>
                 <span class="kn">from</span> <span class="nn">.stem_processor</span> <span class="kn">import</span> <span class="n">StemProcessor</span>
 

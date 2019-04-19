@@ -357,32 +357,32 @@
                 <p class="last">The QuestionAnswerer requires Elasticsearch. Make sure that Elasticsearch is running in a separate shell before invoking the QuestionAnswerer.</p>
                 </div>
                 <div class="section" id="decide-whether-your-app-needs-a-knowledge-base">
-                <h2>Decide Whether your App Needs a Knowledge Base<a class="headerlink" href="#decide-whether-your-app-needs-a-knowledge-base" title="Permalink to this headline">¶</a></h2>
+                <h2>Decide Whether your App Needs a Knowledge Base<a class="headerlink" href="#decide-whether-your-app-needs-a-knowledge-base" title="Permalink to this headline"></a></h2>
                 <p>The first question to answer before you start building your application is: <em>Do we need a knowledge base or not?</em></p>
                 <p>For applications with large- or medium-vocabulary content, having a knowledge base is critical and can be the differentiating factor for the best conversational applications. For example, video discovery applications typically need to find movie or TV shows from a catalog containing hundred of thousands or even millions of records. The knowledge base provides information about important entities to fulfill users’ requests.</p>
                 <p>For applications with small-vocabulary content, it is not necessary to have a knowledge base, especially when ranking and disambiguating entities is not required. One example is a home assistant for smart home automation.</p>
                 <p>In its most basic form, a knowledge base is just a repository of objects of specified types. For example, a knowledge base that contains a large entertainment content catalog could include <code class="docutils literal"><span class="pre">movie</span></code> and <code class="docutils literal"><span class="pre">tv_show</span></code> among the types of its objects. A knowledge base that contains a directory of local businesses could have object types like <code class="docutils literal"><span class="pre">restaurant</span></code>, <code class="docutils literal"><span class="pre">hardware_store</span></code>, and so on. Objects typically have attributes which capture salient aspects of the concepts they describe. For example, a <code class="docutils literal"><span class="pre">restaurant</span></code> object might have attributes for <code class="docutils literal"><span class="pre">address</span></code> and <code class="docutils literal"><span class="pre">phone_number</span></code>; a <code class="docutils literal"><span class="pre">movie</span></code> object might have attributes like <code class="docutils literal"><span class="pre">cast_list</span></code>, <code class="docutils literal"><span class="pre">runtime</span></code>, and <code class="docutils literal"><span class="pre">release_date</span></code>.</p>
                 </div>
                 <div class="section" id="decide-how-to-use-question-answering-in-your-application">
-                <h2>Decide How to Use Question Answering in your Application<a class="headerlink" href="#decide-how-to-use-question-answering-in-your-application" title="Permalink to this headline">¶</a></h2>
+                <h2>Decide How to Use Question Answering in your Application<a class="headerlink" href="#decide-how-to-use-question-answering-in-your-application" title="Permalink to this headline"></a></h2>
                 <p>The purpose of the Workbench question answerer is to map natural language queries to a query which is then run over a structured database. (This is called <em>knowledge-based question answering</em>.) The question answerer is designed to work with custom knowledge bases derived from large content catalogs, for production-grade applications.</p>
                 <p>Catalogs containing even up to hundreds of millions of unique, domain-specific entity objects can easily be handled by Workbench in production. The number of unique entities typical scales up to tens of thousands for restaurant menus processed by food delivery services, millions for product retail catalogs, and tens or hundreds of millions for media entertainment libraries. The Workbench knowledge base and question answering systems have been successfully applied to all of the above use cases.</p>
                 <p>The question answerer can be used in a variety of ways, but in practice, conversational applications rely on this module and its underlying knowledge base for the four primary purposes listed below. Decide which purposes are most important to your use case and incorporate those priorities into the way you code your dialogue state handlers.</p>
                 <div class="section" id="answer-questions">
-                <h3>1. Answer Questions<a class="headerlink" href="#answer-questions" title="Permalink to this headline">¶</a></h3>
+                <h3>1. Answer Questions<a class="headerlink" href="#answer-questions" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Providing relevant results as answers to user requests is a basic use case for the question answerer. Knowledge base searches can be constructed using the entities extracted from NLP pipeline. The form of the answer depends on the nature of the application. For instance, in a food ordering app the answer could be a dish with attributes matching the criteria provided by users, while in a video discovery app the answer could be a list of movies or TV shows that best match the user request.</p>
                 </div>
                 <div class="section" id="validate-questions">
-                <h3>2. Validate Questions<a class="headerlink" href="#validate-questions" title="Permalink to this headline">¶</a></h3>
+                <h3>2. Validate Questions<a class="headerlink" href="#validate-questions" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The knowledge base can contain information to help inform users when requests are out of scope. For example, if a user orders pizza from a coffee shop in a food ordering app, the question answerer would be unable to find an entity matching the user request, but could provide information to help steer the conversation in the right direction. Other examples of this kind include the user asking for a customization option that is not available for the desired dish, or asking for campsite information from a travel app that only offers hotels and motels.</p>
                 </div>
                 <div class="section" id="disambiguate-entities">
-                <h3>3. Disambiguate Entities<a class="headerlink" href="#disambiguate-entities" title="Permalink to this headline">¶</a></h3>
+                <h3>3. Disambiguate Entities<a class="headerlink" href="#disambiguate-entities" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>We often need to disambiguate entities based on application requirements and context. For example, a food ordering app could offer dozens of <code class="docutils literal"><span class="pre">Pad</span> <span class="pre">Thai</span></code> dishes from a number of restaurants. In a travel booking app it is impossible to book the right flight without knowing which of multiple cities named <code class="docutils literal"><span class="pre">Springfield</span></code> the user is asking for. In a music discovery app a request for <code class="docutils literal"><span class="pre">thriller</span></code> could refer to a song or an album. In such cases we are unable to retrieve the exact entities that the users mean without taking into account contextual information like entity relationships and hierarchy, user preferences, or application business logic.</p>
                 <p>This disambiguation task can be formulated as a knowledge base search with constraints derived from contextual information. For the food ordering example, the selected restaurant can be added as a filter to the knowledge base search to find the best-matching dishes from that restaurant.</p>
                 </div>
                 <div class="section" id="suggest-alternatives">
-                <h3>4. Suggest Alternatives<a class="headerlink" href="#suggest-alternatives" title="Permalink to this headline">¶</a></h3>
+                <h3>4. Suggest Alternatives<a class="headerlink" href="#suggest-alternatives" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The question answerer can suggest the closest matches when exactly correct matches cannot be found. For example, if a user requests ‘Star Wars Rogue One’ and that movie is not available, the knowledge base could suggest other available Star Wars titles. The question answerer uses scoring factors including text relevance and location proximity to retrieve and suggest the most relevant information from the knowledge base.</p>
                 <p>The question answerer can also suggest alternatives based on custom logic in the application. Taking food ordering application as an example, we may want to:</p>
                 <blockquote>
@@ -395,7 +395,7 @@
                 </div>
                 </div>
                 <div class="section" id="prepare-your-data-for-the-knowledge-base">
-                <h2>Prepare your Data for the Knowledge Base<a class="headerlink" href="#prepare-your-data-for-the-knowledge-base" title="Permalink to this headline">¶</a></h2>
+                <h2>Prepare your Data for the Knowledge Base<a class="headerlink" href="#prepare-your-data-for-the-knowledge-base" title="Permalink to this headline"></a></h2>
                 <p>Building a custom knowledge base using application content data is straightforward in Workbench. The content data can be restaurant menus, retailing product catalogs, or any custom data that users would like to interact with through conversational interfaces. This data is often stored in large-scale databases with application-specific data models. The question answerer can build a knowledge base using either (1) data dumps from a database, or (2) the output of a data pipeline which handles more complex data transformations.</p>
                 <p>The question answerer takes in data files that contain knowledge base objects, which are the basic unit of information in knowledge base indexes. Each data file contains objects of a specified type.</p>
                 <p>Each object has:</p>
@@ -535,12 +535,12 @@
                 </div>
                 </div>
                 <div class="section" id="verify-that-the-data-is-clean">
-                <h2>Verify that the Data is Clean<a class="headerlink" href="#verify-that-the-data-is-clean" title="Permalink to this headline">¶</a></h2>
+                <h2>Verify that the Data is Clean<a class="headerlink" href="#verify-that-the-data-is-clean" title="Permalink to this headline"></a></h2>
                 <p>For the question answerer to achieve the best possible performance, it’s critical to have clean data in the knowledge base. You should not assume that the generic text processing and normalization that the Workbench knowledge base performs is sufficient. Domain- or application-specific normalizations are often necessary. For example, in a food ordering app, menus from different restaurants could differ in format and the conventions they use.</p>
                 <p>Good practice dictates that you inspect the data to identify noise and inconsistency in the dataset, then clean up and normalize the data as needed. In order for your app to achieve high accuracy, it’s important to do this as a pre-processing task.</p>
                 </div>
                 <div class="section" id="import-the-data-into-the-knowledge-base">
-                <h2>Import the Data into the Knowledge Base<a class="headerlink" href="#import-the-data-into-the-knowledge-base" title="Permalink to this headline">¶</a></h2>
+                <h2>Import the Data into the Knowledge Base<a class="headerlink" href="#import-the-data-into-the-knowledge-base" title="Permalink to this headline"></a></h2>
                 <div class="admonition note">
                 <p class="first admonition-title">Note</p>
                 <p>For this tutorial, we will be using the <code class="docutils literal"><span class="pre">food_ordering</span></code> blueprint application. You can download this application by running these commands:</p>
@@ -612,7 +612,7 @@
                 </div>
                 </div>
                 <div class="section" id="perform-simple-searches-with-the-get-api">
-                <h2>Perform Simple Searches with the <code class="docutils literal"><span class="pre">get()</span></code> API<a class="headerlink" href="#perform-simple-searches-with-the-get-api" title="Permalink to this headline">¶</a></h2>
+                <h2>Perform Simple Searches with the <code class="docutils literal"><span class="pre">get()</span></code> API<a class="headerlink" href="#perform-simple-searches-with-the-get-api" title="Permalink to this headline"></a></h2>
                 <p>The <code class="xref py py-meth docutils literal"><span class="pre">get()</span></code> method is the basic API for searching the knowledge base, with a simple and intuitive interface similar to those of common web search interfaces.</p>
                 <p>As arguments, <code class="xref py py-meth docutils literal"><span class="pre">get()</span></code> takes in one or more <em>knowledge base field/text query</em> pairs. The knowledge base fields to be used depend on the mapping between NLP entity types and knowledge base objects, which is often application-specific since it depends, in turn, on the data model of the application. For example, in a food ordering app, a <code class="docutils literal"><span class="pre">cuisine</span></code> entity type could be mapped to a knowledge base object or to an attribute of a knowledge base object.</p>
                 <p>Use <code class="xref py py-meth docutils literal"><span class="pre">get()</span></code> to retrieve a knowledge base object whose ID is already known:</p>
@@ -780,7 +780,7 @@
                 </div>
                 </div>
                 <div class="section" id="perform-advanced-searches-with-the-build-search-api">
-                <h2>Perform Advanced Searches with the <code class="docutils literal"><span class="pre">build_search()</span></code> API<a class="headerlink" href="#perform-advanced-searches-with-the-build-search-api" title="Permalink to this headline">¶</a></h2>
+                <h2>Perform Advanced Searches with the <code class="docutils literal"><span class="pre">build_search()</span></code> API<a class="headerlink" href="#perform-advanced-searches-with-the-build-search-api" title="Permalink to this headline"></a></h2>
                 <p>While the basic search API described above covers the most common use cases in conversational applications, it can’t help in scenarios like the following:</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -797,7 +797,7 @@
                 </pre></div>
                 </div>
                 <div class="section" id="query">
-                <h3>Query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h3>
+                <h3>Query<a class="headerlink" href="#query" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Use the <code class="xref py py-meth docutils literal"><span class="pre">query()</span></code> API to run an advanced text query search. For each query, specify a text field in the knowledge base, and a query string for the text relevance match. The question answerer ranks results using several factors including exact matches, phrase matches, and partial matches on the text.</p>
                 <p>In the following example, the question answerer returns the dishes that best match the name <code class="docutils literal"><span class="pre">fish</span> <span class="pre">and</span> <span class="pre">chips</span></code>. We specify the query string <code class="docutils literal"><span class="pre">fish</span> <span class="pre">and</span> <span class="pre">chips</span></code> on the knowledge base field <code class="docutils literal"><span class="pre">name</span></code> in the <code class="docutils literal"><span class="pre">menu_items</span></code> index (which contains all available dishes). The top two results are from two different restaurants, and both match the name <code class="docutils literal"><span class="pre">fish</span> <span class="pre">and</span> <span class="pre">chips</span></code> exactly:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.components</span> <span class="kn">import</span> <span class="n">QuestionAnswerer</span>
@@ -835,7 +835,7 @@
                 </div>
                 </div>
                 <div class="section" id="filter">
-                <h3>Filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h3>
+                <h3>Filter<a class="headerlink" href="#filter" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Use the <code class="xref py py-meth docutils literal"><span class="pre">filter()</span></code> API to add filters to an advanced text query search.</p>
                 <p>Two types of filters are supported: <strong>text filter</strong> and <strong>range filter</strong>. For text filter, specify a knowledge base text field name and the filtering text string. The text string is normalized and the entire text string is used to filter the results, like SQL predicates in relational databases. For example, in food ordering apps, users often request dishes of a particular cuisine type or from a specific restaurant.</p>
                 <p>In the example below we try to find dishes (that is, items in the <code class="docutils literal"><span class="pre">menu_items</span></code> index) whose names best match <code class="docutils literal"><span class="pre">fish</span> <span class="pre">and</span> <span class="pre">chips</span></code>, from a restaurant whose ID matches <code class="docutils literal"><span class="pre">B01DEEGQBK</span></code>:</p>
@@ -925,7 +925,7 @@
                 </div>
                 </div>
                 <div class="section" id="sort">
-                <h3>Sort<a class="headerlink" href="#sort" title="Permalink to this headline">¶</a></h3>
+                <h3>Sort<a class="headerlink" href="#sort" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Use the <code class="xref py py-meth docutils literal"><span class="pre">sort()</span></code> API to add one or more custom sort criteria to an advanced search.</p>
                 <p>Custom sort</p>
                 <blockquote>

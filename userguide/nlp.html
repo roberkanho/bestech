@@ -341,7 +341,7 @@
                 </ul>
                 </div>
                 <div class="section" id="instantiate-the-nlp-class">
-                <span id="instantiate-nlp"></span><h2>Instantiate the NLP class<a class="headerlink" href="#instantiate-the-nlp-class" title="Permalink to this headline">¶</a></h2>
+                <span id="instantiate-nlp"></span><h2>Instantiate the NLP class<a class="headerlink" href="#instantiate-the-nlp-class" title="Permalink to this headline"></a></h2>
                 <p>Working with the natural language processor falls into two broad phases:</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -429,7 +429,7 @@
                 <p>So far in our tutorial, the NLP object has been initialized but has not yet been trained, so <code class="xref py py-attr docutils literal"><span class="pre">ready</span></code> and <code class="xref py py-attr docutils literal"><span class="pre">dirty</span></code> are both false.</p>
                 </div>
                 <div class="section" id="train-the-nlp-pipeline">
-                <span id="build-nlp"></span><h2>Train the NLP pipeline<a class="headerlink" href="#train-the-nlp-pipeline" title="Permalink to this headline">¶</a></h2>
+                <span id="build-nlp"></span><h2>Train the NLP pipeline<a class="headerlink" href="#train-the-nlp-pipeline" title="Permalink to this headline"></a></h2>
                 <p>As described in <a class="reference internal" href="../quickstart/07_train_the_natural_language_processing_classifiers.html"><span class="doc">Step 7</span></a>, the <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.build()</span></code> method is the fastest way to train a baseline natural language processor. Depending on the complexity of your Workbench project and the size of its training data, this can take anywhere from a few seconds to several minutes. With logging level set to <code class="docutils literal"><span class="pre">INFO</span></code> or below, you should see the build progress in the console along with cross-validation accuracies for the classifiers.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">configure_logs</span><span class="p">;</span> <span class="n">configure_logs</span><span class="p">()</span>
                 <span class="kn">from</span> <span class="nn">mmworkbench.components.nlp</span> <span class="kn">import</span> <span class="n">NaturalLanguageProcessor</span>
@@ -510,7 +510,7 @@
                 </div>
                 <p>You will learn more about classifier configuration later in this chapter.</p>
                 <div class="section" id="training-at-different-levels-of-the-nlp-hierarchy">
-                <span id="build-partial-nlp"></span><h3>Training at different levels of the NLP hierarchy<a class="headerlink" href="#training-at-different-levels-of-the-nlp-hierarchy" title="Permalink to this headline">¶</a></h3>
+                <span id="build-partial-nlp"></span><h3>Training at different levels of the NLP hierarchy<a class="headerlink" href="#training-at-different-levels-of-the-nlp-hierarchy" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>While calling the <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method on the <code class="xref py py-obj docutils literal"><span class="pre">nlp</span></code> object is the easiest way to build or rebuild all the classifiers, it can be time-consuming. Sometimes it is more efficient to only rebuild a subset of your classifiers. To do this, call the <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method at the appropriate level in the domain-intent-entity-role hierarchy.</p>
                 <p>For instance, the code below rebuilds the NLP models for one selected domain only, namely the <code class="docutils literal"><span class="pre">times_and_dates</span></code> domain of the <code class="docutils literal"><span class="pre">home_assistant</span></code> app.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">configure_logs</span><span class="p">;</span> <span class="n">configure_logs</span><span class="p">()</span>
@@ -578,7 +578,7 @@
                 <p>More about fine-grained access to individual classifiers appears in the subsequent chapters.</p>
                 </div>
                 <div class="section" id="building-models-incrementally">
-                <span id="incremental-builds"></span><h3>Building models incrementally<a class="headerlink" href="#building-models-incrementally" title="Permalink to this headline">¶</a></h3>
+                <span id="incremental-builds"></span><h3>Building models incrementally<a class="headerlink" href="#building-models-incrementally" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.build()</span></code> method by default retrains all NLP models from scratch. In most cases, however, you may just be modifying the configuration, training data, or resources (like gazetteers) of certain specific models within the NLP pipeline. In such cases, Workbench can intelligently retrain only those models whose dependencies have changed and simply reuse the previous models for the ones that haven’t. To do so, set the <code class="xref py py-data docutils literal"><span class="pre">incremental</span></code> parameter of the <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method to <code class="docutils literal"><span class="pre">True</span></code>.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">incremental</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
                 </pre></div>
@@ -599,13 +599,13 @@
                 </div>
                 </div>
                 <div class="section" id="classifier-configurations">
-                <span id="config"></span><h3>Classifier configurations<a class="headerlink" href="#classifier-configurations" title="Permalink to this headline">¶</a></h3>
+                <span id="config"></span><h3>Classifier configurations<a class="headerlink" href="#classifier-configurations" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>We have seen how the natural language processor’s <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method and the individual classifiers’ <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> methods use configurations to train models.</p>
                 <p>To be more precise, a classifier configuration defines the <a class="reference external" href="https://en.wikipedia.org/wiki/Supervised_learning#Approaches_and_algorithms">machine learning algorithm</a> to use, the <a class="reference external" href="https://en.wikipedia.org/wiki/Feature_(machine_learning)">features</a> to be extracted from the input data, and the methodology to use for <a class="reference external" href="https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)">hyperparameter selection</a>.</p>
                 <p>Workbench domain, intent, entity, and role classifiers all use a <em>configuration dictionary</em> to define the machine learning settings for model training.</p>
                 <p>This section describes the structure and format of the configuration dictionary. Detailed explanation of configurable options for each type of classifier appears in subsequent chapters.</p>
                 <div class="section" id="anatomy-of-a-classifier-configuration">
-                <h4>Anatomy of a classifier configuration<a class="headerlink" href="#anatomy-of-a-classifier-configuration" title="Permalink to this headline">¶</a></h4>
+                <h4>Anatomy of a classifier configuration<a class="headerlink" href="#anatomy-of-a-classifier-configuration" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>A classifier configuration has three sections: <strong>Model Settings</strong>, <strong>Feature Extraction Settings</strong>, and <strong>Hyperparameter Settings</strong>.</p>
                 <ol class="arabic simple">
                 <li><strong>Model Settings</strong> - The <a class="reference external" href="https://en.wikipedia.org/wiki/Supervised_learning#Approaches_and_algorithms">machine learning algorithm</a>  or modeling approach to use, along with any algorithm-specific settings.</li>
@@ -676,7 +676,7 @@
                 <p>The above configuration defines a grid with five potential values for the ‘C’ parameter and two possible values for the ‘penalty’ parameter. It also specifies that optimal values need to be found using a 10-fold cross-validated grid search over the provided parameter grid.</p>
                 </div>
                 <div class="section" id="using-custom-configurations">
-                <span id="custom-configs"></span><h4>Using custom configurations<a class="headerlink" href="#using-custom-configurations" title="Permalink to this headline">¶</a></h4>
+                <span id="custom-configs"></span><h4>Using custom configurations<a class="headerlink" href="#using-custom-configurations" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>There are two ways to override Workbench’s preset configurations for NLP classifiers.</p>
                 <p>The first method, as described <a class="reference internal" href="#build-nlp-with-config"><span class="std std-ref">earlier</span></a>, is to define the classifier&nbsp;settings in your application configuration file, <code class="docutils literal"><span class="pre">config.py</span></code>. The classifier configuration must be defined as a dictionary with one of the following names to override the corresponding classifier’s default settings.</p>
                 <blockquote>
@@ -691,13 +691,13 @@
                 <p>Alternatively, you could pass configuration settings (like model type, features, and so on) as arguments to the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method of the appropriate classifier. Arguments passed to <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> take precedence over both Workbench defaults and settings defined in <code class="docutils literal"><span class="pre">config.py</span></code>. See individual classifier chapters for more about the <code class="xref py py-meth docutils literal"><span class="pre">fit()</span></code> method.</p>
                 </div>
                 <div class="section" id="configuring-rest-of-the-pipeline">
-                <h4>Configuring rest of the pipeline<a class="headerlink" href="#configuring-rest-of-the-pipeline" title="Permalink to this headline">¶</a></h4>
+                <h4>Configuring rest of the pipeline<a class="headerlink" href="#configuring-rest-of-the-pipeline" title="Permalink to this headline"><table class="docutils"></a></h4>
                 <p>Since neither the entity resolver nor the language parser are supervised classifiers, they are configured differently from the rest of the NLP pipeline. See <a class="reference external" href="entity_resolver">Working with the Entity Resolver</a> and <a class="reference external" href="parser">Working with the Language Parser</a>, respectively, to learn how to configure these components.</p>
                 </div>
                 </div>
                 </div>
                 <div class="section" id="run-the-nlp-pipeline">
-                <span id="run-nlp"></span><h2>Run the NLP pipeline<a class="headerlink" href="#run-the-nlp-pipeline" title="Permalink to this headline">¶</a></h2>
+                <span id="run-nlp"></span><h2>Run the NLP pipeline<a class="headerlink" href="#run-the-nlp-pipeline" title="Permalink to this headline"></a></h2>
                 <p>Run the trained NLP pipeline on a test query using the <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.process()</span></code> method. The <code class="xref py py-meth docutils literal"><span class="pre">process()</span></code> method sends the query for sequential processing by each component in the NLP pipeline and returns the aggregated output from all of them.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">process</span><span class="p">(</span><span class="s2">&quot;I&#39;d like a mujaddara wrap and two chicken kebab from palmyra&quot;</span><span class="p">)</span>
                 </pre></div>
@@ -797,7 +797,7 @@
                 </div></blockquote>
                 <p>For more about the above steps, including outputs and methods for batch testing and evaluation, see the chapters on individual NLP components.</p>
                 <div class="section" id="specifying-request-timestamp-and-time-zone">
-                <span id="specify-timestamp"></span><h3>Specifying request timestamp and time zone<a class="headerlink" href="#specifying-request-timestamp-and-time-zone" title="Permalink to this headline">¶</a></h3>
+                <span id="specify-timestamp"></span><h3>Specifying request timestamp and time zone<a class="headerlink" href="#specifying-request-timestamp-and-time-zone" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>For applications dealing with temporal events, you can specify the timestamp and time zone for each query to modify the default behavior of the NLP pipeline. This information affects how certain <a class="reference internal" href="entity_recognizer.html#system-entities"><span class="std std-ref">system entities</span></a> get resolved in Workbench.</p>
                 <p>To pass in this information, use these two optional parameters of the <code class="xref py py-meth docutils literal"><span class="pre">process()</span></code> method:</p>
                 <blockquote>
@@ -860,7 +860,7 @@
                 </div>
                 </div>
                 <div class="section" id="evaluate-nlp-performance">
-                <span id="evaluate-nlp"></span><h2>Evaluate NLP performance<a class="headerlink" href="#evaluate-nlp-performance" title="Permalink to this headline">¶</a></h2>
+                <span id="evaluate-nlp"></span><h2>Evaluate NLP performance<a class="headerlink" href="#evaluate-nlp-performance" title="Permalink to this headline"></a></h2>
                 <p>The&nbsp;cross-validation accuracies for each classifier, reported during model training, can be good initial indicators of your NLP pipeline’s performance. However, the true measure of a machine-learned system’s real-world performance is its accuracy on previously unseen test data. The test data is a set of labeled queries prepared in <a class="reference internal" href="../quickstart/06_generate_representative_training_data.html"><span class="doc">the same manner</span></a> as the training data. Names of files containing test queries have the prefix <code class="docutils literal"><span class="pre">test</span></code>. These files are placed within the intent subfolders, alongside the training data files.</p>
                 <a class="reference internal image-reference" href="../_images/kwik_e_mart_directory.png"><img alt="../_images/kwik_e_mart_directory.png" class="align-center" src="../_images/kwik_e_mart_directory.png" style="width: 350px;" /></a>
                 <p>While training data is used for training and tuning the models, test data is used solely for model evaluation. Ideally, the test data should have no queries in common with the training data and be representative of the real-world usage of the app. During evaluation, the ground truth annotations are stripped away from the test queries and the unlabeled queries are passed in to a trained classifier. The classifier’s output predictions are then compared against the ground truth labels to measure the model’s prediction accuracy. A successful production-grade conversational app must achieve test accuracies greater than 90% for all the classification models in its NLP pipeline.</p>
@@ -952,7 +952,7 @@
                 <p>For more about how evaluation works for each individual classifier, see the <cite>evaluation</cite> sections of the respective chapters.</p>
                 </div>
                 <div class="section" id="optimize-the-nlp-models">
-                <h2>Optimize the NLP models<a class="headerlink" href="#optimize-the-nlp-models" title="Permalink to this headline">¶</a></h2>
+                <h2>Optimize the NLP models<a class="headerlink" href="#optimize-the-nlp-models" title="Permalink to this headline"></a></h2>
                 <p>The typical experimentation flow for Machine Learning-based systems looks like this:</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -972,7 +972,7 @@
                 </div></blockquote>
                 </div>
                 <div class="section" id="select-data-for-experiments">
-                <span id="custom-datasets"></span><h2>Select data for experiments<a class="headerlink" href="#select-data-for-experiments" title="Permalink to this headline">¶</a></h2>
+                <span id="custom-datasets"></span><h2>Select data for experiments<a class="headerlink" href="#select-data-for-experiments" title="Permalink to this headline"></a></h2>
                 <p>During the course of experimentation, it is common to have multiple datasets for training and testing as you iterate on building the most optimal models for your NLP pipeline. Multiple training datasets allow you to try out different versions of training data for fitting your models and identifying the best performing one. They are also useful for building and deploying different variants of your models trained on different datasets from the same Workbench project.</p>
                 <p>Multiple testing datasets (or test sets) allow you to compute evaluation numbers on different versions of test data. A recommended practice is to have at least two different test sets in your project - a development set and a blind set. You should use the development set for frequent evaluation and error analysis to fine-tune your model’s parameters and improve its performance. The blind set, on the other hand, should merely be used for computing the final evaluation metrics without being open for detailed investigation.</p>
                 <p>In Workbench, a dataset is a collection of labeled query files that share the same filename prefix and are distributed across the different intent folders consistent with the Workbench project structure. Each dataset is identified by a label which is the same as the common prefix shared by its constituent data files. By default, Workbench uses all files within your intent folders that match the <code class="docutils literal"><span class="pre">'train*.txt'</span></code> pattern for training and the <code class="docutils literal"><span class="pre">'test*.txt'</span></code> pattern for testing. In other words, the <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.build()</span></code> and <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.evaluate()</span></code> methods use the datasets named <code class="docutils literal"><span class="pre">'train'</span></code> and <code class="docutils literal"><span class="pre">'test'</span></code> by default, respectively. To instead train or evaluate on a specific subset of files within your intent folders, use the <code class="xref py py-data docutils literal"><span class="pre">label_set</span></code> parameter of the <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> and <code class="xref py py-meth docutils literal"><span class="pre">evaluate()</span></code> methods to identify the desired dataset.</p>
@@ -1005,7 +1005,7 @@
                 </div>
                 </div>
                 <div class="section" id="save-models-for-future-use">
-                <h2>Save models for future use<a class="headerlink" href="#save-models-for-future-use" title="Permalink to this headline">¶</a></h2>
+                <h2>Save models for future use<a class="headerlink" href="#save-models-for-future-use" title="Permalink to this headline"></a></h2>
                 <p>Once you have trained an NLP pipeline and are satisfied with its accuracy, you can save it to disk using the <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.dump()</span></code> method. The <code class="xref py py-meth docutils literal"><span class="pre">dump()</span></code> method saves all the trained models to a cache folder within your Workbench project.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">nlp</span><span class="o">.</span><span class="n">dump</span><span class="p">()</span>
                 </pre></div>

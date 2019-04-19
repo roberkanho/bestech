@@ -338,11 +338,11 @@
               <p class="last">Please make sure to install and run all of the <a class="reference internal" href="../userguide/getting_started.html#getting-started-virtualenv-setup"><span class="std std-ref">pre-requisites</span></a> for Workbench before continuing on with this blueprint tutorial.</p>
               </div>
               <div class="section" id="the-use-case">
-              <h2>1. The Use Case<a class="headerlink" href="#the-use-case" title="Permalink to this headline">¶</a></h2>
+              <h2>1. The Use Case<a class="headerlink" href="#the-use-case" title="Permalink to this headline"></a></h2>
               <p>In a hands-free manner, from the convenience of their homes, users should have the same food-ordering experience as when conversing with a restaurant waiter or a drive-through attendant. The food is ordered for delivery from a service similar to Amazon Restaurants, Grubhub or DoorDash.</p>
               </div>
               <div class="section" id="example-dialogue-interactions">
-              <h2>2. Example Dialogue Interactions<a class="headerlink" href="#example-dialogue-interactions" title="Permalink to this headline">¶</a></h2>
+              <h2>2. Example Dialogue Interactions<a class="headerlink" href="#example-dialogue-interactions" title="Permalink to this headline"></a></h2>
               <p>The conversational flows for food ordering can&nbsp;be highly complex, depending on the desired app functionality and the amount of user guidance required at each step. Enumerating and finalizing all anticipated user interactions requires multiple iterations.</p>
               <p>Here are some examples of scripted dialogue interactions for conversational flows.</p>
               <a class="reference internal image-reference" href="../_images/food_ordering_interactions.png"><img alt="../_images/food_ordering_interactions.png" class="align-center" src="../_images/food_ordering_interactions.png" style="width: 700px;" /></a>
@@ -352,7 +352,7 @@
               </div>
               </div>
               <div class="section" id="domain-intent-entity-hierarchy">
-              <h2>3. Domain-Intent-Entity Hierarchy<a class="headerlink" href="#domain-intent-entity-hierarchy" title="Permalink to this headline">¶</a></h2>
+              <h2>3. Domain-Intent-Entity Hierarchy<a class="headerlink" href="#domain-intent-entity-hierarchy" title="Permalink to this headline"></a></h2>
               <p>Here is the NLP model hierarchy for our food ordering application.</p>
               <a class="reference internal image-reference" href="../_images/food_ordering_hierarchy.png"><img alt="../_images/food_ordering_hierarchy.png" class="align-center" src="../_images/food_ordering_hierarchy.png" style="width: 700px;" /></a>
               <p>The single domain, <code class="docutils literal"><span class="pre">ordering</span></code>, encompasses all of the functionality required to order food for delivery from nearby restaurants. The <code class="docutils literal"><span class="pre">ordering</span></code> domain supports the following intents:</p>
@@ -398,7 +398,7 @@
               <a class="reference internal image-reference" href="../_images/food_ordering_directory.png"><img alt="../_images/food_ordering_directory.png" class="align-center" src="../_images/food_ordering_directory.png" style="width: 250px;" /></a>
               </div>
               <div class="section" id="dialogue-states">
-              <h2>4. Dialogue States<a class="headerlink" href="#dialogue-states" title="Permalink to this headline">¶</a></h2>
+              <h2>4. Dialogue States<a class="headerlink" href="#dialogue-states" title="Permalink to this headline"></a></h2>
               <p>To support the functionality we envision, our app needs one dialogue state for each intent, as shown in the table below.</p>
               <table class="docutils">
               <colgroup>
@@ -595,7 +595,7 @@
               </div>
               </div>
               <div class="section" id="knowledge-base">
-              <h2>5. Knowledge Base<a class="headerlink" href="#knowledge-base" title="Permalink to this headline">¶</a></h2>
+              <h2>5. Knowledge Base<a class="headerlink" href="#knowledge-base" title="Permalink to this headline"></a></h2>
               <p>The knowledge base for our food ordering app leverages publicly available information about San Francisco restaurants from <a class="reference external" href="https://primenow.amazon.com/restaurants">Amazon Restaurants</a>. The knowledge base comprises two indexes in <a class="reference external" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>:</p>
               <blockquote>
               <div><ul class="simple">
@@ -735,7 +735,7 @@
               </div>
               </div>
               <div class="section" id="training-data">
-              <h2>6. Training Data<a class="headerlink" href="#training-data" title="Permalink to this headline">¶</a></h2>
+              <h2>6. Training Data<a class="headerlink" href="#training-data" title="Permalink to this headline"></a></h2>
               <p>The labeled data for training our NLP pipeline was created using both in-house data generation and crowdsourcing techniques. See <a class="reference internal" href="../quickstart/06_generate_representative_training_data.html"><span class="doc">Step 6</span></a> of the Step-By-Step Guide for a full description of this highly important, multi-step process. Be aware that at minimum, the following data generation tasks are required:</p>
               <table class="docutils">
               <colgroup>
@@ -835,7 +835,7 @@
               </div>
               </div>
               <div class="section" id="training-the-nlp-classifiers">
-              <h2>7. Training the NLP Classifiers<a class="headerlink" href="#training-the-nlp-classifiers" title="Permalink to this headline">¶</a></h2>
+              <h2>7. Training the NLP Classifiers<a class="headerlink" href="#training-the-nlp-classifiers" title="Permalink to this headline"></a></h2>
               <p>Train a baseline NLP system for the blueprint app. The <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method of the <code class="xref py py-class docutils literal"><span class="pre">NaturalLanguageProcessor</span></code> class, used as shown below, applies Workbench’s default machine learning settings.</p>
               <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.components.nlp</span> <span class="kn">import</span> <span class="n">NaturalLanguageProcessor</span>
               <span class="kn">import</span> <span class="nn">mmworkbench</span> <span class="kn">as</span> <span class="nn">wb</span>
@@ -1036,7 +1036,7 @@
               </div>
               </div>
               <div class="section" id="parser-configuration">
-              <span id="food-ordering-parser"></span><h2>8. Parser Configuration<a class="headerlink" href="#parser-configuration" title="Permalink to this headline">¶</a></h2>
+              <span id="food-ordering-parser"></span><h2>8. Parser Configuration<a class="headerlink" href="#parser-configuration" title="Permalink to this headline"></a></h2>
               <p>Once the NLP classification models are trained, you can configure and run the Workbench <a class="reference internal" href="../userguide/parser.html"><span class="doc">Language Parser</span></a> to link related entities into meaningful entity groups. The application configuration file, <code class="docutils literal"><span class="pre">config.py</span></code>, at the top level of the blueprint folder, contains the following parser configuration:</p>
               <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">PARSER_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
                   <span class="s1">&#39;dish&#39;</span><span class="o">:</span> <span class="p">{</span>
@@ -1230,7 +1230,7 @@
               </div>
               </div>
               <div class="section" id="using-the-question-answerer">
-              <h2>9. Using the Question Answerer<a class="headerlink" href="#using-the-question-answerer" title="Permalink to this headline">¶</a></h2>
+              <h2>9. Using the Question Answerer<a class="headerlink" href="#using-the-question-answerer" title="Permalink to this headline"></a></h2>
               <p>The <a class="reference internal" href="../userguide/kb.html"><span class="doc">Question Answerer</span></a> component in Workbench is mainly used within dialogue state handlers for retrieving information from the knowledge base. For example, in our <code class="docutils literal"><span class="pre">welcome</span></code> dialogue state handler, we use the Question Answerer to retrieve the top three entries in our <code class="docutils literal"><span class="pre">restaurants</span></code> index and present their names as suggestions to the user.</p>
               <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.components.question_answerer</span> <span class="kn">import</span> <span class="n">QuestionAnswerer</span>
               <span class="n">qa</span> <span class="o">=</span> <span class="n">QuestionAnswerer</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="s1">&#39;food_ordering&#39;</span><span class="p">)</span>
@@ -1266,7 +1266,7 @@
               </div>
               </div>
               <div class="section" id="testing-and-deployment">
-              <h2>10. Testing and Deployment<a class="headerlink" href="#testing-and-deployment" title="Permalink to this headline">¶</a></h2>
+              <h2>10. Testing and Deployment<a class="headerlink" href="#testing-and-deployment" title="Permalink to this headline"></a></h2>
               <p>Once all the individual pieces (NLP, Question Answererer, Dialogue State Handlers) have been trained, configured, or implemented, use the <code class="xref py py-class docutils literal"><span class="pre">Conversation</span></code> class in Workbench to perform an end-to-end test of your conversational app.</p>
               <p>For instance:</p>
               <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.components.dialogue</span> <span class="kn">import</span> <span class="n">Conversation</span>

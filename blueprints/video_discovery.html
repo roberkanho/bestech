@@ -338,11 +338,11 @@
                 <p class="last">Please make sure to install and run all of the <a class="reference internal" href="../userguide/getting_started.html#getting-started-virtualenv-setup"><span class="std std-ref">pre-requisites</span></a> for Workbench before continuing on with this blueprint tutorial.</p>
                 </div>
                 <div class="section" id="the-use-case">
-                <h2>1. The Use Case<a class="headerlink" href="#the-use-case" title="Permalink to this headline">¶</a></h2>
+                <h2>1. The Use Case<a class="headerlink" href="#the-use-case" title="Permalink to this headline"></a></h2>
                 <p>Through a conversational interface, users should be able to browse a content catalog of movies and TV shows, then play what they find through a service similar to Netflix, Hulu, or Amazon Video.</p>
                 </div>
                 <div class="section" id="example-dialogue-interactions">
-                <h2>2. Example Dialogue Interactions<a class="headerlink" href="#example-dialogue-interactions" title="Permalink to this headline">¶</a></h2>
+                <h2>2. Example Dialogue Interactions<a class="headerlink" href="#example-dialogue-interactions" title="Permalink to this headline"></a></h2>
                 <p>The conversational flows for video discovery can&nbsp;be highly complex, depending on the desired app functionality and the amount of user guidance required at each step. Enumerating and finalizing all anticipated user interactions requires multiple iterations.</p>
                 <p>Here are some examples of scripted dialogue interactions for conversational flows.</p>
                 <a class="reference internal image-reference" href="../_images/video_dicovery_interactions.png"><img alt="../_images/video_dicovery_interactions.png" class="align-center" src="../_images/video_dicovery_interactions.png" style="width: 700px;" /></a>
@@ -352,7 +352,7 @@
                 </div>
                 </div>
                 <div class="section" id="domain-intent-entity-hierarchy">
-                <h2>3. Domain-Intent-Entity Hierarchy<a class="headerlink" href="#domain-intent-entity-hierarchy" title="Permalink to this headline">¶</a></h2>
+                <h2>3. Domain-Intent-Entity Hierarchy<a class="headerlink" href="#domain-intent-entity-hierarchy" title="Permalink to this headline"></a></h2>
                 <p>Users should be able to search for video content using common filters such as: <code class="docutils literal"><span class="pre">genre</span></code>, <code class="docutils literal"><span class="pre">cast</span></code>, <code class="docutils literal"><span class="pre">release_year</span></code>, and so on. They should be able to continue refining their search until they find the right content, and to restart the search whenever they like. Generic actions like greeting the user, providing help, and responding to insults and compliments should also be supported.</p>
                 <p>Based on this desired functionality, the developers of the video discovery app created the NLP model hierarchy below.</p>
                 <a class="reference internal image-reference" href="../_images/video_discovery_hierarchy.png"><img alt="../_images/video_discovery_hierarchy.png" class="align-center" src="../_images/video_discovery_hierarchy.png" style="width: 700px;" /></a>
@@ -416,7 +416,7 @@
                 <a class="reference internal image-reference" href="../_images/directory_video_discovery.png"><img alt="../_images/directory_video_discovery.png" class="align-center" src="../_images/directory_video_discovery.png" style="width: 250px;" /></a>
                 </div>
                 <div class="section" id="dialogue-states">
-                <h2>4. Dialogue States<a class="headerlink" href="#dialogue-states" title="Permalink to this headline">¶</a></h2>
+                <h2>4. Dialogue States<a class="headerlink" href="#dialogue-states" title="Permalink to this headline"></a></h2>
                 <p>To support the functionality we envision, our app needs one dialogue state for each intent, as shown in the table below.</p>
                 <table class="docutils">
                 <colgroup>
@@ -627,7 +627,7 @@
                 <p>For more information on the <code class="docutils literal"><span class="pre">show_content</span></code> method and the functions it uses, see the <code class="docutils literal"><span class="pre">__init__.py</span></code> file in the blueprint folder.</p>
                 </div>
                 <div class="section" id="knowledge-base">
-                <h2>5. Knowledge Base<a class="headerlink" href="#knowledge-base" title="Permalink to this headline">¶</a></h2>
+                <h2>5. Knowledge Base<a class="headerlink" href="#knowledge-base" title="Permalink to this headline"></a></h2>
                 <p>The knowledge base for our video discovery app leverages publicly available information about movies and TV shows from the <a class="reference external" href="https://www.themoviedb.org/">The Movie DB</a> website. The knowledge base comprises one index in <a class="reference external" href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>:</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -714,7 +714,7 @@
                 </div>
                 </div>
                 <div class="section" id="training-data">
-                <h2>6. Training Data<a class="headerlink" href="#training-data" title="Permalink to this headline">¶</a></h2>
+                <h2>6. Training Data<a class="headerlink" href="#training-data" title="Permalink to this headline"></a></h2>
                 <p>The labeled data for training our NLP pipeline was created using both in-house data generation and crowdsourcing techniques. See <a class="reference internal" href="../quickstart/06_generate_representative_training_data.html"><span class="doc">Step 6</span></a> of the Step-By-Step Guide for a full description of this highly important, multi-step process. Be aware that at minimum, the following data generation tasks are required:</p>
                 <table class="docutils">
                 <colgroup>
@@ -811,7 +811,7 @@
                 </div>
                 </div>
                 <div class="section" id="training-the-nlp-classifiers">
-                <h2>7. Training the NLP Classifiers<a class="headerlink" href="#training-the-nlp-classifiers" title="Permalink to this headline">¶</a></h2>
+                <h2>7. Training the NLP Classifiers<a class="headerlink" href="#training-the-nlp-classifiers" title="Permalink to this headline"></a></h2>
                 <p>Train a baseline NLP system for the blueprint app. The <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method of the <code class="xref py py-class docutils literal"><span class="pre">NaturalLanguageProcessor</span></code> class, used as shown below, trains the NLP system using the annotated data.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">configure_logs</span><span class="p">;</span> <span class="n">configure_logs</span><span class="p">()</span>
                 <span class="kn">from</span> <span class="nn">mmworkbench.components.nlp</span> <span class="kn">import</span> <span class="n">NaturalLanguageProcessor</span>
@@ -961,13 +961,13 @@
                 </div>
                 </div>
                 <div class="section" id="parser-configuration">
-                <h2>8. Parser Configuration<a class="headerlink" href="#parser-configuration" title="Permalink to this headline">¶</a></h2>
+                <h2>8. Parser Configuration<a class="headerlink" href="#parser-configuration" title="Permalink to this headline"></a></h2>
                 <p>The relationships between entities in the video discovery queries are simple ones. For example, in the annotated query <code class="docutils literal"><span class="pre">content</span> <span class="pre">with</span> <span class="pre">{Tom</span> <span class="pre">Hanks|cast}</span></code>, the <code class="docutils literal"><span class="pre">cast</span></code> entity is self-sufficient, in that it is not described by any other entity.</p>
                 <p>If you extended the app to support queries with more complex entity relationships, it would be necessary to specify <em>entity groups</em> and configure the parser accordingly. For example, in the query <code class="docutils literal"><span class="pre">show</span> <span class="pre">me</span> <span class="pre">a</span> <span class="pre">{Tom</span> <span class="pre">Hanks|cast}</span> <span class="pre">{movie|type}</span> <span class="pre">and</span> <span class="pre">a</span> <span class="pre">{Jim</span> <span class="pre">Parsons|cast}</span> <span class="pre">{TV</span> <span class="pre">show|type}</span></code>, we would need to relate the <code class="docutils literal"><span class="pre">cast</span></code> entities to the <code class="docutils literal"><span class="pre">type</span></code> entities, because one kind of entity describes the other. Each pair of related entities would form an entity group. For more about entity groups and parser configurations, see the <a class="reference internal" href="../userguide/parser.html"><span class="doc">Language Parser</span></a> chapter of the User Guide.</p>
                 <p>Since we do not have entity groups in the video discovery app, we do not need a parser configuration.</p>
                 </div>
                 <div class="section" id="using-the-question-answerer">
-                <h2>9. Using the Question Answerer<a class="headerlink" href="#using-the-question-answerer" title="Permalink to this headline">¶</a></h2>
+                <h2>9. Using the Question Answerer<a class="headerlink" href="#using-the-question-answerer" title="Permalink to this headline"></a></h2>
                 <p>The <a class="reference internal" href="../userguide/kb.html"><span class="doc">Question Answerer</span></a> component in Workbench is mainly used within dialogue state handlers for retrieving information from the knowledge base. For example, in our <code class="docutils literal"><span class="pre">welcome</span></code> dialogue state handler, we use the Question Answerer to retrieve the top ten entries in our <code class="docutils literal"><span class="pre">videos</span></code> index and present them as suggestions to the user. For that, we sort the videos by popularity when using the <a class="reference internal" href="../userguide/kb.html"><span class="doc">Question Answerer</span></a>:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">qa</span> <span class="o">=</span> <span class="n">QuestionAnswerer</span><span class="p">(</span><span class="n">app_path</span><span class="o">=</span><span class="s1">&#39;video_discovery&#39;</span><span class="p">)</span>
                 <span class="n">results</span> <span class="o">=</span> <span class="n">qa</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s1">&#39;videos&#39;</span><span class="p">,</span><span class="n">_sort</span><span class="o">=</span><span class="s1">&#39;popularity&#39;</span><span class="p">,</span> <span class="n">_sort_type</span><span class="o">=</span><span class="s1">&#39;desc&#39;</span><span class="p">)</span>
@@ -981,7 +981,7 @@
                 </div>
                 </div>
                 <div class="section" id="testing-and-deployment">
-                <h2>10. Testing and Deployment<a class="headerlink" href="#testing-and-deployment" title="Permalink to this headline">¶</a></h2>
+                <h2>10. Testing and Deployment<a class="headerlink" href="#testing-and-deployment" title="Permalink to this headline"></a></h2>
                 <p>Once all the individual pieces (NLP, Question Answererer, Dialogue State Handlers) have been trained, configured, or implemented, use the <code class="xref py py-class docutils literal"><span class="pre">Conversation</span></code> class in Workbench to perform an end-to-end test of your conversational app.</p>
                 <p>For instance:</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench.components.dialogue</span> <span class="kn">import</span> <span class="n">Conversation</span>

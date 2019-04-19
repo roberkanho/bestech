@@ -347,13 +347,13 @@
                 <p class="last">This is an in-depth tutorial to work through from start to finish. Before you begin, read the <a class="reference internal" href="../index.html#quickstart"><span class="std std-ref">Step-by-Step Guide</span></a>, paying special attention to <a class="reference internal" href="../quickstart/08_configure_the_language_parser.html"><span class="doc">Step 8</span></a>.</p>
                 </div>
                 <div class="section" id="some-parsing-terminology">
-                <h2>Some parsing terminology<a class="headerlink" href="#some-parsing-terminology" title="Permalink to this headline">¶</a></h2>
+                <h2>Some parsing terminology<a class="headerlink" href="#some-parsing-terminology" title="Permalink to this headline"></a></h2>
                 <p>In this guide, the terms <em>language parser</em> and <em>parser</em> are interchangeable. To understand how the parser works, you need to understand <strong>entity groups</strong>.</p>
                 <p>The main entity in an entity group is the <strong>head</strong> entity. The other, <strong>dependent</strong> entities, are attributes of the main entity. The terms, <em>head</em> and <em>dependent</em>, reflect the <a class="reference external" href="https://en.wikipedia.org/wiki/Dependency_grammar">linguistic (syntactic) function</a> of the entities within the group.</p>
                 <p><strong>Head</strong> and <strong>dependent</strong> entities are also called <strong>parent</strong> and <strong>child</strong> entities, respectively. This is because the hierarchy inherent in any entity group can be seen as a tree data structure, where <strong>parent</strong> and <strong>child</strong> denote the relationship between the nodes in the <a class="reference external" href="https://en.wikipedia.org/wiki/Tree_(data_structure)">tree representation</a>.</p>
                 </div>
                 <div class="section" id="figure-out-whether-your-app-needs-a-parser">
-                <h2>Figure out whether your app needs a parser<a class="headerlink" href="#figure-out-whether-your-app-needs-a-parser" title="Permalink to this headline">¶</a></h2>
+                <h2>Figure out whether your app needs a parser<a class="headerlink" href="#figure-out-whether-your-app-needs-a-parser" title="Permalink to this headline"></a></h2>
                 <p>Your Workbench app needs a language parser only if <strong>both</strong> the conditions in the table below are true.</p>
                 <blockquote>
                 <div><table class="docutils">
@@ -457,17 +457,17 @@
                 </div>
                 </div>
                 <div class="section" id="how-the-configuration-instructs-the-parser">
-                <span id="simple-parser-config"></span><h2>How the configuration instructs the parser<a class="headerlink" href="#how-the-configuration-instructs-the-parser" title="Permalink to this headline">¶</a></h2>
+                <span id="simple-parser-config"></span><h2>How the configuration instructs the parser<a class="headerlink" href="#how-the-configuration-instructs-the-parser" title="Permalink to this headline"></a></h2>
                 <p>What lets Workbench know about the head and dependent entity types for your application is the <code class="xref py py-data docutils literal"><span class="pre">PARSER_CONFIG</span></code> dictionary in <code class="docutils literal"><span class="pre">config.py</span></code>, your app configuration file. In <code class="xref py py-data docutils literal"><span class="pre">PARSER_CONFIG</span></code>, the keys are the head entity types, and the values capture information about the corresponding dependent entity types.</p>
                 <p>Using the head-dependent relationships defined in the configuration, the parser analyzes the detected entities in a query and hypothesizes different potential ways of grouping the entities together. Each such grouping is called a candidate <strong>parse</strong>. After generating these parse hypotheses, the parser uses a set of linguistically-motivated heuristics to pick the most likely candidate.</p>
                 <p>Workbench supports both simple and advanced forms of parser configuration. Recommended practice is to get the parser up and running with the simple configuration. If the app achieves satisfactory accuracy, you do not need to move on to the advanced configuration. If, however, you want to experiment with fine-tuned parsing, the advanced configuration makes that possible.</p>
                 <p>Think about whether your app must support queries where (1) there are multiple head entities of the same type, and (2) those head entities have many potential dependents. For example, “Get me a pepperoni pizza with extra cheese, a calzone, and two diet cokes.” Such a query is inherently ambiguous because there is more than one way to group its entities that satisfies the head-dependent relationships a simple configuration can define. For apps that deal with queries like this, fine-tuning the settings available in the advanced configuration is highly recommended. <a class="reference internal" href="#food-parser-advanced-config"><span class="std std-ref">Later in this chapter</span></a>, we explore this issue in detail.</p>
                 </div>
                 <div class="section" id="learn-how-to-create-a-simple-parser-configuration">
-                <span id="food-simple-parser-config"></span><h2>Learn how to create a simple parser configuration<a class="headerlink" href="#learn-how-to-create-a-simple-parser-configuration" title="Permalink to this headline">¶</a></h2>
+                <span id="food-simple-parser-config"></span><h2>Learn how to create a simple parser configuration<a class="headerlink" href="#learn-how-to-create-a-simple-parser-configuration" title="Permalink to this headline"></a></h2>
                 <p>The first step toward running the parser is creating the simple configuration described in this section.</p>
                 <div class="section" id="simple-configuration-structure">
-                <h3>Simple configuration structure<a class="headerlink" href="#simple-configuration-structure" title="Permalink to this headline">¶</a></h3>
+                <h3>Simple configuration structure<a class="headerlink" href="#simple-configuration-structure" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The configuration is a dictionary where each key-value pair instructs the parser to (1) look for a specific head&nbsp;entity in the query, and (2) cluster that head entity with one or more specified dependent entities to form an entity group.</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -478,7 +478,7 @@
                 </div></blockquote>
                 </div>
                 <div class="section" id="simple-configuration-example">
-                <h3>Simple configuration example<a class="headerlink" href="#simple-configuration-example" title="Permalink to this headline">¶</a></h3>
+                <h3>Simple configuration example<a class="headerlink" href="#simple-configuration-example" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Let’s define a <code class="xref py py-data docutils literal"><span class="pre">PARSER_CONFIG</span></code> to see how to apply these principles. This example is for the <a class="reference internal" href="../blueprints/food_ordering.html"><span class="doc">food ordering blueprint</span></a>.</p>
                 <p>First, specify that a <code class="docutils literal"><span class="pre">dish</span></code> entity can have an <code class="docutils literal"><span class="pre">option</span></code> entity and a numeric quantity entity (<code class="docutils literal"><span class="pre">sys_number</span></code>) as its dependents. An <code class="docutils literal"><span class="pre">option</span></code> entity, in turn, can have its own associated quantity entity.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">PARSER_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
@@ -498,12 +498,12 @@
                 </div>
                 </div>
                 <div class="section" id="define-a-simple-parser-configuration">
-                <span id="define-config"></span><h2>Define a simple parser configuration<a class="headerlink" href="#define-a-simple-parser-configuration" title="Permalink to this headline">¶</a></h2>
+                <span id="define-config"></span><h2>Define a simple parser configuration<a class="headerlink" href="#define-a-simple-parser-configuration" title="Permalink to this headline"></a></h2>
                 <p>Write out (or better yet, diagram) the entities in your app and how they are related. Then think through how to capture those relationships in a <code class="xref py py-data docutils literal"><span class="pre">PARSER_CONFIG</span></code> dictionary that maps each head entity type to a list of related dependent entity types, as explained in the previous section.</p>
                 <p>Define the simple <code class="xref py py-data docutils literal"><span class="pre">PARSER_CONFIG</span></code> dictionary and add it to your <code class="docutils literal"><span class="pre">config.py</span></code>.</p>
                 </div>
                 <div class="section" id="load-the-parser-configuration">
-                <span id="load-config"></span><h2>Load the parser configuration<a class="headerlink" href="#load-the-parser-configuration" title="Permalink to this headline">¶</a></h2>
+                <span id="load-config"></span><h2>Load the parser configuration<a class="headerlink" href="#load-the-parser-configuration" title="Permalink to this headline"></a></h2>
                 <p>Load the configuration by calling the <code class="xref py py-meth docutils literal"><span class="pre">build()</span></code> method on the <code class="xref py py-class docutils literal"><span class="pre">NaturalLanguageProcessor</span></code> class.</p>
                 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">configure_logs</span><span class="p">;</span> <span class="n">configure_logs</span><span class="p">()</span>
                 <span class="kn">from</span> <span class="nn">mmworkbench.components.nlp</span> <span class="kn">import</span> <span class="n">NaturalLanguageProcessor</span>
@@ -513,7 +513,7 @@
                 </div>
                 </div>
                 <div class="section" id="run-the-parser">
-                <span id="run-parser"></span><h2>Run the parser<a class="headerlink" href="#run-the-parser" title="Permalink to this headline">¶</a></h2>
+                <span id="run-parser"></span><h2>Run the parser<a class="headerlink" href="#run-the-parser" title="Permalink to this headline"></a></h2>
                 <p>The parser runs as the last step in the NLP pipeline, building on top of the information provided by all the previous NLP models. The most convenient way to run a configured parser is to use the <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.process()</span></code> method, which sends the query for processing by each NLP pipeline component in sequence, then returns the aggregated output from all the components.</p>
                 <p>In the output of <code class="xref py py-meth docutils literal"><span class="pre">NaturalLanguageProcessor.process()</span></code>:</p>
                 <blockquote>
@@ -648,10 +648,10 @@
                 <p>Your app should exhibit decent baseline parsing&nbsp;accuracy out-of-the-box using default parser settings. To improve its accuracy further, you can optimize the parser settings for the nature of your data. If you decide to experiment in this way, run your parser using an advanced configuration as described in the next section.</p>
                 </div>
                 <div class="section" id="learn-how-to-create-an-advanced-parser-configuration-optional">
-                <span id="advanced-parser-config"></span><h2>Learn how to create an advanced parser configuration (optional)<a class="headerlink" href="#learn-how-to-create-an-advanced-parser-configuration-optional" title="Permalink to this headline">¶</a></h2>
+                <span id="advanced-parser-config"></span><h2>Learn how to create an advanced parser configuration (optional)<a class="headerlink" href="#learn-how-to-create-an-advanced-parser-configuration-optional" title="Permalink to this headline"></a></h2>
                 <p>Workbench offers an advanced parser configuration format to provide fine-grained control over parser behavior. While both the simple and the advanced configurations define head-dependent relationships, in the advanced configuration you can specify that <em>only a dependent entity that satisfies certain constraints</em> can be attached to a compatible head entity. If chosen well, these constraints can help eliminate potentially incorrect parse hypotheses, resulting in significantly improved parsing accuracy.</p>
                 <div class="section" id="advanced-configuration-structure">
-                <h3>Advanced configuration structure<a class="headerlink" href="#advanced-configuration-structure" title="Permalink to this headline">¶</a></h3>
+                <h3>Advanced configuration structure<a class="headerlink" href="#advanced-configuration-structure" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>The advanced configuration, like the simple configuration, is a dictionary where each key-value pair instructs the parser to (1) look for a specific head&nbsp;entity in the query, and (2) cluster that head entity with one or more specified dependent entities to form an entity group. The advanced configuration also specifies constraints that a dependent must satisfy to be attached to a compatible head entity.</p>
                 <blockquote>
                 <div><ul class="simple">
@@ -727,7 +727,7 @@
                 </table>
                 </div>
                 <div class="section" id="advanced-configuration-example">
-                <span id="food-parser-advanced-config"></span><h3>Advanced configuration example<a class="headerlink" href="#advanced-configuration-example" title="Permalink to this headline">¶</a></h3>
+                <span id="food-parser-advanced-config"></span><h3>Advanced configuration example<a class="headerlink" href="#advanced-configuration-example" title="Permalink to this headline"><table class="docutils"></a></h3>
                 <p>Let’s define an advanced parser configuration that sets up the same head-dependent relationships as the <a class="reference internal" href="#food-simple-parser-config"><span class="std std-ref">simple configuration</span></a> for <a class="reference internal" href="../blueprints/food_ordering.html#food-ordering-parser"><span class="std std-ref">food ordering</span></a> in the previous section, but that defines constraints for each dependent.</p>
                 <p>The desired per-dependent constraints are:</p>
                 <blockquote>
@@ -756,7 +756,7 @@
                 </div>
                 </div>
                 <div class="section" id="experimenting-with-an-advanced-configuration-optional">
-                <h2>Experimenting with an advanced configuration (optional)<a class="headerlink" href="#experimenting-with-an-advanced-configuration-optional" title="Permalink to this headline">¶</a></h2>
+                <h2>Experimenting with an advanced configuration (optional)<a class="headerlink" href="#experimenting-with-an-advanced-configuration-optional" title="Permalink to this headline"></a></h2>
                 <p>Once you have defined an advanced configuration, <a class="reference internal" href="#load-config"><span class="std std-ref">load the configuration</span></a>, and <a class="reference internal" href="#run-parser"><span class="std std-ref">run the parser</span></a>. Observe the effects of your per-dependent configuration settings on parser accuracy, and if desired, iterate on the whole process.</p>
                 </div>
                 </div>

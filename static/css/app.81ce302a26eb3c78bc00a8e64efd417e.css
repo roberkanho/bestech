@@ -35,14 +35,17 @@ li, ul {
 a {
 	cursor: pointer;
 	text-decoration: none;
-	color: #666
+	color: #666;
+    font-weight: 400;
 }
 a:hover {
 	color: #0074e4
 }
+/*
 .toctree-l1 a {
-	color: #027be3;
+	color: #333333;
 }
+*/
 .content a {
 	color: #0074e4
 }
@@ -1338,6 +1341,8 @@ pre {
     overflow-x: auto;
     position: relative;
     color: #37474f;
+	border-left: 3px solid #114ae5;
+	border-radius: 3px;
 }
 hr {
 	-webkit-box-sizing: content-box;
@@ -6039,7 +6044,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-smoothing: antialiased;
 	background: #fff;
-	color: #202124;
+	color: #333333;
 	min-height: 100vh
 }
 h1 {
