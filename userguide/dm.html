@@ -424,7 +424,7 @@
                 <div class="section" id="request">
                 <h3><code class="docutils literal"><span class="pre">request</span></code><a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
                 <p><code class="docutils literal"><span class="pre">request</span></code> is an immutable <code class="xref py py-class docutils literal"><span class="pre">Request</span></code> object containing the contextual information needed to manage dialogues. You can use this information to fulfill user requests, determine additional information needed from the user, set the state for the next turn or to fill slots in your natural language templates.</p>
-                <table border="1" class="docutils">
+                <table class="docutils">
                 <colgroup>
                 <col width="30%" />
                 <col width="70%" />
@@ -492,7 +492,7 @@
                 <div class="section" id="params">
                 <h3><code class="docutils literal"><span class="pre">params</span></code><a class="headerlink" href="#params" title="Permalink to this headline">¶</a></h3>
                 <p>The <code class="docutils literal"><span class="pre">params</span></code> attribute of the <code class="docutils literal"><span class="pre">request</span></code> object is an immutable <code class="xref py py-class docutils literal"><span class="pre">FrozenParams</span></code> object that contains state information of how workbench processed the current turn.</p>
-                <table border="1" class="docutils">
+                <table class="docutils">
                 <colgroup>
                 <col width="27%" />
                 <col width="73%" />
@@ -541,7 +541,7 @@
                 <div class="section" id="responder">
                 <span id="id2"></span><h3><code class="docutils literal"><span class="pre">responder</span></code><a class="headerlink" href="#responder" title="Permalink to this headline">¶</a></h3>
                 <p>The <code class="docutils literal"><span class="pre">responder</span></code> is a mutable object used to send actions, like templated natural language responses, to the client. The <code class="docutils literal"><span class="pre">responder</span></code> can also carry output state from the current handler’s processing to Workbench for next-turn’s handling. It has attributes and methods listed below:</p>
-                <table border="1" class="docutils">
+                <table class="docutils">
                 <colgroup>
                 <col width="22%" />
                 <col width="78%" />
@@ -587,7 +587,7 @@
                 </tbody>
                 </table>
                 <p>The table below details the <code class="docutils literal"><span class="pre">responder</span></code> methods to send actions, also termed <code class="docutils literal"><span class="pre">directives</span></code>, back to the client. You can invoke more than one directive method in a handler, but note that they are executed on a first-in-first-out basis. Internally, the following methods append dictionary-type payloads to the <code class="docutils literal"><span class="pre">directives</span></code> attribute of the <code class="docutils literal"><span class="pre">responder</span></code> object.</p>
-                <table border="1" class="docutils">
+                <table class="docutils">
                 <colgroup>
                 <col width="33%" />
                 <col width="67%" />

@@ -366,7 +366,7 @@
                 <span id="arch-intent-model"></span><h3>Intent Classifier<a class="headerlink" href="#intent-classifier" title="Permalink to this headline">¶</a></h3>
                 <p>Once the NLP determines the domain to which a given query belongs, the Intent Classifier provides the next level of categorization by assigning the query to one of the intents defined for the app. Intents reflect what a user is trying to accomplish. For instance, the user may want to book a flight, search for movies from a catalog, ask about the weather, or set the temperature on a home thermostat. Each of these is an example of a user intent. The intent also defines the desired outcome for the query, by prescribing that the app take a specific action and/or respond with a particular type of answer.</p>
                 <p>Most domains in conversational apps have multiple intents. By convention, intent names are verbs that describe what the user is trying accomplish. Here are some example intents from the <code class="docutils literal"><span class="pre">food</span></code> domain in a “Food Ordering” app.</p>
-                <table border="1" class="docutils">
+                <table class="docutils">
                 <colgroup>
                 <col width="19%" />
                 <col width="81%" />
@@ -398,7 +398,7 @@
                 <span id="arch-entity-model"></span><h3>Entity Recognizer<a class="headerlink" href="#entity-recognizer" title="Permalink to this headline">¶</a></h3>
                 <p>The next step in the NLP pipeline, the Entity Recognizer, identifies every entity in the query that belongs to an entity type pre-defined as relevant to a given intent. An entity is any word or phrase that provides information necessary to understand and fulfill the user’s end goal. For instance, if the intent is to search for movies, relevant entities would include movie titles, genres, and actor names. If the intent is to adjust a thermostat, the entity would be the numerical value for setting the thermostat to a desired temperature.</p>
                 <p>Most intents have multiple entities. By convention, entity names are nouns that describe the entity type. Here are some examples of entity types that might be required for different conversational intents.</p>
-                <table border="1" class="docutils">
+                <table class="docutils">
                 <colgroup>
                 <col width="9%" />
                 <col width="19%" />
@@ -437,7 +437,7 @@
                 <p>The Role Classifier is the last level in the four-layer NLP classification hierarchy. It assigns a differentiating label, called a role, to the entities extracted by the entity recognizer. Sub-categorizing entities in this manner is only necessary where an entity of a particular type can have multiple meanings depending on the context.</p>
                 <p>For example, “7 PM” and “midnight” could both be time entities. But in a query like “French restaurants open from 7 pm until midnight,” one plays the role of an opening time while the other plays the role of a closing time. In this situation, the entity recognizer would categorize both as time entities, then the role classifier would label each entity with the appropriate role. Role classifiers are trained separately for each entity that requires the additional categorization.</p>
                 <p>Here are examples of some entity types that might require role classification when dealing with certain intents.</p>
-                <table border="1" class="docutils">
+                <table class="docutils">
                 <colgroup>
                 <col width="15%" />
                 <col width="29%" />

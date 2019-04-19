@@ -356,7 +356,7 @@
                 <h2>Figure out whether your app needs a parser<a class="headerlink" href="#figure-out-whether-your-app-needs-a-parser" title="Permalink to this headline">¶</a></h2>
                 <p>Your Workbench app needs a language parser only if <strong>both</strong> the conditions in the table below are true.</p>
                 <blockquote>
-                <div><table border="1" class="docutils">
+                <div><table class="docutils">
                 <colgroup>
                 <col width="14%" />
                 <col width="86%" />
@@ -377,7 +377,7 @@
                 <p>Consider the following explanatory examples.</p>
                 <p><strong>a. Kwik-E-Mart</strong></p>
                 <blockquote>
-                <div><table border="1" class="docutils">
+                <div><table class="docutils">
                 <colgroup>
                 <col width="82%" />
                 <col width="18%" />
@@ -393,7 +393,7 @@
                 <p>The first condition is false, so there is no need for a parser.</p>
                 <p><strong>b. Home assistant</strong></p>
                 <blockquote>
-                <div><table border="1" class="docutils">
+                <div><table class="docutils">
                 <colgroup>
                 <col width="82%" />
                 <col width="18%" />
@@ -407,7 +407,7 @@
                 </div></blockquote>
                 <p>The <code class="docutils literal"><span class="pre">turn_appliance_on</span></code> and <code class="docutils literal"><span class="pre">turn_appliance_off</span></code> intents in the <a class="reference internal" href="../blueprints/home_assistant.html#home-model-hierarchy"><span class="std std-ref">home assistant blueprint</span></a> have a pair of related entity types named <code class="docutils literal"><span class="pre">location</span></code> and <code class="docutils literal"><span class="pre">appliance</span></code>. The <code class="docutils literal"><span class="pre">location</span></code> entity describes where a specific <code class="docutils literal"><span class="pre">appliance</span></code> is located. This makes the <code class="docutils literal"><span class="pre">location</span></code> entity a dependent of the <code class="docutils literal"><span class="pre">appliance</span></code> head entity.</p>
                 <blockquote>
-                <div><table border="1" class="docutils">
+                <div><table class="docutils">
                 <colgroup>
                 <col width="82%" />
                 <col width="18%" />
@@ -423,7 +423,7 @@
                 <p>Only one condition is true, so there is no need for a parser.</p>
                 <p><strong>c. Food ordering</strong></p>
                 <blockquote>
-                <div><table border="1" class="docutils">
+                <div><table class="docutils">
                 <colgroup>
                 <col width="82%" />
                 <col width="18%" />
@@ -437,7 +437,7 @@
                 </div></blockquote>
                 <p>In the <a class="reference internal" href="../blueprints/food_ordering.html#food-ordering-parser"><span class="std std-ref">food ordering blueprint</span></a>, entities of type <code class="docutils literal"><span class="pre">option</span></code> and <code class="docutils literal"><span class="pre">sys_number</span></code> are dependents of <code class="docutils literal"><span class="pre">dish</span></code> entities, since they provide information about the <code class="docutils literal"><span class="pre">dish</span></code> being ordered.</p>
                 <blockquote>
-                <div><table border="1" class="docutils">
+                <div><table class="docutils">
                 <colgroup>
                 <col width="82%" />
                 <col width="18%" />
@@ -660,7 +660,7 @@
                 </ul>
                 </div></blockquote>
                 <p>The table below enumerates the settings you can define in the per-dependent configuration.</p>
-                <table border="1" class="docutils">
+                <table class="docutils">
                 <colgroup>
                 <col width="15%" />
                 <col width="12%" />
