@@ -36,7 +36,7 @@
             <a class="position-center-middle router-link-exact-active router-link-active" href="/" style="height: 40px;"><img src="../img/mindmeld-logo.png" style="height: 100%; text-align: center; display: none;"> <img src="../img/mindmeld-logo.png" style="height: 100%; text-align: center;"></a>
           </div>
         </div>
-        <div class="navigates__mobile" style="left: -100%;">
+        <div class="navigates__mobile" style="left: -100%;" id="navigates__mobile">
           <div class="mobile_left-side">
             <div aria-label="main navigation" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
               <p class="caption"><span class="caption-text">Introduction</span></p>
@@ -51,7 +51,7 @@
                   <a class="reference internal" href="../introduction/anatomy_of_a_conversational_ai_interaction.html">Anatomy of a Conversational AI Interaction</a>
                 </li>
                 <li class="toctree-l1 current">
-                  <a class="current reference internal" href="../introduction/introducing_mindmeld_workbench.html">Introducing MindMeld Workbench</a>
+                  <a class="reference internal" href="../introduction/introducing_mindmeld_workbench.html">Introducing MindMeld Workbench</a>
                 </li>
                 <li class="toctree-l1">
                   <a class="reference internal" href="../introduction/key_concepts.html">Key Concepts</a>
@@ -179,7 +179,7 @@
         </div>
       </div>
       <div class="container full-height flex">
-        <div class="left-side">
+        <div class="left-side" id="left-side">
             <div aria-label="main navigation" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
               <p class="caption"><span class="caption-text">Introduction</span></p>
               <ul class="current">
@@ -193,7 +193,7 @@
                   <a class="reference internal" href="../introduction/anatomy_of_a_conversational_ai_interaction.html">Anatomy of a Conversational AI Interaction</a>
                 </li>
                 <li class="toctree-l1 current">
-                  <a class="current reference internal" href="../introduction/introducing_mindmeld_workbench.html">Introducing MindMeld Workbench</a>
+                  <a class="reference internal" href="../introduction/introducing_mindmeld_workbench.html">Introducing MindMeld Workbench</a>
                 </li>
                 <li class="toctree-l1">
                   <a class="reference internal" href="../introduction/key_concepts.html">Key Concepts</a>
@@ -549,6 +549,63 @@
           navMenuItems[i].classList.add("active");
           break;
         }
+      }
+    }
+
+    //
+    var captions = document.getElementById('left-side').getElementsByClassName('caption');
+    var subLeftMavis = document.getElementById('left-side').getElementsByTagName('ul');
+    for(var i=0;i<captions.length;i++){
+        (function (index) {
+            subLeftMavis[index].style.display='none';
+            if(index==1){
+              subLeftMavis[index].style.display='block';
+            }
+            captions[index].onclick=function () {
+                for(var j=0;j<subLeftMavis.length;j++){
+                  if(j!=index){
+                    subLeftMavis[j].style.display='none';
+                  }
+                }
+                var curDis = subLeftMavis[index].style.display;
+                subLeftMavis[index].style.display=curDis=='block'?'none':'block';
+            }
+        })(i)
+    }
+    //
+    var captionsM = document.getElementById('navigates__mobile').getElementsByClassName('caption');
+    var subLeftMavisM = document.getElementById('navigates__mobile').getElementsByTagName('ul');
+    for(var i=0;i<captionsM.length;i++){
+        (function (index) {
+            subLeftMavisM[index].style.display='none';
+            if(index==1){
+              subLeftMavisM[index].style.display='block';
+            }
+            captionsM[index].onclick=function () {
+                for(var j=0;j<subLeftMavisM.length;j++){
+                  if(j!=index){
+                    subLeftMavisM[j].style.display='none';
+                  }
+                }
+                var curDis = subLeftMavisM[index].style.display;
+                subLeftMavisM[index].style.display=curDis=='block'?'none':'block';
+            }
+        })(i)
+    }
+
+    var leftBar = document.getElementById('navigates__mobile');
+    function handleHmbg(){
+      var curLeft = leftBar.style.left;
+      if(curLeft === '-100%'){
+        leftBar.style.left = '0';
+      }else{
+        leftBar.style.left = '-100%';
+      }
+    }
+
+    window.onresize = function(){
+      if(leftBar.style.left != '-100%'){
+        leftBar.style.left = '-100%';
       }
     }
   </script>

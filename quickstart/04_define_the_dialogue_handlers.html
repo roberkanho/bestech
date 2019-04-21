@@ -36,7 +36,7 @@
             <a class="position-center-middle router-link-exact-active router-link-active" href="/" style="height: 40px;"><img src="../img/mindmeld-logo.png" style="height: 100%; text-align: center; display: none;"> <img src="../img/mindmeld-logo.png" style="height: 100%; text-align: center;"></a>
           </div>
         </div>
-        <div class="navigates__mobile" style="left: -100%;">
+        <div class="navigates__mobile" style="left: -100%;" id="navigates__mobile">
           <div class="mobile_left-side">
             <div aria-label="main navigation" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
               <p class="caption"><span class="caption-text">Introduction</span></p>
@@ -51,7 +51,7 @@
                   <a class="reference internal" href="../introduction/anatomy_of_a_conversational_ai_interaction.html">Anatomy of a Conversational AI Interaction</a>
                 </li>
                 <li class="toctree-l1 current">
-                  <a class="current reference internal" href="../introduction/introducing_mindmeld_workbench.html">Introducing MindMeld Workbench</a>
+                  <a class="reference internal" href="../introduction/introducing_mindmeld_workbench.html">Introducing MindMeld Workbench</a>
                 </li>
                 <li class="toctree-l1">
                   <a class="reference internal" href="../introduction/key_concepts.html">Key Concepts</a>
@@ -72,7 +72,7 @@
                   <a class="reference internal" href="../quickstart/03_define_the_hierarchy.html">Step 3: Define the Domain, Intent, Entity, and Role Hierarchy</a>
                 </li>
                 <li class="toctree-l1">
-                  <a class="reference internal" href="../quickstart/04_define_the_dialogue_handlers.html">Step 4: Define the Dialogue State Handlers</a>
+                  <a class="current reference internal" href="../quickstart/04_define_the_dialogue_handlers.html">Step 4: Define the Dialogue State Handlers</a>
                 </li>
                 <li class="toctree-l1">
                   <a class="reference internal" href="../quickstart/05_create_the_knowledge_base.html">Step 5: Create the Knowledge Base</a>
@@ -179,7 +179,7 @@
         </div>
       </div>
       <div class="container full-height flex">
-        <div class="left-side">
+        <div class="left-side" id="left-side">
             <div aria-label="main navigation" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
               <p class="caption"><span class="caption-text">Introduction</span></p>
               <ul class="current">
@@ -193,7 +193,7 @@
                   <a class="reference internal" href="../introduction/anatomy_of_a_conversational_ai_interaction.html">Anatomy of a Conversational AI Interaction</a>
                 </li>
                 <li class="toctree-l1 current">
-                  <a class="current reference internal" href="../introduction/introducing_mindmeld_workbench.html">Introducing MindMeld Workbench</a>
+                  <a class="reference internal" href="../introduction/introducing_mindmeld_workbench.html">Introducing MindMeld Workbench</a>
                 </li>
                 <li class="toctree-l1">
                   <a class="reference internal" href="../introduction/key_concepts.html">Key Concepts</a>
@@ -214,7 +214,7 @@
                   <a class="reference internal" href="../quickstart/03_define_the_hierarchy.html">Step 3: Define the Domain, Intent, Entity, and Role Hierarchy</a>
                 </li>
                 <li class="toctree-l1">
-                  <a class="reference internal" href="../quickstart/04_define_the_dialogue_handlers.html">Step 4: Define the Dialogue State Handlers</a>
+                  <a class="current reference internal" href="../quickstart/04_define_the_dialogue_handlers.html">Step 4: Define the Dialogue State Handlers</a>
                 </li>
                 <li class="toctree-l1">
                   <a class="reference internal" href="../quickstart/05_create_the_knowledge_base.html">Step 5: Create the Knowledge Base</a>
@@ -349,129 +349,93 @@
                 </div>
               </div>
               <div id="third" class="section navi-href">
-                <span id="app-container"></span>
-                <h2>Create the Application Container<a class="headerlink" href="#create-the-application-container" title="Permalink to this headline"></a></h2>
-                <p>In MindMeld Workbench, every project is also a Python package and therefore must have an <code class="docutils literal"><span class="pre">__init.py__</span></code> file at the root level. This package must contain an <em>application container</em> – a container for all of the logic and functionality for your application. This application container enumerates all of the dialogue states and their associated handlers, and should be defined as <code class="docutils literal"><span class="pre">app</span></code> in the application’s Python package. If you based your application structure on a blueprint, you will see two python files in the root directory: <code class="docutils literal"><span class="pre">__init__.py</span></code> and <code class="docutils literal"><span class="pre">__main__.py</span></code>. If not, you need to create these files with the following minimal implementation.</p>
-                <div class="literal-block-wrapper docutils container" id="id1">
-                  <div class="code-block-caption">
-                    <span class="caption-text">__init__.py</span><a class="headerlink" href="#id1" title="Permalink to this code"><table class="docutils"></a>
-                  </div>
-                  <div class="highlight-python">
-                    <div class="highlight">
-                      <pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">Application</span>
+                <span id="app-container"></span><h2>Create the Application Container<a class="headerlink" href="#create-the-application-container" title="Permalink to this headline"></a></h2>
+<p>In MindMeld Workbench, every project is also a Python package and therefore must have an <code class="docutils literal"><span class="pre">__init.py__</span></code> file at the root level. This package must contain an <em>application container</em> – a container for all of the logic and functionality for your application. This application container enumerates all of the dialogue states and their associated handlers, and should be defined as <code class="docutils literal"><span class="pre">app</span></code> in the application’s Python package. If you based your application structure on a blueprint, you will see two python files in the root directory: <code class="docutils literal"><span class="pre">__init__.py</span></code> and <code class="docutils literal"><span class="pre">__main__.py</span></code>. If not, you need to create these files with the following minimal implementation.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">__init__.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">Application</span>
 
-              <span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
-              <span class="nd">@app.handle</span><span class="p">(</span><span class="n">intent</span><span class="o">=</span><span class="s1">&#39;greet&#39;</span><span class="p">)</span>
-              <span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">responder</span><span class="p">):</span>
-                  <span class="n">responder</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
-              </pre>
-                    </div>
-                  </div>
-                </div>
-                <div class="literal-block-wrapper docutils container" id="id2">
-                  <div class="code-block-caption">
-                    <span class="caption-text">__main__.py</span><a class="headerlink" href="#id2" title="Permalink to this code"><table class="docutils"></a>
-                  </div>
-                  <div class="highlight-python">
-                    <div class="highlight">
-                      <pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-                  <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">app</span>
-                  <span class="n">app</span><span class="o">.</span><span class="n">cli</span><span class="p">()</span>
-              </pre>
-                    </div>
-                  </div>
-                </div>
-                <p>Your directory structure should now resemble the following.</p><a class="reference internal image-reference" href="../_images/directory2.png"><img alt="../_images/directory2.png" class="align-center" src="../_images/directory2.png" style="width: 400px;"></a>
-                <p>The above code snippet illustrates the conventions for implementing dialogue state tracking and dialogue state handling logic in Workbench. The code is written to perform four steps:</p>
-                <ol class="arabic simple">
-                  <li>Import the <code class="docutils literal"><span class="pre">Application</span></code> class from the MindMeld Workbench package.</li>
-                  <li>Define an <code class="docutils literal"><span class="pre">Application</span></code> instance to serve as the parent container for the application.</li>
-                  <li>Using the <code class="docutils literal"><span class="pre">&#64;app.handle()</span></code> decorator, define a pattern which, when matched, invokes the associated handler function.</li>
-                  <li>Specify the handler function <code class="xref py py-func docutils literal"><span class="pre">welcome()</span></code> to define the <code class="docutils literal"><span class="pre">welcome</span></code> dialogue state and return the desired response. We decided that <code class="docutils literal"><span class="pre">welcome</span></code> would be one of our dialogue states based on the scripting exercise in <a class="reference internal" href="02_script_interactions.html"><span class="doc">Step 2</span></a>. For now, we are responding with a simple “Hello”.
-                  </li>
-                </ol>
-                <p>The patterns and associated handlers which you enumerate using this straighforward application structure constitute the core interaction logic for your application. The structure described above should suffice if you plan to contain all the functionality needed for your app’s interactions within a single file (<code class="docutils literal"><span class="pre">__init__.py</span></code>). It is often useful for large applications to break the application logic into multiple modules. Because the application is a Python package there is flexibility in how you accomplish this. Here is one approach which defines dialogue handlers in a <code class="docutils literal"><span class="pre">handlers</span></code> submodule.</p>
-                <div class="literal-block-wrapper docutils container" id="id3">
-                  <div class="code-block-caption">
-                    <span class="caption-text">__init__.py</span><a class="headerlink" href="#id3" title="Permalink to this code"><table class="docutils"></a>
-                  </div>
-                  <div class="highlight-python">
-                    <div class="highlight">
-                      <pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">Application</span>
+<span class="nd">@app.handle</span><span class="p">(</span><span class="n">intent</span><span class="o">=</span><span class="s1">&#39;greet&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">responder</span><span class="p">):</span>
+    <span class="n">responder</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">__main__.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">app</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">cli</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<p>Your directory structure should now resemble the following.</p>
+<a class="reference internal image-reference" href="../_images/directory2.png"><img alt="../_images/directory2.png" class="align-center" src="../_images/directory2.png" style="width: 400px;" /></a>
+<p>The above code snippet illustrates the conventions for implementing dialogue state tracking and dialogue state handling logic in Workbench. The code is written to perform four steps:</p>
+<ol class="arabic simple">
+<li>Import the <code class="docutils literal"><span class="pre">Application</span></code> class from the MindMeld Workbench package.</li>
+<li>Define an <code class="docutils literal"><span class="pre">Application</span></code> instance to serve as the parent container for the application.</li>
+<li>Using the <code class="docutils literal"><span class="pre">&#64;app.handle()</span></code> decorator, define a pattern which, when matched, invokes the associated handler function.</li>
+<li>Specify the handler function <code class="xref py py-func docutils literal"><span class="pre">welcome()</span></code> to define the <code class="docutils literal"><span class="pre">welcome</span></code> dialogue state and return the desired response. We decided that <code class="docutils literal"><span class="pre">welcome</span></code> would be one of our dialogue states based on the scripting exercise in <a class="reference internal" href="02_script_interactions.html"><span class="doc">Step 2</span></a>. For now, we are responding with a simple “Hello”.</li>
+</ol>
+<p>The patterns and associated handlers which you enumerate using this straighforward application structure constitute the core interaction logic for your application. The structure described above should suffice if you plan to contain all the functionality needed for your app’s interactions within a single file (<code class="docutils literal"><span class="pre">__init__.py</span></code>). It is often useful for large applications to break the application logic into multiple modules. Because the application is a Python package there is flexibility in how you accomplish this. Here is one approach which defines dialogue handlers in a <code class="docutils literal"><span class="pre">handlers</span></code> submodule.</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">__init__.py</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">Application</span>
 
-              <span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
-              <span class="hll"><span class="c1"># import modules containing dialogue handlers</span>
-              </span><span class="hll"><span class="kn">import</span> <span class="nn">my_app.handlers</span>
-              </span>
-              <span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;app&#39;</span><span class="p">]</span>
-              </pre>
-                    </div>
-                  </div>
-                </div>
-                <div class="literal-block-wrapper docutils container" id="id4">
-                  <div class="code-block-caption">
-                    <span class="caption-text">handlers.py</span><a class="headerlink" href="#id4" title="Permalink to this code"><table class="docutils"></a>
-                  </div>
-                  <div class="highlight-python">
-                    <div class="highlight">
-                      <pre><span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">app</span>
+<span class="hll"><span class="c1"># import modules containing dialogue handlers</span>
+</span><span class="hll"><span class="kn">import</span> <span class="nn">my_app.handlers</span>
+</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;app&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">handlers.py</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">app</span>
 
-              <span class="nd">@app.handle</span><span class="p">(</span><span class="n">intent</span><span class="o">=</span><span class="s1">&#39;greet&#39;</span><span class="p">)</span>
-              <span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">responder</span><span class="p">):</span>
-                  <span class="n">responder</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
-              </pre>
-                    </div>
-                  </div>
-                </div>
-                <div class="admonition note">
-                  <p class="first admonition-title">Note</p>
-                  <p>Avoiding Circular Imports</p>
-                  <p>While the simple example above will work, it is possible to introduce circular imports with this structure. To avoid circular imports, you can create the application container in a submodule instead of the <code class="docutils literal"><span class="pre">__init__.py</span></code> module, as in the following example.</p>
-                  <div class="literal-block-wrapper docutils container" id="id5">
-                    <div class="code-block-caption">
-                      <span class="caption-text">__init__.py</span><a class="headerlink" href="#id5" title="Permalink to this code"><table class="docutils"></a>
-                    </div>
-                    <div class="highlight-python">
-                      <div class="highlight">
-                        <pre><span></span><span class="hll"><span class="kn">from</span> <span class="nn">my_app.root</span> <span class="kn">import</span> <span class="n">app</span>
-              </span>
-              <span class="c1"># import modules containing dialogue handlers</span>
-              <span class="kn">import</span> <span class="nn">my_app.handlers</span>
-              </pre>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="literal-block-wrapper docutils container" id="id6">
-                    <div class="code-block-caption">
-                      <span class="caption-text">root.py</span><a class="headerlink" href="#id6" title="Permalink to this code"><table class="docutils"></a>
-                    </div>
-                    <div class="highlight-python">
-                      <div class="highlight">
-                        <pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">Application</span>
+<span class="nd">@app.handle</span><span class="p">(</span><span class="n">intent</span><span class="o">=</span><span class="s1">&#39;greet&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">responder</span><span class="p">):</span>
+    <span class="n">responder</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Avoiding Circular Imports</p>
+<p>While the simple example above will work, it is possible to introduce circular imports with this structure. To avoid circular imports, you can create the application container in a submodule instead of the <code class="docutils literal"><span class="pre">__init__.py</span></code> module, as in the following example.</p>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">__init__.py</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="hll"><span class="kn">from</span> <span class="nn">my_app.root</span> <span class="kn">import</span> <span class="n">app</span>
+</span>
+<span class="c1"># import modules containing dialogue handlers</span>
+<span class="kn">import</span> <span class="nn">my_app.handlers</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">root.py</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mmworkbench</span> <span class="kn">import</span> <span class="n">Application</span>
 
-              <span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-              </pre>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="literal-block-wrapper last docutils container" id="id7">
-                    <div class="code-block-caption">
-                      <span class="caption-text">handlers.py</span><a class="headerlink" href="#id7" title="Permalink to this code"><table class="docutils"></a>
-                    </div>
-                    <div class="highlight-python">
-                      <div class="highlight">
-                        <pre><span></span><span class="hll"><span class="kn">from</span> <span class="nn">.root</span> <span class="kn">import</span> <span class="n">app</span>
-              </span>
-              <span class="nd">@app.handle</span><span class="p">(</span><span class="n">intent</span><span class="o">=</span><span class="s1">&#39;greet&#39;</span><span class="p">)</span>
-              <span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">responder</span><span class="p">):</span>
-                  <span class="n">responder</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
-              </pre>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Application</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper last docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">handlers.py</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="hll"><span class="kn">from</span> <span class="nn">.root</span> <span class="kn">import</span> <span class="n">app</span>
+</span>
+<span class="nd">@app.handle</span><span class="p">(</span><span class="n">intent</span><span class="o">=</span><span class="s1">&#39;greet&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">welcome</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">responder</span><span class="p">):</span>
+    <span class="n">responder</span><span class="o">.</span><span class="n">reply</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
               </div>
               <div id="fourth" class="section navi-href">
                 <h2>Implement the Dialogue State Handlers<a class="headerlink" href="#implement-the-dialogue-state-handlers" title="Permalink to this headline"></a></h2>
@@ -633,6 +597,63 @@
           navMenuItems[i].classList.add("active");
           break;
         }
+      }
+    }
+
+    //
+    var captions = document.getElementById('left-side').getElementsByClassName('caption');
+    var subLeftMavis = document.getElementById('left-side').getElementsByTagName('ul');
+    for(var i=0;i<captions.length;i++){
+        (function (index) {
+            subLeftMavis[index].style.display='none';
+            if(index==1){
+              subLeftMavis[index].style.display='block';
+            }
+            captions[index].onclick=function () {
+                for(var j=0;j<subLeftMavis.length;j++){
+                  if(j!=index){
+                    subLeftMavis[j].style.display='none';
+                  }
+                }
+                var curDis = subLeftMavis[index].style.display;
+                subLeftMavis[index].style.display=curDis=='block'?'none':'block';
+            }
+        })(i)
+    }
+    //
+    var captionsM = document.getElementById('navigates__mobile').getElementsByClassName('caption');
+    var subLeftMavisM = document.getElementById('navigates__mobile').getElementsByTagName('ul');
+    for(var i=0;i<captionsM.length;i++){
+        (function (index) {
+            subLeftMavisM[index].style.display='none';
+            if(index==1){
+              subLeftMavisM[index].style.display='block';
+            }
+            captionsM[index].onclick=function () {
+                for(var j=0;j<subLeftMavisM.length;j++){
+                  if(j!=index){
+                    subLeftMavisM[j].style.display='none';
+                  }
+                }
+                var curDis = subLeftMavisM[index].style.display;
+                subLeftMavisM[index].style.display=curDis=='block'?'none':'block';
+            }
+        })(i)
+    }
+
+    var leftBar = document.getElementById('navigates__mobile');
+    function handleHmbg(){
+      var curLeft = leftBar.style.left;
+      if(curLeft === '-100%'){
+        leftBar.style.left = '0';
+      }else{
+        leftBar.style.left = '-100%';
+      }
+    }
+
+    window.onresize = function(){
+      if(leftBar.style.left != '-100%'){
+        leftBar.style.left = '-100%';
       }
     }
   </script>
