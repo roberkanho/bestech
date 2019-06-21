@@ -13,10 +13,11 @@
 }
 .doc-logo img {
     max-width: 90%;
-    padding: 20px 0 0 30px;
+    padding: 20px 12px 20px 30px;
 }
 .wy-breadcrumbs li:last-child {
     float: right;
+    font-size: 20px;
 }
 @media screen and (max-width: 768px) {
     .wy-tray-container {
@@ -1382,7 +1383,7 @@ div[class^='highlight'] pre {
 }
 .wy-breadcrumbs li {
     display: inline-block;
-    font-size: 13px;
+    font-size: 14px;
 }
 .wy-breadcrumbs li.wy-breadcrumbs-aside {
     float: right;
