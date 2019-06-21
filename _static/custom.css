@@ -11,7 +11,13 @@
     padding: 8px 8px;
 
 }
-
+.doc-logo img {
+    max-width: 90%;
+    padding: 20px 0 0 30px;
+}
+.wy-breadcrumbs li:last-child {
+    float: right;
+}
 @media screen and (max-width: 768px) {
     .wy-tray-container {
         bottom: auto;
