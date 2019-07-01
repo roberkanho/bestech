@@ -625,7 +625,7 @@ button {
 	padding-bottom: .56rem
 }
 .section-news .news-list {
-	margin: 0 auto
+	margin: 20px auto
 }
 .section-news .news-item {
 	background-color: #fff;
@@ -1107,7 +1107,9 @@ button {
 		width: 72%
 	}
 	.section-news .news-list {
-		width: 72%
+		width: 72%;
+		align-items: start;
+    	margin-bottom: 30px;
 	}
 	.section-functionalities .functionalities-list {
 		width: 4.66rem;
@@ -4324,9 +4326,9 @@ body.desktop .q-stepper-tab.step-navigation:hover {
 	align-items: flex-end
 }
 .flex-center, .items-center {
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center
+	-webkit-box-align: start;
+	-ms-flex-align: start;
+	align-items: start
 }
 .items-baseline {
 	-webkit-box-align: baseline;
