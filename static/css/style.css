@@ -67,7 +67,10 @@ button {
 	border: none;
 	background-color: #f5f7f9;
 }
-
+.twitter-tweet {
+	margin-right: 10px;
+	margin-left: 10px;
+}
 #galary {
   position: relative;
   border: 1px solid #9e9e9e;
